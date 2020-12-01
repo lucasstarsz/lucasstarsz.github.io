@@ -73,10 +73,11 @@ a:link {
 /* Header content */
 .header {
     background-position: center;
+    background-blend-mode: overlay;
     background-image: url("../images/fastj_sampler.png");
     
     width: 100%;
-    height: 489px;
+    height: 540px;
     
     /* Makes sure the text is centered in the correct location */
     position: relative;
