@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html id="home">
     <head>
+        <!-- Title -->
         <title>The FastJ Game Engine</title>
+        
+        <!-- Metadata -->
+        <meta name="author" content="Andrew Dey">
+        <meta name="application-name" content="The FastJ Game Engine">
+        <meta name="description" content="WORK IN PROGRESS - The new website for FastJ, an open-source 2D Java Game Engine.">
+        <meta name="keywords" content="FastJ, fastj, Fastj, java, game engine, java game engine, 2D game engine, 2d game engine">
+        
+        <!-- CSS -->
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/nav.css">
     </head>
-    <body>
+    <body class="home">
         <header class="header">
+            
             <!-- Navigation -->
             <div class="navhome">
                 <a href="index.html"><b>FastJ</b></a>
                 <div class="nav-right">
                     <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="https://github.com/lucasstarsz/FastJ-Engine/releases">Download</a>
+                    <a href="getstarted.html">Get Started</a>
+                    <a href="https://github.com/lucasstarsz/FastJ-Engine/">Source</a>
                     <a href="">Documentation</a>
+                    <a href="about.html">About</a>
                 </div>
             </div>
             
@@ -38,7 +49,7 @@
                 <h2>Using FastJ</h2>
                 <span class="left-content">
                     <b>In order to use FastJ, you'll need the following:</b>
-                    <ul>
+                    <ul class="outer-list">
                         <li>A <a href="https://adoptopenjdk.net/">Java 11 JDK</a>, or newer</li>
                         <li>A way to write and compile your Java code</li>
                         <ul>
@@ -59,17 +70,20 @@
             <!-- Pong -->
             <section>
                 <h3>Pong</h3>
+                <div class="left-content">
+                    <span>
+                        <b>Pong</b> was the first game to be made using the FastJ Game Engine, created by the same person who wrote the engine.
+                        <br />
+                        <br />
+                        It is 
+                        <a href="https://github.com/lucasstarsz/Pong">
+                            open source</a>, and made using version 
+                        <a href="https://github.com/lucasstarsz/FastJ-Engine/releases/tag/v0.3-alpha">
+                            0.3.0a</a>
+                        of the FastJ Game Engine.<br /><br />
+                    </span>
+                </div>
                 <span>
-                    <b>Pong</b> was the first game to be made using the FastJ Game Engine, created by the same person who wrote the engine.<br />
-                    It is made using version 
-                    <a href="https://github.com/lucasstarsz/FastJ-Engine/releases/tag/v0.3-alpha">
-                        0.3.0a</a>
-                    of the FastJ Game Engine.
-                    <br />
-                    <br />
-                    <span>Check out Pong in action:</span>
-                    <br />
-                    <br />
                     <video class="game-video" src="assets/videos/pong-gameplay.mp4" controls>
                         Video not supported by your browser.
                     </video>
@@ -77,9 +91,6 @@
                         <a href="https://lucas-z.itch.io/pong">Pong by Lucas Z</a>
                     </iframe>
                     <br />
-                    <a href="https://github.com/lucasstarsz/Pong">
-                        <b>Pong's source code is open to the public, and free to modify.</b>
-                    </a>
                 </span>
             </section>
         </article>
