@@ -4,8 +4,8 @@ body {
     color: #f0f0f0;
     
     padding: 0;
-    margin: 0;
-    background-color: #182146;
+    margin: 0;    
+    background-color: #0a0f22;
 }
 
 article {
@@ -18,8 +18,8 @@ article {
     border-style: solid;
     border-color: black;
     border-radius: 15px;
-    
-    background-color: #0a0f22;
+
+    background-color: #182146;
     
     /* used if width is more than 1280px */
     margin-left: auto;
@@ -51,7 +51,8 @@ footer a {
 
 /* Links */
 a {
-    color: #2b68ff;
+/*    color: #2b68ff;*/
+    color: #0da3ff;
 }
 
 a:link {
@@ -111,7 +112,7 @@ a:link {
         margin-left: 5%;
         margin-right: 5%;
 
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .game-video {
