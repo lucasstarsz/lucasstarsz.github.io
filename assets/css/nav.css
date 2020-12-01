@@ -1,0 +1,45 @@
+.nav {
+    background-color: black;
+}
+
+.nav, .navhome {
+    overflow: hidden;
+}
+
+.nav a, .navhome a {
+    float: left;
+    text-align: center;
+    color: white;
+    
+    transition: background-color .25s;
+    
+    /* width > 640px */
+    padding: 10px 10px;
+    margin: 5px 5px;
+    border-radius: 2px;
+    
+    font-size: 24px;
+}
+
+@media screen and (max-width: 640px) {
+    /* width < 640px */
+    .nav a, .navhome a {
+        padding: 5px 5px;
+        margin: 5px 5px;
+        border-radius: 2px;
+
+        font-size: 18px;
+    }
+}
+
+.nav-right {
+    float: right;
+}
+
+.nav a.active {
+    background-color: #0055aa !important;
+}
+
+.nav a:hover, .navhome a:hover {
+    background-color: #1f1f1f;
+}
