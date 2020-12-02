@@ -20,7 +20,7 @@ article {
     border-radius: 15px;
 
     background-color: #182146;
-    font-size: 1em;
+    font-size: 2em;
     
     /* if width < 1280px */
     margin-left: 5%;
@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     
     text-align: center;
+}
+
+h1 {
+    font-size: 3.5em;
 }
 
 section {
@@ -157,9 +161,14 @@ a:link {
 
 /* if width > 1280px */
 @media screen and (min-width: 1280px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    
     article {
         margin-left: auto;
         margin-right: auto;
+        font-size: 1.125em;
     }
     
     .game-video {
