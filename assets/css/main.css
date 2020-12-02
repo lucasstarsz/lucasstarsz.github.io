@@ -8,19 +8,18 @@ body {
 }
 
 article {
-    padding: 25px 50px;
+    padding: 1em 1em;
     margin-top: 10px;
     margin-bottom: 10px;
     
-    min-width: 300px;
-    max-width: 1000px;
+    min-width: 280px;
+    max-width: 1152px;
     
     border-style: solid;
     border-color: black;
     border-radius: 15px;
 
     background-color: #182146;
-    font-size: 2em;
     
     /* if width < 1280px */
     margin-left: 5%;
@@ -28,18 +27,44 @@ article {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 5px 0px 25px 0px;
+    margin: 5px 0px 20px 0px;
     padding: 0;
     
     text-align: center;
 }
 
-h1 {
-    font-size: 3.5em;
-}
-
 section {
     margin: 20px 0px;
+}
+
+/* Lists */
+ul.outer-list {
+    margin: 5px 0px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+footer a {
+    padding: 5px 15px;
+}
+
+footer a img {
+    /* if width < 400px */
+    width: 3em;
+    height: 3em;
+}
+
+/* Links */
+a {
+    color: #0da3ff;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 /* Header content */
@@ -59,8 +84,9 @@ section {
 }
 
 .headertext {
-    font-size: 3.5em;
+    text-shadow: 2px 2px 1px black;
     font-weight: bold;
+    align-content: left;
     
     /* Centers the text somehow */
     position: absolute;
@@ -68,31 +94,11 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     
-    /* Text shadow */
-    text-shadow: 2px 2px 1px black;
+    /* if width < 400px */
+    font-size: 2.5em;
 }
 
-/* Buttons (made of links) */
-.button {
-    padding: 10px;
-    margin: 0px 10px;
-    
-    border: solid 1px black;
-    border-radius: 10px;
-    
-    background-color: #3f60dd;
-    
-    color: #ffffff;
-    transition: background-color .25s;
-}
-
-a:hover.button {
-    background-color: #456aff;
-}
-
-/*
- * "Get Started" button in the header.
- */
+/* The "Get Started" button in the header. */
 .headertext a.button {
     padding: 10px 20px;
     text-shadow: none;
@@ -101,45 +107,36 @@ a:hover.button {
     font-size: .5em;
 }
 
-/* Lists */
-ul.outer-list {
-    margin: 5px 0px;
+/* Buttons (made of links) */
+.button {
+    padding: 10px;
+    
+    border: solid 1px black;
+    border-radius: 10px;
+    
+    background-color: #3f60dd;
+    
+    color: #ffffff;
+    transition: background-color .25s;
+    
+    /* if width < 400px */
+    margin: 0px 0px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px 0px;
-}
-
-footer a {
-    padding: 5px 15px;
-}
-
-footer a img {
-    width: 64px;
-    height: 64px;
-}
-
-/* Links */
-a {
-    color: #0da3ff;
-}
-
-a:link {
-    text-decoration: none;
+a:hover.button {
+    background-color: #456aff;
 }
     
 /* Videos & Itch.io Frames */
 .game-video {
-    width: 330px;
-    height: 186px;
+    width: 240px;
+    height: 135px;
 }
 
 .itch-io-frame {
     width: 75%;
+    min-width: 321px;
     max-width: 500px;
-    min-width: 330px;
     height: 175px;
 }
 
@@ -157,6 +154,38 @@ a:link {
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* if width > 400px */
+@media screen and (min-width: 400px) {
+    .headertext {
+        font-size: 2.75em;
+    }
+    
+    .button {
+        margin: 0px 10px;
+    }
+    
+    .game-video {
+        width: 320px;
+        height: 180px;
+    }
+}
+
+/* if width > 600px */
+@media screen and (min-width: 600px) {
+    .game-video {
+        width: 400px;
+        height: 225px;
+    }
+}
+
+/* if width > 800px */
+@media screen and (min-width: 800px) {
+    .game-video {
+        width: 480px;
+        height: 270px;
+    }
 }
 
 /* if width > 1280px */

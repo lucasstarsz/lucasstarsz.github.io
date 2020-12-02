@@ -18,15 +18,16 @@
     float: left;
     
     color: white;
-    font-size: 2.125em;
     font-weight: 400;
     
+    border-radius: 10px;
     transition: background-color .25s;
     
-    /* width < 640px */
-    padding: 10px 12px;
-    margin: 5px 5px;
-    border-radius: 10px;
+    /* width < 400px */
+    padding: .62em .37em;
+    margin: .25em .25em;
+    
+    font-size: .75em;
 }
 
 .nav-right {
@@ -39,4 +40,34 @@
 
 .nav a:hover, .navhome a:hover {
     background-color: #1f1f1f;
+}
+
+/* width > 400px */
+@media screen and (min-width: 400px) {
+    .nav a, .navhome a {
+        padding: .62em .37em;
+        margin: .3em .25em;
+        
+        font-size: .825em;
+    }
+}
+
+/* width > 600px */
+@media screen and (min-width: 600px) {
+    .nav a, .navhome a {
+        padding: .62em .4em;
+        margin: .5em .5em;
+        
+        font-size: 1.125em;
+    }
+}
+
+/* width > 900px */
+@media screen and (min-width: 900px) {
+    .nav a, .navhome a {
+        padding: .62em .75em;
+        margin: .5em .5em;
+        
+        font-size: 1.35em;
+    }
 }
