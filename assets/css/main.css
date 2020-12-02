@@ -1,16 +1,16 @@
 body {
     padding: 0;
-    margin: 0;    
+    margin: 0;
     background-color: #0a0f22;
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1em;
     color: #f0f0f0;
 }
 
 article {
     padding: 25px 50px;
-    margin: 10px 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     
     min-width: 300px;
     max-width: 1000px;
@@ -20,81 +20,22 @@ article {
     border-radius: 15px;
 
     background-color: #182146;
+    font-size: 1em;
     
-    /* used if width is more than 1280px */
-    margin-left: auto;
-    margin-right: auto;
+    /* if width < 1280px */
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-@media screen and (max-width: 1280px) {
-   article {
-        /* used if width is less than 1280px */
-        margin-left: 5%;
-        margin-right: 5%;
-   } 
+h1, h2, h3, h4, h5, h6 {
+    margin: 5px 0px 25px 0px;
+    padding: 0;
+    
+    text-align: center;
 }
 
 section {
     margin: 20px 0px;
-}
-
-/* Headings */
-h2 {
-    font-size: 2em;
-}
-
-h3 {
-    font-size: 1.375em;
-}
-
-h2, h3 {
-    padding: 0px;
-    margin-top: 0px;
-    margin-bottom: 20px;
-}
-
-/* Lists */
-ul.outer-list {
-    margin: 5px 0px;
-}
-
-/* Footer */
-footer {
-    padding: 20px 0px;
-}
-
-footer a {
-    padding: 0px 5px 5px 5px;
-}
-
-/* Links */
-a {
-    color: #0da3ff;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-/* Homepage Animation */
-.home {
-    animation: fadein .5s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-    
-/* Videos & Itch.io Frames */
-.game-video {
-    width: 640px;
-    height: 360px;
-}
-
-.itch-io-frame {
-    width: 500px;
-    height: 160px;
 }
 
 /* Header content */
@@ -114,7 +55,7 @@ a:link {
 }
 
 .headertext {
-    font-size: 64px;
+    font-size: 3.5em;
     font-weight: bold;
     
     /* Centers the text somehow */
@@ -122,20 +63,13 @@ a:link {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+    /* Text shadow */
     text-shadow: 2px 2px 1px black;
 }
 
-/* content positioning */
-.centered-content {
-    text-align: center;
-}
-
-.left-content {
-    text-align: left;
-}
-
-/* File Download Buttons */
-.download {
+/* Buttons (made of links) */
+.button {
     padding: 10px;
     margin: 0px 10px;
     
@@ -145,30 +79,96 @@ a:link {
     background-color: #3f60dd;
     
     color: #ffffff;
-    font-size: 1em;
+    transition: background-color .25s;
 }
 
-/* used if width is less than 640px */
-@media screen and (max-width: 640px) {
-    article {
-        margin-left: 8%;
-        margin-right: 8%;
-        padding: 5% 5%;
+a:hover.button {
+    background-color: #456aff;
+}
 
-        font-size: .8em;
+/*
+ * "Get Started" button in the header.
+ */
+.headertext a.button {
+    padding: 10px 20px;
+    text-shadow: none;
+    
+    font-weight: normal;
+    font-size: .5em;
+}
+
+/* Lists */
+ul.outer-list {
+    margin: 5px 0px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+footer a {
+    padding: 5px 15px;
+}
+
+footer a img {
+    width: 64px;
+    height: 64px;
+}
+
+/* Links */
+a {
+    color: #0da3ff;
+}
+
+a:link {
+    text-decoration: none;
+}
+    
+/* Videos & Itch.io Frames */
+.game-video {
+    width: 330px;
+    height: 186px;
+}
+
+.itch-io-frame {
+    width: 75%;
+    max-width: 500px;
+    min-width: 330px;
+    height: 175px;
+}
+
+/* content positioning */
+.centered {
+    text-align: center;
+}
+
+/* Homepage Animation */
+.home {
+    animation: fadein .85s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* if width > 1280px */
+@media screen and (min-width: 1280px) {
+    article {
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .game-video {
-        width: 330px;
-        height: 186px;
-    }
-    
-    .itch-io-frame {
-        width: 330px;
-        height: 160px;
+        width: 640px;
+        height: 360px;
     }
 
-    .headertext {
-        font-size: 2.875em;
+    .itch-io-frame {
+        width: 500px;
+        height: 175px;
     }
 }

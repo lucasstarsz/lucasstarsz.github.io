@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="home">
+<html>
     <head>
         <!-- Title -->
         <title>The FastJ Game Engine</title>
@@ -16,6 +16,12 @@
     </head>
     <body class="home">
         <header class="header">
+            <!-- Title -->
+            <div class="headertext">
+                <span>The FastJ Game Engine</span>
+                <br />
+                <a class="button" href="getstarted.html">Get Started</a>
+            </div>
             
             <!-- Navigation -->
             <div class="navhome">
@@ -23,20 +29,17 @@
                 <div class="nav-right">
                     <a href="index.html">Home</a>
                     <a href="getstarted.html">Get Started</a>
-                    <a href="https://github.com/lucasstarsz/FastJ-Engine/">Source</a>
+                    <a target="_blank" href="https://github.com/lucasstarsz/FastJ-Engine/">Source</a>
                     <a href="">Documentation</a>
                     <a href="about.html">About</a>
                 </div>
             </div>
-            
-            <!-- Title -->
-            <span class="headertext">The FastJ Game Engine</span>
         </header>
         
         <!-- About FastJ -->
-        <article>
-            <section class="centered-content">
-                <h2>About FastJ</h2>
+        <article class="centered">
+            <h2>About FastJ</h2>
+            <section>
                 <span>
                     <b>FastJ</b> is a 2D Java Game Engine. While not complete, it contains many of the features needed to create simple 2D games.
                 </span>
@@ -45,60 +48,62 @@
             
         <!-- Using FastJ -->
         <article>
-            <section class="centered-content">
-                <h2>Using FastJ</h2>
-                <span class="left-content">
+            <h2>Using FastJ</h2>
+            <section>
+                <span>
                     <b>In order to use FastJ, you'll need the following:</b>
                     <ul class="outer-list">
-                        <li>A <a href="https://adoptopenjdk.net/">Java 11 JDK</a>, or newer</li>
-                        <li>A way to write and compile your Java code</li>
+                        <li>A <a target="_blank" href="https://adoptopenjdk.net/">Java 11 JDK</a>, or newer</li>
+                        <li>An IDE or code editor that supports Java</li>
                         <ul>
-                            <li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
-                            <li><a href="https://www.eclipse.org/">Eclipse</a></li>
-                            <li><a href="https://netbeans.org/">Apache Netbeans</a></li>
+                            <li><a target="_blank" href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
+                            <li><a target="_blank" href="https://www.eclipse.org/">Eclipse</a></li>
+                            <li><a target="_blank" href="https://netbeans.org/">Apache Netbeans</a></li>
                         </ul>
-                        <li><a href="https://github.com/lucasstarsz/FastJ-Engine/releases">The latest release</a> of the FastJ Game Engine</li>
+                        <li><a target="_blank" href="https://github.com/lucasstarsz/FastJ-Engine/releases">The latest release</a> of the FastJ Game Engine</li>
                     </ul>
                 </span>
             </section>
         </article>
         
         <!-- Games Made with FastJ -->
-        <article class="centered-content">
+        <article>
             <h2>Games Made with FastJ</h2>
             
             <!-- Pong -->
             <section>
                 <h3>Pong</h3>
-                <div class="left-content">
-                    <span>
-                        <b>Pong</b> was the first game to be made using the FastJ Game Engine, created by the same person who wrote the engine.
-                        <br />
-                        <br />
-                        It is 
-                        <a href="https://github.com/lucasstarsz/Pong">
-                            open source</a>, and made using version 
-                        <a href="https://github.com/lucasstarsz/FastJ-Engine/releases/tag/v0.3-alpha">
-                            0.3.0a</a>
-                        of the FastJ Game Engine.<br /><br />
-                    </span>
-                </div>
                 <span>
-                    <video class="game-video" src="assets/videos/pong-gameplay.mp4" controls>
-                        Video not supported by your browser.
-                    </video>
-                    <iframe class="itch-io-frame" frameborder="0" src="https://itch.io/embed/773952?dark=true" style="vertical-align: 32px">
+                    <b>Pong</b> was the first game to be made using the FastJ Game Engine, created by the same person who wrote the engine.
+                    <br />
+                    <br />
+                    It is 
+                    <a target="_blank" href="https://github.com/lucasstarsz/Pong">
+                        open source</a>, and made using version 
+                    <a target="_blank" href="https://github.com/lucasstarsz/FastJ-Engine/releases/tag/v0.3-alpha">
+                        0.3.0a</a>
+                    of the FastJ Game Engine.<br /><br />
+                </span>
+                <div class="centered">
+                    <iframe class="itch-io-frame centered" frameborder="0" src="https://itch.io/embed/773952?dark=true">
                         <a href="https://lucas-z.itch.io/pong">Pong by Lucas Z</a>
                     </iframe>
-                    <br />
-                </span>
+                </div>
+            </section>
+        </article>
+        
+        <!-- Interested? -->
+        <article class="centered">
+            <h2>Interested?</h2>
+            <section>
+                <a class="button" href="getstarted.html">Yes! Let's get started.</a>
             </section>
         </article>
         
         <!-- Footer: Contacts -->
-        <footer class="centered-content">
+        <footer class="centered">
             <section>
-                <a href="https://github.com/lucasstarsz">
+                <a target="_blank" href="https://github.com/lucasstarsz">
                     <img src="assets/images/github-logo-white.png" alt="GitHub" height="50px" width="50px"></a>
                 <a href="mailto:andrewrcdey@gmail.com">
                     <img src="assets/images/gmail-logo.png" alt="Email" height="50px" width="50px"></a>
