@@ -1,3 +1,4 @@
+/* Body */
 body {
     padding: 0;
     margin: 0;
@@ -7,12 +8,13 @@ body {
     color: #f0f0f0;
 }
 
+/* Articles */
 article {
     padding: 1em 1em;
     margin-top: 10px;
     margin-bottom: 10px;
     
-    min-width: 280px;
+    min-width: 240px;
     max-width: 1152px;
     
     border-style: solid;
@@ -26,20 +28,71 @@ article {
     margin-right: 5%;
 }
 
+/* Sections */
+section {
+    margin: 20px 0px;
+}
+
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
-    margin: 5px 0px 20px 0px;
-    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
     
     text-align: center;
 }
 
-section {
-    margin: 20px 0px;
+/* Links */
+a {
+    color: #0da3ff;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Buttons (made of links) */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 10px;
+    
+    background-color: #3f60dd;
+    
+    color: #ffffff;
+    transition: background-color .25s;
+    
+    /* if width < 400px */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+a:hover.button {
+    background-color: #456aff;
 }
 
 /* Lists */
 ul.outer-list {
     margin: 5px 0px;
+    font-size: 90%;
+}
+
+/* Featured game videos */
+.game-video {
+    width: 240px;
+    height: 135px;
+}
+
+/* Featured game Itch.io frames */
+.itch-io-frame {
+    width: 75%;
+    min-width: 240px;
+    max-width: 500px;
+    
+    height: 50px;
 }
 
 /* Footer */
@@ -58,117 +111,26 @@ footer a img {
     height: 3em;
 }
 
-/* Links */
-a {
-    color: #0da3ff;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-/* Header content */
-.header {
-    background-position: center;
-    background-blend-mode: overlay;
-    background-image: url("../images/fastj_sampler.png");
-    
-    width: 100%;
-    height: 540px;
-    
-    /* Makes sure the text is centered in the correct location */
-    position: relative;
-    
-    /* Just a normal text align */
-    text-align: center;
-}
-
-.headertext {
-    text-shadow: 2px 2px 1px black;
-    font-weight: bold;
-    align-content: left;
-    
-    /* Centers the text somehow */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    /* if width < 400px */
-    font-size: 2.5em;
-}
-
-/* The "Get Started" button in the header. */
-.headertext a.button {
-    padding: 10px 20px;
-    text-shadow: none;
-    
-    font-weight: normal;
-    font-size: .5em;
-}
-
-/* Buttons (made of links) */
-.button {
-    padding: 10px;
-    
-    border: solid 1px black;
-    border-radius: 10px;
-    
-    background-color: #3f60dd;
-    
-    color: #ffffff;
-    transition: background-color .25s;
-    
-    /* if width < 400px */
-    margin: 0px 0px;
-}
-
-a:hover.button {
-    background-color: #456aff;
-}
-    
-/* Videos & Itch.io Frames */
-.game-video {
-    width: 240px;
-    height: 135px;
-}
-
-.itch-io-frame {
-    width: 75%;
-    min-width: 321px;
-    max-width: 500px;
-    height: 175px;
-}
-
-/* content positioning */
+/* content positioning - centered */
 .centered {
     text-align: center;
 }
 
-/* Homepage Animation */
-.home {
-    animation: fadein .85s;
-    animation-timing-function: ease-out;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 /* if width > 400px */
 @media screen and (min-width: 400px) {
-    .headertext {
-        font-size: 2.75em;
-    }
-    
-    .button {
-        margin: 0px 10px;
+    .itch-io-frame {
+        min-width: 321px;
+        height: 175px;
     }
     
     .game-video {
         width: 320px;
         height: 180px;
+    }
+    
+    .button {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -182,6 +144,11 @@ a:hover.button {
 
 /* if width > 800px */
 @media screen and (min-width: 800px) {
+    article {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    
     .game-video {
         width: 480px;
         height: 270px;
