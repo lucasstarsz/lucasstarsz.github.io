@@ -27,8 +27,8 @@
     font-size: .65em;
     
     /* width < 400px */
-    padding: .6em .37em;
-    margin: .35em .15em;
+    padding: .6em .25em;
+    margin: .35em .1em;
 }
 
 .nav-right {
@@ -41,6 +41,13 @@
 
 .nav a:hover, .navhome a:hover {
     background-color: #2f2f2f;
+}
+
+@media screen and (min-width: 300px) {
+    .nav a, .navhome a {
+        padding: .6em .37em;
+        margin: .35em .15em;
+    }
 }
 
 /* width > 360px */

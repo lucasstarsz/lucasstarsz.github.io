@@ -14,7 +14,7 @@ article {
     margin-top: 20px;
     margin-bottom: 20px;
     
-    min-width: 240px;
+    min-width: 200px;
     max-width: 1152px;
     
     border-style: solid;
@@ -24,8 +24,8 @@ article {
     background-color: #182146;
     
     /* if width < 1280px */
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 /* Sections */
@@ -73,14 +73,15 @@ footer a img {
 
 /* Featured game videos */
 .game-video {
-    width: 240px;
-    height: 135px;
+    min-width: 200px;
+    height: 113px;
+    width: auto;
 }
 
 /* Featured game Itch.io frames */
 .itch-io-frame {
     width: 75%;
-    min-width: 240px;
+    min-width: 180px;
     max-width: 500px;
     
     height: 50px;
