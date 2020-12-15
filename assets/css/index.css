@@ -1,8 +1,8 @@
 /* Header content */
 .header {
     background-position: center;
-    background-blend-mode: overlay;
-    background-image: url("../images/fastj_sampler.png");
+    background-blend-mode: darken;
+    background-image: url("../images/fastj_screenshot.png"), linear-gradient(to bottom, transparent, rgba(10, 15, 34, 255));
     
     width: 100%;
     height: 540px;

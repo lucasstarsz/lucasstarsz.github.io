@@ -6,13 +6,13 @@ body {
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f0f0f0;
+    height: 100%;
 }
 
 /* Articles */
 article {
     padding: 0 1em 1em 1em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1em;
     
     min-width: 200px;
     max-width: 1152px;
@@ -59,16 +59,16 @@ ul.outer-list {
 /* Footers */
 footer {
     text-align: center;
-}
-
-footer a {
-    padding: 20px 10px;
+/*    padding: 1em;*/
+    display: flex;
+    justify-content: center;
 }
 
 footer a img {
     /* if width < 400px */
     width: 3em;
     height: 3em;
+    padding: 0 .5em;
 }
 
 /* Featured game videos */
@@ -81,7 +81,7 @@ footer a img {
 /* Featured game Itch.io frames */
 .itch-io-frame {
     width: 75%;
-    min-width: 180px;
+    min-width: 200px;
     max-width: 500px;
     
     height: 50px;
