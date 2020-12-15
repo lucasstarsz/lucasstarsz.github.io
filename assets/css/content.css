@@ -10,9 +10,9 @@ body {
 
 /* Articles */
 article {
-    padding: 1em 1em;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 0 1em 1em 1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
     
     min-width: 240px;
     max-width: 1152px;
@@ -35,7 +35,7 @@ section {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 5px;
+    margin-top: 20px;
     margin-bottom: 20px;
     
     text-align: center;
@@ -48,6 +48,47 @@ a {
 
 a:link {
     text-decoration: none;
+}
+
+/* Lists */
+ul.outer-list {
+    margin: 5px 0px;
+    font-size: 90%;
+}
+
+/* Footers */
+footer {
+    text-align: center;
+}
+
+footer a {
+    padding: 20px 10px;
+}
+
+footer a img {
+    /* if width < 400px */
+    width: 3em;
+    height: 3em;
+}
+
+/* Featured game videos */
+.game-video {
+    width: 240px;
+    height: 135px;
+}
+
+/* Featured game Itch.io frames */
+.itch-io-frame {
+    width: 75%;
+    min-width: 240px;
+    max-width: 500px;
+    
+    height: 50px;
+}
+
+/* content positioning - centered */
+.centered {
+    text-align: center;
 }
 
 /* Buttons (made of links) */
@@ -70,50 +111,9 @@ a:link {
     margin-right: 0px;
 }
 
+/* "Button" hover */
 a:hover.button {
     background-color: #456aff;
-}
-
-/* Lists */
-ul.outer-list {
-    margin: 5px 0px;
-    font-size: 90%;
-}
-
-/* Featured game videos */
-.game-video {
-    width: 240px;
-    height: 135px;
-}
-
-/* Featured game Itch.io frames */
-.itch-io-frame {
-    width: 75%;
-    min-width: 240px;
-    max-width: 500px;
-    
-    height: 50px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px 0px;
-}
-
-footer a {
-    padding: 5px 15px;
-}
-
-footer a img {
-    /* if width < 400px */
-    width: 3em;
-    height: 3em;
-}
-
-/* content positioning - centered */
-.centered {
-    text-align: center;
 }
 
 /* if width > 400px */
@@ -148,7 +148,7 @@ footer a img {
         padding-left: 2%;
         padding-right: 2%;
     }
-    
+
     .game-video {
         width: 480px;
         height: 270px;
@@ -160,13 +160,13 @@ footer a img {
     h1 {
         font-size: 3.5em;
     }
-    
+
     article {
         margin-left: auto;
         margin-right: auto;
         font-size: 1.125em;
     }
-    
+
     .game-video {
         width: 640px;
         height: 360px;
