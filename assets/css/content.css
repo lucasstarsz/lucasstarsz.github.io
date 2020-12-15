@@ -11,7 +11,7 @@ body {
 
 /* Articles */
 article {
-    padding: 0 1em 1em 1em;
+    padding: 1em 1em 0 1em;
     margin-top: 1em;
     
     min-width: 200px;
@@ -68,7 +68,7 @@ footer a img {
     /* if width < 400px */
     width: 3em;
     height: 3em;
-    padding: 0 .5em;
+    padding: 1em;
 }
 
 /* Featured game videos */
