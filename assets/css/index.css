@@ -1,0 +1,67 @@
+/* Header content */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+.header {
+    background-position: center;
+    background-blend-mode: darken;
+    background-image: url("../images/fastj_screenshot_999.png"), linear-gradient(to bottom, transparent, rgba(10, 15, 34, 255));
+    
+    width: 100%;
+    height: 540px;
+    
+    /* Makes sure the text is centered in the correct location */
+    position: relative;
+    
+    /* Just a normal text align */
+    text-align: center;
+}
+
+.headertext {
+    display: inline-block;
+    
+    text-shadow: 2px 2px 1px black;
+    font-weight: bold;
+    
+    /* Centers the text somehow */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* if width < 360px */
+    font-size: 2em;
+}
+
+/* The "Get Started" button in the header. */
+.headertext a.button {
+    padding: 10px 20px;
+    text-shadow: none;
+    
+    font-weight: normal;
+    font-size: .5em;
+}
+
+/* Homepage Animation */
+.home {
+    animation: fadein .85s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* if width > 360px */
+@media screen and (min-width: 360px) {
+    .headertext {
+        font-size: 2.5em;
+    }
+}
+
+/* if width > 400px */
+@media screen and (min-width: 400px) {
+    .headertext {
+        font-size: 2.75em;
+    }
+}
