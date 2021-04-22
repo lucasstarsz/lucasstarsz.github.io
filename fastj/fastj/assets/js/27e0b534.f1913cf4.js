@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{81:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/fastj/news/welcome"},{"title":"Hello","permalink":"/fastj/news/hello-world"},{"title":"Hola","permalink":"/fastj/news/hola"}]}')}}]);
