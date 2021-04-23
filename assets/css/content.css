@@ -5,6 +5,7 @@ body {
     
     font-family: 'Fira Sans', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
+    text-align: center;
 }
 
 /* Articles */
@@ -12,9 +13,9 @@ article {
     padding: 1em 1em 0 1em;
     margin-top: 1em;
     
-    min-width: 200px;
+
+    min-height: 150px;
     max-width: 1152px;
-    min-height: 125px;
     
     border-style: solid;
     border-radius: 15px;
@@ -29,6 +30,15 @@ article {
     align-items: center; */
     align-content: center;
     text-align: center;
+    
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    
+    /* if width < 1280px */
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 .flex .section-content {
@@ -37,13 +47,17 @@ article {
     border-style: solid;
     border-radius: 1rem;
     border-width: 1px;
+    border-color: black;
 
-    min-width: 400px;
-    min-height: 200px;
+    max-width: 300px;
+    min-height: 150px;
     
     padding: 1em;
     margin: .5rem 2rem;
-    /* align-self: center; */
+}
+
+.flex .section-content span {
+    max-width: 200px;
 }
 
 /* Sections */
@@ -164,7 +178,7 @@ footer a img {
 
 /* if width > 800px */
 @media screen and (min-width: 800px) {
-    article {
+    article, .flex {
         padding-left: 2%;
         padding-right: 2%;
     }
@@ -185,7 +199,7 @@ footer a img {
         font-size: 3.5em;
     }
 
-    article {
+    article, .flex {
         margin-left: auto;
         margin-right: auto;
         font-size: 1.125em;
