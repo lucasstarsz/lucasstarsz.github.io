@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 345);
+/******/ 	return __webpack_require__(__webpack_require__.s = 346);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -350,6 +350,53 @@ function _extends() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+function toVal(mix) {
+	var k, y, str='';
+
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		str += mix;
+	} else if (typeof mix === 'object') {
+		if (Array.isArray(mix)) {
+			for (k=0; k < mix.length; k++) {
+				if (mix[k]) {
+					if (y = toVal(mix[k])) {
+						str && (str += ' ');
+						str += y;
+					}
+				}
+			}
+		} else {
+			for (k in mix) {
+				if (mix[k]) {
+					str && (str += ' ');
+					str += k;
+				}
+			}
+		}
+	}
+
+	return str;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+	var i=0, tmp, x, str='';
+	while (i < arguments.length) {
+		if (tmp = arguments[i++]) {
+			if (x = toVal(tmp)) {
+				str && (str += ' ');
+				str += x
+			}
+		}
+	}
+	return str;
+});
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ translate; });
@@ -395,53 +442,6 @@ function translate({message,id},values){var _a;const localizedMessage=(_a=getLoc
 function Translate({children,id,values}){var _a;const localizedMessage=(_a=getLocalizedMessage({message:children,id}))!==null&&_a!==void 0?_a:children;return/*#__PURE__*/react_default.a.createElement(Interpolate,{values:values},localizedMessage);}
 
 /***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-function toVal(mix) {
-	var k, y, str='';
-
-	if (typeof mix === 'string' || typeof mix === 'number') {
-		str += mix;
-	} else if (typeof mix === 'object') {
-		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
-						str && (str += ' ');
-						str += y;
-					}
-				}
-			}
-		} else {
-			for (k in mix) {
-				if (mix[k]) {
-					str && (str += ' ');
-					str += k;
-				}
-			}
-		}
-	}
-
-	return str;
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-	var i=0, tmp, x, str='';
-	while (i < arguments.length) {
-		if (tmp = arguments[i++]) {
-			if (x = toVal(tmp)) {
-				str && (str += ' ');
-				str += x
-			}
-		}
-	}
-	return str;
-});
-
-
-/***/ }),
 /* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -449,7 +449,7 @@ function toVal(mix) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
-/* harmony import */ var _isInternalUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34);
+/* harmony import */ var _isInternalUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
 /* harmony import */ var _ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20);
 /* harmony import */ var _LinksCollector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52);
 /* harmony import */ var _useBaseUrl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
@@ -754,7 +754,7 @@ var path_to_regexp_default = /*#__PURE__*/__webpack_require__.n(path_to_regexp);
 var react_is = __webpack_require__(130);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(35);
+var objectWithoutPropertiesLoose = __webpack_require__(36);
 
 // EXTERNAL MODULE: ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js
 var hoist_non_react_statics_cjs = __webpack_require__(176);
@@ -1533,7 +1533,7 @@ module.exports = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useBaseUrlUtils; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useBaseUrl; });
 /* harmony import */ var _useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _isInternalUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34);
+/* harmony import */ var _isInternalUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -1555,10 +1555,10 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/router.js
 var router = __webpack_require__(18);
@@ -1580,7 +1580,7 @@ var router = __webpack_require__(18);
 var lib = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useUserPreferencesContext.js
-var useUserPreferencesContext = __webpack_require__(51);
+var useUserPreferencesContext = __webpack_require__(34);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/AnnouncementBar/styles.module.css
 // Exports
@@ -1639,7 +1639,7 @@ var useDocusaurusContext = __webpack_require__(7);
  */const Dark=({icon,style})=>/*#__PURE__*/react_default.a.createElement("span",{className:Object(clsx_m["a" /* default */])(Toggle_styles_module.toggle,Toggle_styles_module.dark),style:style},icon);const Light=({icon,style})=>/*#__PURE__*/react_default.a.createElement("span",{className:Object(clsx_m["a" /* default */])(Toggle_styles_module.toggle,Toggle_styles_module.light),style:style},icon);// Based on react-toggle (https://github.com/aaronshaf/react-toggle/).
 const Toggle=/*#__PURE__*/Object(react["memo"])(({className,icons,checked:defaultChecked,disabled,onChange})=>{const[checked,setChecked]=Object(react["useState"])(defaultChecked);const[focused,setFocused]=Object(react["useState"])(false);const inputRef=Object(react["useRef"])(null);const handleToggle=e=>{const checkbox=inputRef.current;if(!checkbox){return;}if(e.target!==checkbox){e.preventDefault();checkbox.focus();checkbox.click();return;}setChecked(checkbox===null||checkbox===void 0?void 0:checkbox.checked);};return/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])('react-toggle',className,{'react-toggle--checked':checked,'react-toggle--focus':focused,'react-toggle--disabled':disabled}),role:"button",tabIndex:-1,onClick:handleToggle},/*#__PURE__*/react_default.a.createElement("div",{className:"react-toggle-track"},/*#__PURE__*/react_default.a.createElement("div",{className:"react-toggle-track-check"},icons.checked),/*#__PURE__*/react_default.a.createElement("div",{className:"react-toggle-track-x"},icons.unchecked)),/*#__PURE__*/react_default.a.createElement("div",{className:"react-toggle-thumb"}),/*#__PURE__*/react_default.a.createElement("input",{ref:inputRef,checked:checked,type:"checkbox",className:"react-toggle-screenreader-only","aria-label":"Switch between dark and light mode",onChange:onChange,onFocus:()=>setFocused(true),onBlur:()=>setFocused(false)}));});/* harmony default export */ var theme_Toggle = (function(props){const{colorMode:{switchConfig:{darkIcon,darkIconStyle,lightIcon,lightIconStyle}}}=Object(lib["useThemeConfig"])();const{isClient}=Object(useDocusaurusContext["default"])();return/*#__PURE__*/react_default.a.createElement(Toggle,Object(esm_extends["a" /* default */])({disabled:!isClient,icons:{checked:/*#__PURE__*/react_default.a.createElement(Dark,{icon:darkIcon,style:darkIconStyle}),unchecked:/*#__PURE__*/react_default.a.createElement(Light,{icon:lightIcon,style:lightIconStyle})}},props));});
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useThemeContext.js
-var useThemeContext = __webpack_require__(40);
+var useThemeContext = __webpack_require__(41);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useScrollPosition.js
 var useScrollPosition = __webpack_require__(71);
@@ -1655,7 +1655,7 @@ var useScrollPosition = __webpack_require__(71);
 var useLockBodyScroll = __webpack_require__(72);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useWindowSize.js
-var useWindowSize = __webpack_require__(45);
+var useWindowSize = __webpack_require__(46);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/NavbarItem/DefaultNavbarItem.js
 var DefaultNavbarItem = __webpack_require__(27);
@@ -1819,7 +1819,7 @@ var Head = __webpack_require__(25);
 // Search plugins should swizzle/override this comp to add their behavior
 function SearchMetadatas({locale,version,tag}){return/*#__PURE__*/react_default.a.createElement(Head["a" /* default */],null,locale&&/*#__PURE__*/react_default.a.createElement("meta",{name:"docusaurus_locale",content:`${locale}`}),version&&/*#__PURE__*/react_default.a.createElement("meta",{name:"docusaurus_version",content:version}),tag&&/*#__PURE__*/react_default.a.createElement("meta",{name:"docusaurus_tag",content:tag}));}
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Seo/index.js
-var Seo = __webpack_require__(41);
+var Seo = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/LayoutHead/index.js
 /**
@@ -3526,7 +3526,7 @@ module.exports = {
 /* harmony import */ var F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(14);
 /* harmony import */ var _docusaurus_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(18);
@@ -3548,7 +3548,7 @@ const toUrl=Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__[/* defaul
 
 var roundingPrecisionFrom = __webpack_require__(105).roundingPrecisionFrom;
 
-var override = __webpack_require__(36);
+var override = __webpack_require__(37);
 
 var OptimizationLevel = {
   Zero: '0',
@@ -3783,7 +3783,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
 var Link = __webpack_require__(6);
@@ -3823,7 +3823,7 @@ var breakUp = __webpack_require__(209);
 var canOverride = __webpack_require__(210);
 var restore = __webpack_require__(212);
 
-var override = __webpack_require__(36);
+var override = __webpack_require__(37);
 
 // Properties to process
 // Extend this object in order to add support for more properties in the optimizer.
@@ -4946,7 +4946,7 @@ module.exports = {
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(35);
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(36);
 /* harmony import */ var tiny_invariant__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(21);
 
 
@@ -5219,6 +5219,21 @@ if (false) { var ariaCurrentType; }
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _theme_UserPreferencesContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69);
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function useUserPreferencesContext(){const context=Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_theme_UserPreferencesContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"]);if(context==null){throw new Error('`useUserPreferencesContext` is used outside of `Layout` Component.');}return context;}/* harmony default export */ __webpack_exports__["a"] = (useUserPreferencesContext);
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hasProtocol; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isInternalUrl; });
 /**
@@ -5229,7 +5244,7 @@ if (false) { var ariaCurrentType; }
  */function hasProtocol(url){return /^(\w*:|\/\/)/.test(url)===true;}function isInternalUrl(url){return typeof url!=='undefined'&&!hasProtocol(url);}
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5250,7 +5265,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 }
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 function override(source1, source2) {
@@ -5290,7 +5305,7 @@ module.exports = override;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Hack = __webpack_require__(82);
@@ -5487,7 +5502,7 @@ module.exports = {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8301,7 +8316,7 @@ Prism.languages.wasm = {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8309,7 +8324,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({"title":"FastJ","tagline":"The open-source, 2D Java game engine.","url":"https://lucasstarsz.github.io","baseUrl":"/fastj/","noIndex":false,"onBrokenLinks":"throw","onBrokenMarkdownLinks":"warn","favicon":"img/fastj/fastj_icon.png","organizationName":"lucasstarsz","projectName":"lucasstarsz.github.io","themeConfig":{"colorMode":{"defaultMode":"dark","disableSwitch":false,"respectPrefersColorScheme":false,"switchConfig":{"darkIcon":"🌙","lightIcon":"❄️","darkIconStyle":{},"lightIconStyle":{}}},"navbar":{"logo":{"alt":"FastJ Logo","src":"svg/fastj_icon.svg"},"items":[{"type":"doc","docId":"intro","position":"left","label":"Wiki","activeSidebarClassName":"navbar__link--active"},{"href":"https://javadoc.io/doc/io.github.lucasstarsz.fastj/fastj-library","label":"API Docs","position":"left"},{"to":"/news","label":"News","position":"left"},{"href":"https://github.com/lucasstarsz/FastJ/","label":"GitHub","position":"right"}],"hideOnScroll":false},"footer":{"style":"dark","links":[{"title":"Docs","items":[{"label":"Wiki","to":"/wiki/intro"},{"label":"API Docs","href":"https://javadoc.io/doc/io.github.lucasstarsz.fastj/fastj-library"}]},{"title":"More","items":[{"label":"News","to":"/news"},{"label":"GitHub","href":"https://github.com/lucasstarsz/FastJ/"}]}],"copyright":"Copyright © 2021 Andrew Dey. Built with Docusaurus.\n      <br/>\n      Hand + Feather, Windows, macOS, and Linux icons originally made by \n      <a href=\"https://www.freepik.com\" title=\"Freepik\">Freepik</a> \n      from \n      <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a>, \n      and modified by me."},"docs":{"versionPersistence":"localStorage"},"metadatas":[],"prism":{"additionalLanguages":[]},"hideableSidebar":false},"presets":[["@docusaurus/preset-classic",{"wiki":{"sidebarPath":"F:\\npmtest\\fastj-docs\\sidebars.js","editUrl":"https://github.com/lucasstarsz/FastJ/"},"news":{"showReadingTime":true,"editUrl":"https://github.com/lucasstarsz/FastJ/"},"theme":{"customCss":"F:\\npmtest\\fastj-docs\\src\\css\\custom.css"},"blog":{"path":"news","routeBasePath":"news","postsPerPage":7,"blogDescription":"Keep up with the latest news on the FastJ Game Engine."},"docs":{"path":"wiki","routeBasePath":"wiki"}}]],"baseUrlIssueBanner":true,"i18n":{"defaultLocale":"en","locales":["en"],"localeConfigs":{}},"onDuplicateRoutes":"warn","customFields":{},"plugins":[],"themes":[],"titleDelimiter":"|"});
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8324,7 +8339,7 @@ __webpack_require__.r(__webpack_exports__);
  */function useThemeContext(){const context=Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_theme_ThemeContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"]);if(context==null){throw new Error('`useThemeContext` is used outside of `Layout` Component. See https://docusaurus.io/docs/api/themes/configuration#usethemecontext.');}return context;}/* harmony default export */ __webpack_exports__["a"] = (useThemeContext);
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8343,7 +8358,7 @@ __webpack_require__.r(__webpack_exports__);
  */function Seo({title,description,keywords,image}){const{image:defaultImage}=Object(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_2__["useThemeConfig"])();const pageTitle=Object(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_2__["useTitleFormatter"])(title);const pageImage=Object(_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(image||defaultImage,{absolute:true});return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Head__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title",null,pageTitle),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{property:"og:title",content:pageTitle}),description&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{name:"description",content:description}),description&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{property:"og:description",content:description}),keywords&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{name:"keywords",content:Array.isArray(keywords)?keywords.join(','):keywords}),pageImage&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{property:"og:image",content:pageImage}),pageImage&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{name:"twitter:image",content:pageImage}),pageImage&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta",{name:"twitter:card",content:"summary_large_image"}));}
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8359,10 +8374,10 @@ var Link = __webpack_require__(6);
 var esm_extends = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/prism-react-renderer/prism/index.js
-var prism_react_renderer_prism = __webpack_require__(38);
+var prism_react_renderer_prism = __webpack_require__(39);
 
 // CONCATENATED MODULE: ./node_modules/prism-react-renderer/themes/duotoneDark/index.js
 // Duotone Dark
@@ -8913,7 +8928,7 @@ var palenight_theme = {
 /* harmony default export */ var palenight = (palenight_theme);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useThemeContext.js
-var useThemeContext = __webpack_require__(40);
+var useThemeContext = __webpack_require__(41);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/index.js
 var lib = __webpack_require__(3);
@@ -8926,7 +8941,7 @@ var lib = __webpack_require__(3);
  * LICENSE file in the root directory of this source tree.
  */const usePrismTheme=()=>{const{prism}=Object(lib["useThemeConfig"])();const{isDarkTheme}=Object(useThemeContext["a" /* default */])();const lightModeTheme=prism.theme||palenight;const darkModeTheme=prism.darkTheme||lightModeTheme;const prismTheme=isDarkTheme?darkModeTheme:lightModeTheme;return prismTheme;};/* harmony default export */ var hooks_usePrismTheme = (usePrismTheme);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/CodeBlock/styles.module.css
 // Exports
@@ -9002,7 +9017,7 @@ if(/*#__PURE__*/Object(react["isValidElement"])(children)){return children;}retu
 if(/*#__PURE__*/Object(react["isValidElement"])(children===null||children===void 0?void 0:(_children$props=children.props)===null||_children$props===void 0?void 0:_children$props.children)){return children===null||children===void 0?void 0:children.props.children;}return/*#__PURE__*/react_default.a.createElement(CodeBlock,/*#__PURE__*/Object(react["isValidElement"])(children)?children===null||children===void 0?void 0:children.props:{children});},h1:theme_Heading('h1'),h2:theme_Heading('h2'),h3:theme_Heading('h3'),h4:theme_Heading('h4'),h5:theme_Heading('h5'),h6:theme_Heading('h6')};/* harmony default export */ var theme_MDXComponents = __webpack_exports__["a"] = (MDXComponents);
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9012,7 +9027,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useTOCHighlight.js
 /**
@@ -9045,7 +9060,7 @@ const links=document.getElementsByClassName(linkClassName);while(index<links.len
 ,dangerouslySetInnerHTML:{__html:heading.value}}),/*#__PURE__*/react_default.a.createElement(Headings,{isChild:true,toc:heading.children}))));}function TOC({toc}){hooks_useTOCHighlight(LINK_CLASS_NAME,ACTIVE_LINK_CLASS_NAME,TOP_OFFSET);return/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])(styles_module.tableOfContents,'thin-scrollbar')},/*#__PURE__*/react_default.a.createElement(Headings,{toc:toc}));}/* harmony default export */ var theme_TOC = __webpack_exports__["a"] = (TOC);
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9055,22 +9070,22 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
 var esm = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
 var Link = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/MDXComponents/index.js + 9 modules
-var MDXComponents = __webpack_require__(42);
+var MDXComponents = __webpack_require__(43);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Seo/index.js
-var Seo = __webpack_require__(41);
+var Seo = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/BlogPostItem/styles.module.css
 // Exports
@@ -9092,7 +9107,7 @@ var lib = __webpack_require__(3);
 function useReadingTimePlural(){const{selectMessage}=Object(lib["usePluralForm"])();return readingTimeFloat=>{const readingTime=Math.ceil(readingTimeFloat);return selectMessage(readingTime,Object(Translate["b" /* translate */])({id:'theme.blog.post.readingTime.plurals',description:'Pluralized label for "{readingTime} min read". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',message:'One min read|{readingTime} min read'},{readingTime}));};}function BlogPostItem(props){const readingTimePlural=useReadingTimePlural();const{children,frontMatter,metadata,truncated,isBlogPostPage=false}=props;const{date,formattedDate,permalink,tags,readingTime}=metadata;const{author,title,image,keywords}=frontMatter;const authorURL=frontMatter.author_url||frontMatter.authorURL;const authorTitle=frontMatter.author_title||frontMatter.authorTitle;const authorImageURL=frontMatter.author_image_url||frontMatter.authorImageURL;const renderPostHeader=()=>{const TitleHeading=isBlogPostPage?'h1':'h2';return/*#__PURE__*/react_default.a.createElement("header",null,/*#__PURE__*/react_default.a.createElement(TitleHeading,{className:Object(clsx_m["a" /* default */])('margin-bottom--sm',styles_module.blogPostTitle)},isBlogPostPage?title:/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{to:permalink},title)),/*#__PURE__*/react_default.a.createElement("div",{className:"margin-vert--md"},/*#__PURE__*/react_default.a.createElement("time",{dateTime:date,className:styles_module.blogPostDate},formattedDate,readingTime&&/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,' · ',readingTimePlural(readingTime)))),/*#__PURE__*/react_default.a.createElement("div",{className:"avatar margin-vert--md"},authorImageURL&&/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{className:"avatar__photo-link avatar__photo",href:authorURL},/*#__PURE__*/react_default.a.createElement("img",{src:authorImageURL,alt:author})),/*#__PURE__*/react_default.a.createElement("div",{className:"avatar__intro"},author&&/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,/*#__PURE__*/react_default.a.createElement("h4",{className:"avatar__name"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{href:authorURL},author)),/*#__PURE__*/react_default.a.createElement("small",{className:"avatar__subtitle"},authorTitle)))));};return/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,/*#__PURE__*/react_default.a.createElement(Seo["a" /* default */],{keywords,image}),/*#__PURE__*/react_default.a.createElement("article",{className:!isBlogPostPage?'margin-bottom--xl':undefined},renderPostHeader(),/*#__PURE__*/react_default.a.createElement("div",{className:"markdown"},/*#__PURE__*/react_default.a.createElement(esm["a" /* MDXProvider */],{components:MDXComponents["a" /* default */]},children)),(tags.length>0||truncated)&&/*#__PURE__*/react_default.a.createElement("footer",{className:"row margin-vert--lg"},tags.length>0&&/*#__PURE__*/react_default.a.createElement("div",{className:"col"},/*#__PURE__*/react_default.a.createElement("strong",null,/*#__PURE__*/react_default.a.createElement(Translate["a" /* default */],{id:"theme.tags.tagsListLabel",description:"The label alongside a tag list"},"Tags:")),tags.map(({label,permalink:tagPermalink})=>/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{key:tagPermalink,className:"margin-horiz--sm",to:tagPermalink},label))),truncated&&/*#__PURE__*/react_default.a.createElement("div",{className:"col text--right"},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{to:metadata.permalink,"aria-label":`Read more about ${title}`},/*#__PURE__*/react_default.a.createElement("strong",null,/*#__PURE__*/react_default.a.createElement(Translate["a" /* default */],{id:"theme.blog.post.readMore",description:"The label used in blog post item excerpts to link to full blog posts"},"Read More")))))));}/* harmony default export */ var theme_BlogPostItem = __webpack_exports__["a"] = (BlogPostItem);
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9108,7 +9123,7 @@ function useReadingTimePlural(){const{selectMessage}=Object(lib["usePluralForm"]
  */const desktopThresholdWidth=996;const windowSizes={desktop:'desktop',mobile:'mobile'};function useWindowSize(){const isClient=_docusaurus_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].canUseDOM;function getSize(){if(!isClient){return undefined;}return window.innerWidth>desktopThresholdWidth?windowSizes.desktop:windowSizes.mobile;}const[windowSize,setWindowSize]=Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(getSize);Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(()=>{if(!isClient){return undefined;}function handleResize(){setWindowSize(getSize());}window.addEventListener('resize',handleResize);return()=>window.removeEventListener('resize',handleResize);},[]);return windowSize;}/* harmony default export */ __webpack_exports__["a"] = (useWindowSize);
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Hack = __webpack_require__(82);
@@ -9183,7 +9198,7 @@ module.exports = restoreFromOptimizing;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -9677,7 +9692,7 @@ exports.computeSourceURL = computeSourceURL;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports) {
 
 var REMOTE_RESOURCE_PATTERN = /^(\w+:\/\/|\/\/)/;
@@ -9690,7 +9705,7 @@ module.exports = isRemoteResource;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9957,27 +9972,12 @@ function __classPrivateFieldSet(receiver, state, value, kind, f) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;subClass.__proto__=superClass;}function _assertThisInitialized(self){if(self===void 0){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};return _extends.apply(this,arguments);}var React=__webpack_require__(0);var PropTypes=__webpack_require__(8);var ALL_INITIALIZERS=[];var READY_INITIALIZERS=[];function isWebpackReady(getModuleIds){if(false){}return getModuleIds().every(function(moduleId){return typeof moduleId!=="undefined"&&typeof __webpack_require__.m[moduleId]!=="undefined";});}function load(loader){var promise=loader();var state={loading:true,loaded:null,error:null};state.promise=promise.then(function(loaded){state.loading=false;state.loaded=loaded;return loaded;}).catch(function(err){state.loading=false;state.error=err;throw err;});return state;}function loadMap(obj){var state={loading:false,loaded:{},error:null};var promises=[];try{Object.keys(obj).forEach(function(key){var result=load(obj[key]);if(!result.loading){state.loaded[key]=result.loaded;state.error=result.error;}else{state.loading=true;}promises.push(result.promise);result.promise.then(function(res){state.loaded[key]=res;}).catch(function(err){state.error=err;});});}catch(err){state.error=err;}state.promise=Promise.all(promises).then(function(res){state.loading=false;return res;}).catch(function(err){state.loading=false;throw err;});return state;}function resolve(obj){return obj&&obj.__esModule?obj.default:obj;}function render(loaded,props){return React.createElement(resolve(loaded),props);}function createLoadableComponent(loadFn,options){var _class,_temp;if(!options.loading){throw new Error("react-loadable requires a `loading` component");}var opts=_extends({loader:null,loading:null,delay:200,timeout:null,render:render,webpack:null,modules:null},options);var res=null;function init(){if(!res){res=loadFn(opts.loader);}return res.promise;}ALL_INITIALIZERS.push(init);if(typeof opts.webpack==="function"){READY_INITIALIZERS.push(function(){if(isWebpackReady(opts.webpack)){return init();}});}return _temp=_class=/*#__PURE__*/function(_React$Component){_inheritsLoose(LoadableComponent,_React$Component);function LoadableComponent(props){var _this;_this=_React$Component.call(this,props)||this;_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)),"retry",function(){_this.setState({error:null,loading:true,timedOut:false});res=loadFn(opts.loader);_this._loadModule();});init();_this.state={error:res.error,pastDelay:false,timedOut:false,loading:res.loading,loaded:res.loaded};return _this;}LoadableComponent.preload=function preload(){return init();};var _proto=LoadableComponent.prototype;_proto.UNSAFE_componentWillMount=function UNSAFE_componentWillMount(){this._loadModule();};_proto.componentDidMount=function componentDidMount(){this._mounted=true;};_proto._loadModule=function _loadModule(){var _this2=this;if(this.context.loadable&&Array.isArray(opts.modules)){opts.modules.forEach(function(moduleName){_this2.context.loadable.report(moduleName);});}if(!res.loading){return;}var setStateWithMountCheck=function setStateWithMountCheck(newState){if(!_this2._mounted){return;}_this2.setState(newState);};if(typeof opts.delay==='number'){if(opts.delay===0){this.setState({pastDelay:true});}else{this._delay=setTimeout(function(){setStateWithMountCheck({pastDelay:true});},opts.delay);}}if(typeof opts.timeout==="number"){this._timeout=setTimeout(function(){setStateWithMountCheck({timedOut:true});},opts.timeout);}var update=function update(){setStateWithMountCheck({error:res.error,loaded:res.loaded,loading:res.loading});_this2._clearTimeouts();};res.promise.then(function(){update();return null;}).catch(function(err){update();return null;});};_proto.componentWillUnmount=function componentWillUnmount(){this._mounted=false;this._clearTimeouts();};_proto._clearTimeouts=function _clearTimeouts(){clearTimeout(this._delay);clearTimeout(this._timeout);};_proto.render=function render(){if(this.state.loading||this.state.error){return React.createElement(opts.loading,{isLoading:this.state.loading,pastDelay:this.state.pastDelay,timedOut:this.state.timedOut,error:this.state.error,retry:this.retry});}else if(this.state.loaded){return opts.render(this.state.loaded,this.props);}else{return null;}};return LoadableComponent;}(React.Component),_defineProperty(_class,"contextTypes",{loadable:PropTypes.shape({report:PropTypes.func.isRequired})}),_temp;}function Loadable(opts){return createLoadableComponent(load,opts);}function LoadableMap(opts){if(typeof opts.render!=="function"){throw new Error("LoadableMap requires a `render(loaded, props)` function");}return createLoadableComponent(loadMap,opts);}Loadable.Map=LoadableMap;var Capture=/*#__PURE__*/function(_React$Component2){_inheritsLoose(Capture,_React$Component2);function Capture(){return _React$Component2.apply(this,arguments)||this;}var _proto2=Capture.prototype;_proto2.getChildContext=function getChildContext(){return{loadable:{report:this.props.report}};};_proto2.render=function render(){return React.Children.only(this.props.children);};return Capture;}(React.Component);_defineProperty(Capture,"propTypes",{report:PropTypes.func.isRequired});_defineProperty(Capture,"childContextTypes",{loadable:PropTypes.shape({report:PropTypes.func.isRequired}).isRequired});Loadable.Capture=Capture;function flushInitializers(initializers){var promises=[];while(initializers.length){var init=initializers.pop();promises.push(init());}return Promise.all(promises).then(function(){if(initializers.length){return flushInitializers(initializers);}});}Loadable.preloadAll=function(){return new Promise(function(resolve,reject){flushInitializers(ALL_INITIALIZERS).then(resolve,reject);});};Loadable.preloadReady=function(){return new Promise(function(resolve,reject){// We always will resolve, errors should be handled within loading UIs.
 flushInitializers(READY_INITIALIZERS).then(resolve,resolve);});};module.exports=Loadable;
-
-/***/ }),
-/* 51 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _theme_UserPreferencesContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69);
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function useUserPreferencesContext(){const context=Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_theme_UserPreferencesContext__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"]);if(context==null){throw new Error('`useUserPreferencesContext` is used outside of `Layout` Component.');}return context;}/* harmony default export */ __webpack_exports__["a"] = (useUserPreferencesContext);
 
 /***/ }),
 /* 52 */
@@ -10039,7 +10039,7 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 var systemLineBreak = __webpack_require__(103).EOL;
 
-var override = __webpack_require__(36);
+var override = __webpack_require__(37);
 
 var Breaks = {
   AfterAtRule: 'afterAtRule',
@@ -10547,9 +10547,9 @@ var populateComponents = __webpack_require__(85);
 
 var restoreWithComponents = __webpack_require__(86);
 
-var wrapForOptimizing = __webpack_require__(37).all;
+var wrapForOptimizing = __webpack_require__(38).all;
 var removeUnused = __webpack_require__(104);
-var restoreFromOptimizing = __webpack_require__(46);
+var restoreFromOptimizing = __webpack_require__(47);
 
 var OptimizationLevel = __webpack_require__(28).OptimizationLevel;
 
@@ -10587,7 +10587,7 @@ module.exports = optimizeProperties;
 /* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var wrapSingle = __webpack_require__(37).single;
+var wrapSingle = __webpack_require__(38).single;
 
 var Token = __webpack_require__(11);
 
@@ -12238,13 +12238,13 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 var esm_extends = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/IconEdit/styles.module.css
 // Exports
@@ -12281,13 +12281,13 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
 var useDocusaurusContext = __webpack_require__(7);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useThemeContext.js
-var useThemeContext = __webpack_require__(40);
+var useThemeContext = __webpack_require__(41);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/ThemedImage/styles.module.css
 // Exports
@@ -13528,7 +13528,7 @@ exports.SourceNode = __webpack_require__(249).SourceNode;
 var path = __webpack_require__(9);
 var url = __webpack_require__(30);
 
-var isRemoteResource = __webpack_require__(48);
+var isRemoteResource = __webpack_require__(49);
 var hasProtocol = __webpack_require__(61);
 
 var HTTP_PROTOCOL = 'http:';
@@ -13837,7 +13837,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./": 331
+	"./": 332
 };
 
 
@@ -13869,7 +13869,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -14357,12 +14357,12 @@ module.exports = parsePart;
 
 "use strict";
 
-const ansiStyles = __webpack_require__(336);
-const {stdout: stdoutColor, stderr: stderrColor} = __webpack_require__(340);
+const ansiStyles = __webpack_require__(337);
+const {stdout: stdoutColor, stderr: stderrColor} = __webpack_require__(341);
 const {
 	stringReplaceAll,
 	stringEncaseCRLFWithFirstIndex
-} = __webpack_require__(343);
+} = __webpack_require__(344);
 
 const {isArray} = Array;
 
@@ -14571,7 +14571,7 @@ const chalkTag = (chalk, ...strings) => {
 	}
 
 	if (template === undefined) {
-		template = __webpack_require__(344);
+		template = __webpack_require__(345);
 	}
 
 	return template(chalk, parts.join(''));
@@ -14648,7 +14648,7 @@ module.exports = removeUnused;
 /* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var override = __webpack_require__(36);
+var override = __webpack_require__(37);
 
 var INTEGER_PATTERN = /^\d+$/;
 
@@ -14901,7 +14901,7 @@ module.exports = cloneArray;
  */
 
 var base64VLQ = __webpack_require__(113);
-var util = __webpack_require__(47);
+var util = __webpack_require__(48);
 var ArraySet = __webpack_require__(114).ArraySet;
 var MappingList = __webpack_require__(245).MappingList;
 
@@ -15477,7 +15477,7 @@ exports.decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
  * http://opensource.org/licenses/BSD-3-Clause
  */
 
-var util = __webpack_require__(47);
+var util = __webpack_require__(48);
 var has = Object.prototype.hasOwnProperty;
 var hasNativeMap = typeof Map !== "undefined";
 
@@ -15853,7 +15853,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
 /* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 /* harmony import */ var _theme_BlogSidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
-/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
+/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__);
 /**
@@ -15882,7 +15882,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:true});exports.useThemeConfig=void 0;const tslib_1=__webpack_require__(49);/**
+Object.defineProperty(exports,"__esModule",{value:true});exports.useThemeConfig=void 0;const tslib_1=__webpack_require__(50);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -15933,7 +15933,7 @@ exports.isDocsPluginEnabled=!!useDocs_1.useAllDocsData;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:true});exports.useDocsPreferredVersionContext=exports.DocsPreferredVersionContextProvider=void 0;const tslib_1=__webpack_require__(49);/**
+Object.defineProperty(exports,"__esModule",{value:true});exports.useDocsPreferredVersionContext=exports.DocsPreferredVersionContextProvider=void 0;const tslib_1=__webpack_require__(50);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -15970,7 +15970,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-const frontMatter={sidebar_position:1};const metadata={"unversionedId":"tutorial-basics/create-a-page","id":"tutorial-basics/create-a-page","isDocsHomePage":false,"title":"Create a Page","description":"Add Markdown or React files to src/pages to create a standalone page:","source":"@site/wiki/tutorial-basics/create-a-page.md","sourceDirName":"tutorial-basics","slug":"/tutorial-basics/create-a-page","permalink":"/fastj/wiki/tutorial-basics/create-a-page","version":"current","sidebarPosition":1,"frontMatter":{"sidebar_position":1},"sidebar":"defaultSidebar","previous":{"title":"Creating a FastJ Project","permalink":"/fastj/wiki/fastj-basics/creating-a-fastj-project"},"next":{"title":"Create a Document","permalink":"/fastj/wiki/tutorial-basics/create-a-document"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[{value:'Create your first React Page',id:'create-your-first-react-page',children:[]},{value:'Create your first Markdown Page',id:'create-your-first-markdown-page',children:[]}];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Add `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`Markdown or React`),` files to `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`src/pages`),` to create a `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`standalone page`),`:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("ul",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`src/pages/index.js`),` -> `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`localhost:3000/`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`src/pages/foo.md`),` -> `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`localhost:3000/foo`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`src/pages/foo/bar.js`),` -> `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`localhost:3000/foo/bar`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"create-your-first-react-page"},`Create your first React Page`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Create a file at `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`src/pages/my-react-page.js`),`:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("pre",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("code",{parentName:"pre","className":"language-jsx","metastring":"title=\"src/pages/my-react-page.js\"","title":"\"src/pages/my-react-page.js\""},`import React from 'react';
+const frontMatter={sidebar_position:1};const metadata={"unversionedId":"tutorial-basics/create-a-page","id":"tutorial-basics/create-a-page","isDocsHomePage":false,"title":"Create a Page","description":"Add Markdown or React files to src/pages to create a standalone page:","source":"@site/wiki/tutorial-basics/create-a-page.md","sourceDirName":"tutorial-basics","slug":"/tutorial-basics/create-a-page","permalink":"/fastj/wiki/tutorial-basics/create-a-page","version":"current","sidebarPosition":1,"frontMatter":{"sidebar_position":1},"sidebar":"defaultSidebar","previous":{"title":"Creating the Gradle Project","permalink":"/fastj/wiki/fastj-basics/creating-a-fastj-project"},"next":{"title":"Create a Document","permalink":"/fastj/wiki/tutorial-basics/create-a-document"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[{value:'Create your first React Page',id:'create-your-first-react-page',children:[]},{value:'Create your first Markdown Page',id:'create-your-first-markdown-page',children:[]}];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Add `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`Markdown or React`),` files to `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`src/pages`),` to create a `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`standalone page`),`:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("ul",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`src/pages/index.js`),` -> `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`localhost:3000/`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`src/pages/foo.md`),` -> `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`localhost:3000/foo`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`src/pages/foo/bar.js`),` -> `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`localhost:3000/foo/bar`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"create-your-first-react-page"},`Create your first React Page`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Create a file at `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`src/pages/my-react-page.js`),`:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("pre",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("code",{parentName:"pre","className":"language-jsx","metastring":"title=\"src/pages/my-react-page.js\"","title":"\"src/pages/my-react-page.js\""},`import React from 'react';
 import Layout from '@theme/Layout';
 
 export default function MyReactPage() {
@@ -16037,8 +16037,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-/* harmony import */ var _theme_MDXComponents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
-/* harmony import */ var _theme_TOC__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(43);
+/* harmony import */ var _theme_MDXComponents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
+/* harmony import */ var _theme_TOC__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(44);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__);
 /**
@@ -16255,26 +16255,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-const frontMatter={sidebar_position:1,keywords:['fastj tutorial','how to use fastj','tutorial for fastj','how to fastj','fastj how to','fastj in 5 minutes','how do I use fastj','fastj guide'],description:'Let\'s get together the tools you need in order to use the FastJ Game Engine.',image:'/static/img/fastj/fastj_icon.png'};const metadata={"unversionedId":"fastj-basics/setting-up-for-fastj","id":"fastj-basics/setting-up-for-fastj","isDocsHomePage":false,"title":"Setting up for FastJ","description":"Let's get together the tools you need in order to use the FastJ Game Engine.","source":"@site/wiki/fastj-basics/setting-up-for-fastj.md","sourceDirName":"fastj-basics","slug":"/fastj-basics/setting-up-for-fastj","permalink":"/fastj/wiki/fastj-basics/setting-up-for-fastj","version":"current","sidebarPosition":1,"frontMatter":{"sidebar_position":1,"keywords":["fastj tutorial","how to use fastj","tutorial for fastj","how to fastj","fastj how to","fastj in 5 minutes","how do I use fastj","fastj guide"],"description":"Let's get together the tools you need in order to use the FastJ Game Engine.","image":"/static/img/fastj/fastj_icon.png"},"sidebar":"defaultSidebar","previous":{"title":"Tutorial Intro","permalink":"/fastj/wiki/intro"},"next":{"title":"Creating a FastJ Project","permalink":"/fastj/wiki/fastj-basics/creating-a-fastj-project"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[{value:'Java 11 or Later',id:'java-11-or-later',children:[]},{value:'IDE/Code Editor',id:'idecode-editor',children:[{value:'IntellliJ IDEA (most taxing, recommended for people with strong computers)',id:'intelllij-idea-most-taxing-recommended-for-people-with-strong-computers',children:[]},{value:'Eclipse (taxing, recommended for people with mediocre computers)',id:'eclipse-taxing-recommended-for-people-with-mediocre-computers',children:[]},{value:'VSCode (not an IDE, but still the perfect option for people with slower computers)',id:'vscode-not-an-ide-but-still-the-perfect-option-for-people-with-slower-computers',children:[]}]},{value:'Build Tool',id:'build-tool',children:[{value:'For Maven Users',id:'for-maven-users',children:[]}]}];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`To follow along with the rest of this guide, you'll need the following:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("ul",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"li","href":"#java-11-or-later"},`Java 11 or Later`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"li","href":"#idecode-editor"},`An IDE/Code Editor`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"li","href":"#build-tool"},`A Build Tool, preferably Gradle`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`If you have all of these already, `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"creating-a-fastj-project","title":"Creating a FastJ Project"},`skip ahead to the next page`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"java-11-or-later"},`Java 11 or Later`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`FastJ is written in Java, and this guide will have you follow along by writing code in Java as well. Furthermore, it was built with Java 11 but it supports Java up to the latest version and will continue to support the latest versions. As such, if you don't have a preferred version to use then I recommend you download `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://adoptopenjdk.net/?variant=openjdk16&jvmVariant=hotspot","title":"Install Java from AdoptOpenJDK"},`the latest version of Java`),`, from AdoptOpenJDK. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://adoptopenjdk.net/?variant=openjdk16&jvmVariant=hotspot","title":"Install Java from AdoptOpenJDK"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-tip alert alert--success"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"12","height":"16","viewBox":"0 0 12 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"}))),`Alternatives to AdoptOpenJDK`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`Other distributions such as OpenJDK, Zulu OpenJDK, and the Amazon Corretto JDK are also great choices -- I just happen to prefer AdoptOpenJDK's distribution.`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"idecode-editor"},`IDE/Code Editor`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Using an IDE (Integrated Development Environment -- a tool specialized towards developing and distributing code), you'll be able to speed up your development process through the many tools it provides. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`However, IDEs are generally very taxing on your computer. To counteract this, I'll leave you with a list of tools to choose from, based on how strong your computer is:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"intelllij-idea-most-taxing-recommended-for-people-with-strong-computers"},`IntellliJ IDEA (most taxing, recommended for people with strong computers)`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`In this case, I highly recommend the community version of `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.jetbrains.com/idea/","title":"IntelliJ IDEA IDE"},`IntelliJ IDEA`),` -- it's an incredibly powerful IDE with some of the best tooling in the world. And the Community version is free!`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.jetbrains.com/idea/","title":"IntelliJ IDEA IDE"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-tip alert alert--success"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"12","height":"16","viewBox":"0 0 12 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"}))),`For Students`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`If you're a student, you can get IntelliJ professional for free as well, though the `,`[Github Developer Student Pack][Student-Pack-Link]`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"eclipse-taxing-recommended-for-people-with-mediocre-computers"},`Eclipse (taxing, recommended for people with mediocre computers)`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.eclipse.org/downloads/","title":"Eclipse IDE"},`Eclipse`),` is another great option -- while it does not provide all the tooling that IntelliJ does, it runs faster and is still an overall great experience. It was my first experience with a real IDE, and I still use its amazing keyboard shortcuts and code theme.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.eclipse.org/downloads/","title":"Eclipse IDE"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"vscode-not-an-ide-but-still-the-perfect-option-for-people-with-slower-computers"},`VSCode (not an IDE, but still the perfect option for people with slower computers)`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`If IntelliJ and Eclipse still prove to run too slow for you, then this code editor (VSCode is not an IDE) is the next best thing. It provides highly-configurable plugins that help to enhance your experience with coding to get fairly close to that of an IDE -- and it still opens fairly quickly, much quicker than that of the IDEs mentioned above.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://code.visualstudio.com/","title":"VSCode"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"build-tool"},`Build Tool`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`You may not have seen this term before. A `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`build tool`),` is `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("del",{parentName:"p"},`a tool to help you build`),` a tool designed to simplify the process of compiling, running, testing, deploying, and distributing your code -- and much more!`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Now, onto choosing a build tool... I highly recommend `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://gradle.org/install/","title":"Install Gradle"},`Gradle`),`. Gradle is one of two mainstream build tools designed for Java, and it's the build tool I will be writing these tutorials for. The other main option is to use `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://maven.apache.org/download.cgi","title":"Install Maven, if you're into that"},`Maven`),`, which I talk about a bit more `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"#for-maven-users"},`down below`),`. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Download Gradle `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://gradle.org/install/","title":"Install Gradle"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-note alert alert--secondary"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"14","height":"16","viewBox":"0 0 14 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"}))),`For Experienced Developers: Why to use a Build Tool`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`If you're not new to Java, you may be familiar with the tedious process of crafting your own solutions to compiling and running your code. You may also be familiar with the idea that you can't sensibly develop your code outside of a certain IDE because that IDE manages the code for you. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`These are part of the main reasons build tools were created. You no longer have to depend on an IDE or create often error-prone and inefficient tools to do the job, because the build tool can handle that for you, and so much more!`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-info alert alert--info"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"14","height":"16","viewBox":"0 0 14 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"}))),`Gradle & Android...`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`Android developers, don't groan in exasperation at the mention of Gradle -- the process of working with Gradle for developing non-Android projects is much simpler (and much, much faster). I've not developed any public android apps, but I feel the pain of those long build times. Trust me, Gradle's much better with non-desktop development.`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"for-maven-users"},`For Maven Users`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`For users of `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://maven.apache.org/download.cgi","title":"Install Maven, if you're into that"},`Maven`),`, don't hesitate to give Gradle a shot anyways -- you might like what you see. You can also just follow along with Maven -- the differences between the two for the scope of these tutorials are fairly insignificant, other than syntax.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Now that we've covered what you need to use FastJ, we'll get on to creating a FastJ project and our first game window!`));};MDXContent.isMDXComponent=true;
+const frontMatter={sidebar_position:1,keywords:['fastj tutorial','how to use fastj','tutorial for fastj','how to fastj','fastj how to','fastj in 5 minutes','how do I use fastj','fastj guide'],description:'Let\'s get together the tools you need in order to use the FastJ Game Engine.',image:'/static/img/fastj/fastj_icon.png'};const metadata={"unversionedId":"fastj-basics/setting-up-for-fastj","id":"fastj-basics/setting-up-for-fastj","isDocsHomePage":false,"title":"Setting up for FastJ","description":"Let's get together the tools you need in order to use the FastJ Game Engine.","source":"@site/wiki/fastj-basics/setting-up-for-fastj.md","sourceDirName":"fastj-basics","slug":"/fastj-basics/setting-up-for-fastj","permalink":"/fastj/wiki/fastj-basics/setting-up-for-fastj","version":"current","sidebarPosition":1,"frontMatter":{"sidebar_position":1,"keywords":["fastj tutorial","how to use fastj","tutorial for fastj","how to fastj","fastj how to","fastj in 5 minutes","how do I use fastj","fastj guide"],"description":"Let's get together the tools you need in order to use the FastJ Game Engine.","image":"/static/img/fastj/fastj_icon.png"},"sidebar":"defaultSidebar","previous":{"title":"Tutorial Intro","permalink":"/fastj/wiki/intro"},"next":{"title":"Creating the Gradle Project","permalink":"/fastj/wiki/fastj-basics/creating-a-fastj-project"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[{value:'Java 11 or Later',id:'java-11-or-later',children:[]},{value:'IDE/Code Editor',id:'idecode-editor',children:[{value:'IntellliJ IDEA (most taxing, recommended for people with strong computers)',id:'intelllij-idea-most-taxing-recommended-for-people-with-strong-computers',children:[]},{value:'Eclipse (taxing, recommended for people with mediocre computers)',id:'eclipse-taxing-recommended-for-people-with-mediocre-computers',children:[]},{value:'VSCode (not an IDE, but still the perfect option for people with slower computers)',id:'vscode-not-an-ide-but-still-the-perfect-option-for-people-with-slower-computers',children:[]}]},{value:'Build Tool',id:'build-tool',children:[{value:'What about Maven?',id:'what-about-maven',children:[]}]}];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`To follow along with the rest of this guide, you'll need the following:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("ul",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"li","href":"#java-11-or-later"},`Java 11 or Later`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"li","href":"#idecode-editor"},`An IDE/Code Editor`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"li","href":"#build-tool"},`A Build Tool, preferably Gradle`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`If you have all of these already, `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"creating-a-fastj-project","title":"Creating a FastJ Project"},`skip ahead to the next page`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"java-11-or-later"},`Java 11 or Later`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`FastJ is written in Java, and this guide will have you follow along by writing code in Java as well. Furthermore, it was built with Java 11 but it supports Java up to the latest version and will continue to support the latest versions. As such, if you don't have a preferred version to use then I recommend you download `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://adoptopenjdk.net/?variant=openjdk16&jvmVariant=hotspot","title":"Install Java from AdoptOpenJDK"},`the latest version of Java`),`, from AdoptOpenJDK. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://adoptopenjdk.net/?variant=openjdk16&jvmVariant=hotspot","title":"Install Java from AdoptOpenJDK"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-tip alert alert--success"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"12","height":"16","viewBox":"0 0 12 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"}))),`Alternatives to AdoptOpenJDK`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`Other distributions such as OpenJDK, Zulu OpenJDK, and the Amazon Corretto JDK are also great choices -- I just happen to prefer AdoptOpenJDK's distribution.`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"idecode-editor"},`IDE/Code Editor`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Using an IDE (Integrated Development Environment -- a tool specialized towards developing and distributing code), you'll be able to speed up your development process through the many tools it provides. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`However, IDEs are generally very taxing on your computer. To counteract this, I'll leave you with a list of tools to choose from, based on how strong your computer is:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"intelllij-idea-most-taxing-recommended-for-people-with-strong-computers"},`IntellliJ IDEA (most taxing, recommended for people with strong computers)`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`In this case, I highly recommend the community version of `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.jetbrains.com/idea/","title":"IntelliJ IDEA IDE"},`IntelliJ IDEA`),` -- it's an incredibly powerful IDE with some of the best tooling in the world. And the Community version is free!`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.jetbrains.com/idea/","title":"IntelliJ IDEA IDE"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-tip alert alert--success"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"12","height":"16","viewBox":"0 0 12 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"}))),`For Students`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`If you're a student, you can get IntelliJ professional for free as well, though the `,`[Github Developer Student Pack][Student-Pack-Link]`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"eclipse-taxing-recommended-for-people-with-mediocre-computers"},`Eclipse (taxing, recommended for people with mediocre computers)`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.eclipse.org/downloads/","title":"Eclipse IDE"},`Eclipse`),` is another great option -- while it does not provide all the tooling that IntelliJ does, it runs faster and is still an overall great experience. It was my first experience with a real IDE, and I still use its amazing keyboard shortcuts and code theme.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://www.eclipse.org/downloads/","title":"Eclipse IDE"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"vscode-not-an-ide-but-still-the-perfect-option-for-people-with-slower-computers"},`VSCode (not an IDE, but still the perfect option for people with slower computers)`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`If IntelliJ and Eclipse still prove to run too slow for you, then this code editor (VSCode is not an IDE) is the next best thing. It provides highly-configurable plugins that help to enhance your experience with coding to get fairly close to that of an IDE -- and it still opens fairly quickly, much quicker than that of the IDEs mentioned above.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Check it out `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://code.visualstudio.com/","title":"VSCode"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"build-tool"},`Build Tool`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`You may not have seen this term before. A `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`build tool`),` is `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("del",{parentName:"p"},`a tool to help you build`),` a tool designed to simplify the process of compiling, running, testing, deploying, and distributing your code -- and much more!`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Now, onto choosing a build tool... I highly recommend `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://gradle.org/install/","title":"Install Gradle"},`Gradle`),`. Gradle is one of two mainstream build tools designed for Java, and it's the build tool I will be writing these tutorials for. The other main option is to use `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://maven.apache.org/download.cgi","title":"Install Maven, if you're into that"},`Maven`),`, which I talk about a bit more `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"#for-maven-users"},`down below`),`. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Download Gradle `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://gradle.org/install/","title":"Install Gradle"},`here`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h3",{"id":"what-about-maven"},`What about Maven?`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`For users of `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://maven.apache.org/download.cgi","title":"Install Maven, if you're into that"},`Maven`),`, don't hesitate to give Gradle a shot anyways -- you might like what you see. Alternatively, you can just follow along with Maven -- the differences between the two for the scope of these tutorials are fairly insignificant, other than syntax.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{"className":"admonition admonition-note alert alert--secondary"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-heading"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h5",{parentName:"div"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("span",{parentName:"h5","className":"admonition-icon"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"14","height":"16","viewBox":"0 0 14 16"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"}))),`For Experienced Developers: Why to use a Build Tool`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("div",{parentName:"div","className":"admonition-content"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`If you're not new to Java, you may be familiar with the tedious process of crafting your own solutions to compiling and running your code. You may also be familiar with the idea that you can't sensibly develop your code outside of a certain IDE because that IDE manages the code for you. `),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",{parentName:"div"},`These are part of the main reasons build tools were created. You no longer have to depend on an IDE or create often error-prone and inefficient tools to do the job, because the build tool can handle that for you, and so much more!`))),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Now that we've covered what you need to use FastJ, we'll get on to creating a FastJ project and our first game window!`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
 /* 147 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "frontMatter", function() { return frontMatter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "metadata", function() { return metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toc", function() { return toc; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
-/* harmony import */ var F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-const frontMatter={sidebar_position:2,keywords:['fastj project','fastj tutorial','create fastj project','how to create fastj project'],description:'Let\'s install FastJ, and create your first game window.',image:'/static/img/fastj/fastj_icon.png'};const metadata={"unversionedId":"fastj-basics/creating-a-fastj-project","id":"fastj-basics/creating-a-fastj-project","isDocsHomePage":false,"title":"Creating a FastJ Project","description":"Let's install FastJ, and create your first game window.","source":"@site/wiki/fastj-basics/creating-a-fastj-project.md","sourceDirName":"fastj-basics","slug":"/fastj-basics/creating-a-fastj-project","permalink":"/fastj/wiki/fastj-basics/creating-a-fastj-project","version":"current","sidebarPosition":2,"frontMatter":{"sidebar_position":2,"keywords":["fastj project","fastj tutorial","create fastj project","how to create fastj project"],"description":"Let's install FastJ, and create your first game window.","image":"/static/img/fastj/fastj_icon.png"},"sidebar":"defaultSidebar","previous":{"title":"Setting up for FastJ","permalink":"/fastj/wiki/fastj-basics/setting-up-for-fastj"},"next":{"title":"Create a Page","permalink":"/fastj/wiki/tutorial-basics/create-a-page"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}));};MDXContent.isMDXComponent=true;
-
-/***/ }),
-/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16301,10 +16285,10 @@ const frontMatter={sidebar_position:1};const metadata={"unversionedId":"tutorial
     },
   },
 };
-`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`The docs version dropdown appears in your navbar:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("img",{alt:"Docs Version Dropdown",src:__webpack_require__(326).default})),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"update-an-existing-version"},`Update an existing version`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`It is possible to edit versioned docs in their respective folder:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("ul",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`versioned_docs/version-1.0/hello.md`),` updates `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`http://localhost:3000/docs/hello`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`docs/hello.md`),` updates `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`http://localhost:3000/docs/next/hello`))));};MDXContent.isMDXComponent=true;
+`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`The docs version dropdown appears in your navbar:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("img",{alt:"Docs Version Dropdown",src:__webpack_require__(327).default})),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("h2",{"id":"update-an-existing-version"},`Update an existing version`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`It is possible to edit versioned docs in their respective folder:`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("ul",null,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`versioned_docs/version-1.0/hello.md`),` updates `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`http://localhost:3000/docs/hello`)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("li",{parentName:"ul"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`docs/hello.md`),` updates `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"li"},`http://localhost:3000/docs/next/hello`))));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 149 */
+/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16320,13 +16304,13 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter={slug:'hello-world',title:'Hello',author:'Endilie Yacop Sucipto',author_title:'Maintainer of Docusaurus',author_url:'https://github.com/endiliey',author_image_url:'https://avatars1.githubusercontent.com/u/17883920?s=460&v=4',tags:['hello','docusaurus']};const metadata={"permalink":"/fastj/news/hello-world","source":"@site/news/2019-05-29-hello-world.md","title":"Hello","description":"Welcome to this blog. This blog is created with Docusaurus 2 alpha.","date":"2019-05-29T00:00:00.000Z","formattedDate":"May 28, 2019","tags":[{"label":"hello","permalink":"/fastj/news/tags/hello"},{"label":"docusaurus","permalink":"/fastj/news/tags/docusaurus"}],"readingTime":0.12,"truncated":true,"prevItem":{"title":"Welcome","permalink":"/fastj/news/welcome"},"nextItem":{"title":"Hola","permalink":"/fastj/news/hola"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Welcome to this blog. This blog is created with `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://docusaurus.io/"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"a"},`Docusaurus 2 alpha`)),`.`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 150 */
+/* 149 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"facebook\":{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"facebook\",\"name\":\"facebook\",\"count\":1,\"permalink\":\"/fastj/news/tags/facebook\"},\"hello\":{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"hello\",\"name\":\"hello\",\"count\":2,\"permalink\":\"/fastj/news/tags/hello\"},\"docusaurus\":{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"docusaurus\",\"name\":\"docusaurus\",\"count\":3,\"permalink\":\"/fastj/news/tags/docusaurus\"},\"hola\":{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"hola\",\"name\":\"hola\",\"count\":1,\"permalink\":\"/fastj/news/tags/hola\"}}");
 
 /***/ }),
-/* 151 */
+/* 150 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16344,7 +16328,7 @@ const frontMatter={sidebar_position:5};const metadata={"unversionedId":"tutorial
 `)),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`The `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`build`),` folder is now served at `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`http://localhost:3000/`),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`You can now deploy the `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`build`),` folder `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`almost anywhere`),` easily, `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},`for free`),` or very small cost (read the `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"p"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"strong","href":"https://docusaurus.io/docs/deployment"},`Deployment Guide`)),`).`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 152 */
+/* 151 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16352,10 +16336,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _theme_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _theme_BlogPostItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+/* harmony import */ var _theme_BlogPostItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(45);
 /* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _theme_BlogSidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(29);
-/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4);
+/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_6__);
 /**
@@ -16368,7 +16352,7 @@ function useBlogPostsPlural(){const{selectMessage}=Object(_docusaurus_theme_comm
 tag:'blog_tags_posts'}},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"container margin-vert--lg"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"row"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"col col--3"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_BlogSidebar__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"],{sidebar:sidebar})),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main",{className:"col col--7"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BlogTagsPostPageTitle,{count:count,tagName:tagName})),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"],{href:allTagsPath},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],{id:"theme.tags.tagsPageLink",description:"The label of the link targeting the tag list page"},"View All Tags")),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"margin-vert--xl"},items.map(({content:BlogPostContent})=>/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_BlogPostItem__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"],{key:BlogPostContent.metadata.permalink,frontMatter:BlogPostContent.frontMatter,metadata:BlogPostContent.metadata,truncated:true},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BlogPostContent,null))))))));}/* harmony default export */ __webpack_exports__["default"] = (BlogTagsPostPage);
 
 /***/ }),
-/* 153 */
+/* 152 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16384,13 +16368,13 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter={slug:'hola',title:'Hola',author:'Gao Wei',author_title:'Docusaurus Core Team',author_url:'https://github.com/wgao19',author_image_url:'https://avatars1.githubusercontent.com/u/2055384?v=4',tags:['hola','docusaurus']};const metadata={"permalink":"/fastj/news/hola","source":"@site/news/2019-05-28-hola.md","title":"Hola","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet","date":"2019-05-28T00:00:00.000Z","formattedDate":"May 27, 2019","tags":[{"label":"hola","permalink":"/fastj/news/tags/hola"},{"label":"docusaurus","permalink":"/fastj/news/tags/docusaurus"}],"readingTime":0.12,"truncated":false,"prevItem":{"title":"Hello","permalink":"/fastj/news/hello-world"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 154 */
+/* 153 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"facebook\",\"name\":\"facebook\",\"count\":1,\"permalink\":\"/fastj/news/tags/facebook\"}");
 
 /***/ }),
-/* 155 */
+/* 154 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16406,13 +16390,13 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter={slug:'hello-world',title:'Hello',author:'Endilie Yacop Sucipto',author_title:'Maintainer of Docusaurus',author_url:'https://github.com/endiliey',author_image_url:'https://avatars1.githubusercontent.com/u/17883920?s=460&v=4',tags:['hello','docusaurus']};const metadata={"permalink":"/fastj/news/hello-world","source":"@site/news/2019-05-29-hello-world.md","title":"Hello","description":"Welcome to this blog. This blog is created with Docusaurus 2 alpha.","date":"2019-05-29T00:00:00.000Z","formattedDate":"May 28, 2019","tags":[{"label":"hello","permalink":"/fastj/news/tags/hello"},{"label":"docusaurus","permalink":"/fastj/news/tags/docusaurus"}],"readingTime":0.12,"truncated":true,"prevItem":{"title":"Welcome","permalink":"/fastj/news/welcome"},"nextItem":{"title":"Hola","permalink":"/fastj/news/hola"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Welcome to this blog. This blog is created with `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("a",{parentName:"p","href":"https://docusaurus.io/"},Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("strong",{parentName:"a"},`Docusaurus 2 alpha`)),`.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`This is a test post.`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`A whole bunch of other information.`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 156 */
+/* 155 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"pluginId\":\"default\",\"version\":\"current\",\"label\":\"Next\",\"isLast\":true,\"docsSidebars\":{\"defaultSidebar\":[{\"type\":\"link\",\"label\":\"Tutorial Intro\",\"href\":\"/fastj/wiki/intro\"},{\"type\":\"category\",\"label\":\"Getting Started with FastJ\",\"items\":[{\"type\":\"link\",\"label\":\"Setting up for FastJ\",\"href\":\"/fastj/wiki/fastj-basics/setting-up-for-fastj\"},{\"type\":\"link\",\"label\":\"Creating a FastJ Project\",\"href\":\"/fastj/wiki/fastj-basics/creating-a-fastj-project\"}],\"collapsed\":true},{\"type\":\"category\",\"label\":\"Tutorial - Basics\",\"items\":[{\"type\":\"link\",\"label\":\"Create a Page\",\"href\":\"/fastj/wiki/tutorial-basics/create-a-page\"},{\"type\":\"link\",\"label\":\"Create a Document\",\"href\":\"/fastj/wiki/tutorial-basics/create-a-document\"},{\"type\":\"link\",\"label\":\"Create a Blog Post\",\"href\":\"/fastj/wiki/tutorial-basics/create-a-blog-post\"},{\"type\":\"link\",\"label\":\"Markdown Features\",\"href\":\"/fastj/wiki/tutorial-basics/markdown-features\"},{\"type\":\"link\",\"label\":\"Deploy your site\",\"href\":\"/fastj/wiki/tutorial-basics/deploy-your-site\"},{\"type\":\"link\",\"label\":\"Congratulations!\",\"href\":\"/fastj/wiki/tutorial-basics/congratulations\"}],\"collapsed\":true},{\"type\":\"category\",\"label\":\"Tutorial - Extras\",\"items\":[{\"type\":\"link\",\"label\":\"Manage Docs Versions\",\"href\":\"/fastj/wiki/tutorial-extras/manage-docs-versions\"},{\"type\":\"link\",\"label\":\"Translate your site\",\"href\":\"/fastj/wiki/tutorial-extras/translate-your-site\"}],\"collapsed\":true}]},\"permalinkToSidebar\":{\"/fastj/wiki/fastj-basics/creating-a-fastj-project\":\"defaultSidebar\",\"/fastj/wiki/fastj-basics/setting-up-for-fastj\":\"defaultSidebar\",\"/fastj/wiki/intro\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/congratulations\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/create-a-blog-post\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/create-a-document\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/create-a-page\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/deploy-your-site\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/markdown-features\":\"defaultSidebar\",\"/fastj/wiki/tutorial-extras/manage-docs-versions\":\"defaultSidebar\",\"/fastj/wiki/tutorial-extras/translate-your-site\":\"defaultSidebar\"}}");
+module.exports = JSON.parse("{\"pluginId\":\"default\",\"version\":\"current\",\"label\":\"Next\",\"isLast\":true,\"docsSidebars\":{\"defaultSidebar\":[{\"type\":\"link\",\"label\":\"Tutorial Intro\",\"href\":\"/fastj/wiki/intro\"},{\"type\":\"category\",\"label\":\"Getting Started with FastJ\",\"items\":[{\"type\":\"link\",\"label\":\"Setting up for FastJ\",\"href\":\"/fastj/wiki/fastj-basics/setting-up-for-fastj\"},{\"type\":\"link\",\"label\":\"Creating the Gradle Project\",\"href\":\"/fastj/wiki/fastj-basics/creating-a-fastj-project\"}],\"collapsed\":true},{\"type\":\"category\",\"label\":\"Tutorial - Basics\",\"items\":[{\"type\":\"link\",\"label\":\"Create a Page\",\"href\":\"/fastj/wiki/tutorial-basics/create-a-page\"},{\"type\":\"link\",\"label\":\"Create a Document\",\"href\":\"/fastj/wiki/tutorial-basics/create-a-document\"},{\"type\":\"link\",\"label\":\"Create a Blog Post\",\"href\":\"/fastj/wiki/tutorial-basics/create-a-blog-post\"},{\"type\":\"link\",\"label\":\"Markdown Features\",\"href\":\"/fastj/wiki/tutorial-basics/markdown-features\"},{\"type\":\"link\",\"label\":\"Deploy your site\",\"href\":\"/fastj/wiki/tutorial-basics/deploy-your-site\"},{\"type\":\"link\",\"label\":\"Congratulations!\",\"href\":\"/fastj/wiki/tutorial-basics/congratulations\"}],\"collapsed\":true},{\"type\":\"category\",\"label\":\"Tutorial - Extras\",\"items\":[{\"type\":\"link\",\"label\":\"Manage Docs Versions\",\"href\":\"/fastj/wiki/tutorial-extras/manage-docs-versions\"},{\"type\":\"link\",\"label\":\"Translate your site\",\"href\":\"/fastj/wiki/tutorial-extras/translate-your-site\"}],\"collapsed\":true}]},\"permalinkToSidebar\":{\"/fastj/wiki/fastj-basics/creating-a-fastj-project\":\"defaultSidebar\",\"/fastj/wiki/fastj-basics/setting-up-for-fastj\":\"defaultSidebar\",\"/fastj/wiki/intro\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/congratulations\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/create-a-blog-post\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/create-a-document\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/create-a-page\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/deploy-your-site\":\"defaultSidebar\",\"/fastj/wiki/tutorial-basics/markdown-features\":\"defaultSidebar\",\"/fastj/wiki/tutorial-extras/manage-docs-versions\":\"defaultSidebar\",\"/fastj/wiki/tutorial-extras/translate-your-site\":\"defaultSidebar\"}}");
 
 /***/ }),
-/* 157 */
+/* 156 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16428,13 +16412,13 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter={slug:'hola',title:'Hola',author:'Gao Wei',author_title:'Docusaurus Core Team',author_url:'https://github.com/wgao19',author_image_url:'https://avatars1.githubusercontent.com/u/2055384?v=4',tags:['hola','docusaurus']};const metadata={"permalink":"/fastj/news/hola","source":"@site/news/2019-05-28-hola.md","title":"Hola","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet","date":"2019-05-28T00:00:00.000Z","formattedDate":"May 27, 2019","tags":[{"label":"hola","permalink":"/fastj/news/tags/hola"},{"label":"docusaurus","permalink":"/fastj/news/tags/docusaurus"}],"readingTime":0.12,"truncated":false,"prevItem":{"title":"Hello","permalink":"/fastj/news/hello-world"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 158 */
+/* 157 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"permalink\":\"/fastj/news\",\"page\":1,\"postsPerPage\":7,\"totalPages\":1,\"totalCount\":3,\"previousPage\":null,\"nextPage\":null,\"blogDescription\":\"Keep up with the latest news on the FastJ Game Engine.\",\"blogTitle\":\"Blog\"}");
 
 /***/ }),
-/* 159 */
+/* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16450,24 +16434,24 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter={slug:'welcome',title:'Welcome',author:'Yangshun Tay',author_title:'Front End Engineer @ Facebook',author_url:'https://github.com/yangshun',author_image_url:'https://avatars0.githubusercontent.com/u/1315101?s=400&v=4',tags:['facebook','hello','docusaurus']};const metadata={"permalink":"/fastj/news/welcome","source":"@site/news/2019-05-30-welcome.md","title":"Welcome","description":"Blog features are powered by the blog plugin. Simply add files to the blog directory. It supports tags as well!","date":"2019-05-30T00:00:00.000Z","formattedDate":"May 29, 2019","tags":[{"label":"facebook","permalink":"/fastj/news/tags/facebook"},{"label":"hello","permalink":"/fastj/news/tags/hello"},{"label":"docusaurus","permalink":"/fastj/news/tags/docusaurus"}],"readingTime":0.175,"truncated":false,"nextItem":{"title":"Hello","permalink":"/fastj/news/hello-world"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])(MDXLayout,Object(F_npmtest_fastj_docs_node_modules_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Blog features are powered by the blog plugin. Simply add files to the `,Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("inlineCode",{parentName:"p"},`blog`),` directory. It supports tags as well!`),Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__[/* mdx */ "b"])("p",null,`Delete the whole directory if you don't want the blog features. As simple as that!`));};MDXContent.isMDXComponent=true;
 
 /***/ }),
-/* 160 */
+/* 159 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"hello\",\"name\":\"hello\",\"count\":2,\"permalink\":\"/fastj/news/tags/hello\"}");
 
 /***/ }),
-/* 161 */
+/* 160 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"allTagsPath\":\"/fastj/news/tags\",\"slug\":\"docusaurus\",\"name\":\"docusaurus\",\"count\":3,\"permalink\":\"/fastj/news/tags/docusaurus\"}");
 
 /***/ }),
-/* 162 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
 /* eslint-disable no-mixed-operators */
-const cssKeywords = __webpack_require__(338);
+const cssKeywords = __webpack_require__(339);
 
 // NOTE: conversions should only return primitive values (i.e. arrays, or
 //       values that give correct `typeof` results).
@@ -17307,7 +17291,7 @@ convert.rgb.gray = function (rgb) {
 
 
 /***/ }),
-/* 163 */
+/* 162 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17322,7 +17306,7 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 var Link = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/DocPaginator/index.js
 /**
@@ -17351,7 +17335,7 @@ if(!latestVersionSuggestion){return/*#__PURE__*/react_default.a.createElement(re
 // fallback to main doc of latest version
 const latestVersionSuggestedDoc=latestDocSuggestion!==null&&latestDocSuggestion!==void 0?latestDocSuggestion:getVersionMainDoc(latestVersionSuggestion);return/*#__PURE__*/react_default.a.createElement("div",{className:"alert alert--warning margin-bottom--md",role:"alert"},/*#__PURE__*/react_default.a.createElement("div",null,activeVersion.name==='current'?/*#__PURE__*/react_default.a.createElement(UnreleasedVersionLabel,{siteTitle:siteTitle,versionLabel:activeVersion.label}):/*#__PURE__*/react_default.a.createElement(UnmaintainedVersionLabel,{siteTitle:siteTitle,versionLabel:activeVersion.label})),/*#__PURE__*/react_default.a.createElement("div",{className:"margin-top--md"},/*#__PURE__*/react_default.a.createElement(LatestVersionSuggestionLabel,{versionLabel:latestVersionSuggestion.label,to:latestVersionSuggestedDoc.path,onClick:()=>savePreferredVersionName(latestVersionSuggestion.name)})));}/* harmony default export */ var theme_DocVersionSuggestions = (DocVersionSuggestions);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Seo/index.js
-var Seo = __webpack_require__(41);
+var Seo = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/LastUpdated/styles.module.css
 // Exports
@@ -17367,13 +17351,13 @@ var Seo = __webpack_require__(41);
  * LICENSE file in the root directory of this source tree.
  */function LastUpdatedAtDate({lastUpdatedAt,formattedLastUpdatedAt}){return/*#__PURE__*/react_default.a.createElement(Translate["a" /* default */],{id:"theme.lastUpdated.atDate",description:"The words used to describe on which date a page has been last updated",values:{date:/*#__PURE__*/react_default.a.createElement("time",{dateTime:new Date(lastUpdatedAt*1000).toISOString(),className:styles_module.lastUpdatedDate},formattedLastUpdatedAt)}},' on {date}');}function LastUpdatedByUser({lastUpdatedBy}){return/*#__PURE__*/react_default.a.createElement(Translate["a" /* default */],{id:"theme.lastUpdated.byUser",description:"The words used to describe by who the page has been last updated",values:{user:/*#__PURE__*/react_default.a.createElement("strong",null,lastUpdatedBy)}},' by {user}');}function LastUpdated({lastUpdatedAt,formattedLastUpdatedAt,lastUpdatedBy}){return/*#__PURE__*/react_default.a.createElement("div",{className:"col text--right"},/*#__PURE__*/react_default.a.createElement("em",null,/*#__PURE__*/react_default.a.createElement("small",null,/*#__PURE__*/react_default.a.createElement(Translate["a" /* default */],{id:"theme.lastUpdated.lastUpdatedAtBy",description:"The sentence used to display when a page has been last updated, and by who",values:{atDate:lastUpdatedAt&&formattedLastUpdatedAt?/*#__PURE__*/react_default.a.createElement(LastUpdatedAtDate,{lastUpdatedAt:lastUpdatedAt,formattedLastUpdatedAt:formattedLastUpdatedAt}):'',byUser:lastUpdatedBy?/*#__PURE__*/react_default.a.createElement(LastUpdatedByUser,{lastUpdatedBy:lastUpdatedBy}):''}},'Last updated{atDate}{byUser}'), false&&/*#__PURE__*/false)));}
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/TOC/index.js + 2 modules
-var TOC = __webpack_require__(43);
+var TOC = __webpack_require__(44);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/EditThisPage/index.js + 2 modules
 var EditThisPage = __webpack_require__(76);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/DocItem/styles.module.css
 // Exports
@@ -17395,7 +17379,7 @@ var clsx_m = __webpack_require__(5);
 const showVersionBadge=versions.length>1;return/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,/*#__PURE__*/react_default.a.createElement(Seo["a" /* default */],{title,description,keywords,image}),/*#__PURE__*/react_default.a.createElement("div",{className:"row"},/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])('col',{[DocItem_styles_module.docItemCol]:!hideTableOfContents})},/*#__PURE__*/react_default.a.createElement(theme_DocVersionSuggestions,null),/*#__PURE__*/react_default.a.createElement("div",{className:DocItem_styles_module.docItemContainer},/*#__PURE__*/react_default.a.createElement("article",null,showVersionBadge&&/*#__PURE__*/react_default.a.createElement("div",null,/*#__PURE__*/react_default.a.createElement("span",{className:"badge badge--secondary"},"Version: ",version.label)),!hideTitle&&/*#__PURE__*/react_default.a.createElement("header",null,/*#__PURE__*/react_default.a.createElement("h1",{className:DocItem_styles_module.docTitle},title)),/*#__PURE__*/react_default.a.createElement("div",{className:"markdown"},/*#__PURE__*/react_default.a.createElement(DocContent,null))),(editUrl||lastUpdatedAt||lastUpdatedBy)&&/*#__PURE__*/react_default.a.createElement("div",{className:"margin-vert--xl"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},/*#__PURE__*/react_default.a.createElement("div",{className:"col"},editUrl&&/*#__PURE__*/react_default.a.createElement(EditThisPage["a" /* default */],{editUrl:editUrl})),(lastUpdatedAt||lastUpdatedBy)&&/*#__PURE__*/react_default.a.createElement(LastUpdated,{lastUpdatedAt:lastUpdatedAt,formattedLastUpdatedAt:formattedLastUpdatedAt,lastUpdatedBy:lastUpdatedBy}))),/*#__PURE__*/react_default.a.createElement("div",{className:"margin-vert--lg"},/*#__PURE__*/react_default.a.createElement(theme_DocPaginator,{metadata:metadata})))),!hideTableOfContents&&DocContent.toc&&/*#__PURE__*/react_default.a.createElement("div",{className:"col col--3"},/*#__PURE__*/react_default.a.createElement(TOC["a" /* default */],{toc:DocContent.toc}))));}/* harmony default export */ var theme_DocItem = __webpack_exports__["default"] = (DocItem);
 
 /***/ }),
-/* 164 */
+/* 163 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17422,19 +17406,19 @@ var Layout = __webpack_require__(15);
 var esm_extends = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/index.js
 var lib = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useUserPreferencesContext.js
-var useUserPreferencesContext = __webpack_require__(51);
+var useUserPreferencesContext = __webpack_require__(34);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useLockBodyScroll.js
 var useLockBodyScroll = __webpack_require__(72);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useWindowSize.js
-var useWindowSize = __webpack_require__(45);
+var useWindowSize = __webpack_require__(46);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useScrollPosition.js
 var useScrollPosition = __webpack_require__(71);
@@ -17443,7 +17427,7 @@ var useScrollPosition = __webpack_require__(71);
 var Link = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/isInternalUrl.js
-var isInternalUrl = __webpack_require__(34);
+var isInternalUrl = __webpack_require__(35);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Logo/index.js
 var Logo = __webpack_require__(53);
@@ -17459,7 +17443,7 @@ var Logo = __webpack_require__(53);
 var IconMenu = __webpack_require__(73);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/DocSidebar/styles.module.css
 // Exports
@@ -17493,7 +17477,7 @@ const DocSidebar_DocSidebarItems=/*#__PURE__*/Object(react["memo"])(function Doc
 const[collapsed,setCollapsed]=Object(react["useState"])(()=>{if(!collapsible){return false;}return isActive?false:item.collapsed;});const menuListRef=Object(react["useRef"])(null);const[menuListHeight,setMenuListHeight]=Object(react["useState"])(undefined);const handleMenuListHeight=(calc=true)=>{var _menuListRef$current;setMenuListHeight(calc?`${(_menuListRef$current=menuListRef.current)===null||_menuListRef$current===void 0?void 0:_menuListRef$current.scrollHeight}px`:undefined);};// If we navigate to a category, it should automatically expand itself
 Object(react["useEffect"])(()=>{const justBecameActive=isActive&&!wasActive;if(justBecameActive&&collapsed){setCollapsed(false);}},[isActive,wasActive,collapsed]);const handleItemClick=Object(react["useCallback"])(e=>{e.preventDefault();if(!menuListHeight){handleMenuListHeight();}setTimeout(()=>setCollapsed(state=>!state),100);},[menuListHeight]);if(items.length===0){return null;}return/*#__PURE__*/react_default.a.createElement("li",{className:Object(clsx_m["a" /* default */])('menu__list-item',{'menu__list-item--collapsed':collapsed})},/*#__PURE__*/react_default.a.createElement("a",Object(esm_extends["a" /* default */])({className:Object(clsx_m["a" /* default */])('menu__link',{'menu__link--sublist':collapsible,'menu__link--active':collapsible&&isActive,[styles_module.menuLinkText]:!collapsible}),onClick:collapsible?handleItemClick:undefined,href:collapsible?'#!':undefined},props),label),/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list",ref:menuListRef,style:{height:menuListHeight},onTransitionEnd:()=>{if(!collapsed){handleMenuListHeight(false);}}},/*#__PURE__*/react_default.a.createElement(DocSidebar_DocSidebarItems,{items:items,tabIndex:collapsed?'-1':'0',onItemClick:onItemClick,collapsible:collapsible,activePath:activePath})));}function DocSidebarItemLink({item,onItemClick,activePath,collapsible:_collapsible,...props}){const{href,label}=item;const isActive=isActiveSidebarItem(item,activePath);return/*#__PURE__*/react_default.a.createElement("li",{className:"menu__list-item",key:label},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],Object(esm_extends["a" /* default */])({className:Object(clsx_m["a" /* default */])('menu__link',{'menu__link--active':isActive,[styles_module.menuLinkExternal]:!Object(isInternalUrl["a" /* default */])(href)}),to:href},Object(isInternalUrl["a" /* default */])(href)&&{isNavLink:true,exact:true,onClick:onItemClick},props),label));}function useShowAnnouncementBar(){const{isAnnouncementBarClosed}=Object(useUserPreferencesContext["a" /* default */])();const[showAnnouncementBar,setShowAnnouncementBar]=Object(react["useState"])(!isAnnouncementBarClosed);Object(useScrollPosition["a" /* default */])(({scrollY})=>{if(!isAnnouncementBarClosed){setShowAnnouncementBar(scrollY===0);}});return showAnnouncementBar;}function useResponsiveSidebar(){const[showResponsiveSidebar,setShowResponsiveSidebar]=Object(react["useState"])(false);Object(useLockBodyScroll["a" /* default */])(showResponsiveSidebar);const windowSize=Object(useWindowSize["a" /* default */])();Object(react["useEffect"])(()=>{if(windowSize===useWindowSize["b" /* windowSizes */].desktop){setShowResponsiveSidebar(false);}},[windowSize]);const closeResponsiveSidebar=Object(react["useCallback"])(e=>{e.target.blur();setShowResponsiveSidebar(false);},[setShowResponsiveSidebar]);const toggleResponsiveSidebar=Object(react["useCallback"])(()=>{setShowResponsiveSidebar(value=>!value);},[setShowResponsiveSidebar]);return{showResponsiveSidebar,closeResponsiveSidebar,toggleResponsiveSidebar};}function HideableSidebarButton({onClick}){return/*#__PURE__*/react_default.a.createElement("button",{type:"button",title:Object(Translate["b" /* translate */])({id:'theme.docs.sidebar.collapseButtonTitle',message:'Collapse sidebar',description:'The title attribute for collapse button of doc sidebar'}),"aria-label":Object(Translate["b" /* translate */])({id:'theme.docs.sidebar.collapseButtonAriaLabel',message:'Collapse sidebar',description:'The title attribute for collapse button of doc sidebar'}),className:Object(clsx_m["a" /* default */])('button button--secondary button--outline',styles_module.collapseSidebarButton),onClick:onClick},/*#__PURE__*/react_default.a.createElement(theme_IconArrow,{className:styles_module.collapseSidebarButtonIcon}));}function ResponsiveSidebarButton({responsiveSidebarOpened,onClick}){return/*#__PURE__*/react_default.a.createElement("button",{"aria-label":responsiveSidebarOpened?Object(Translate["b" /* translate */])({id:'theme.docs.sidebar.responsiveCloseButtonLabel',message:'Close menu',description:'The ARIA label for close button of mobile doc sidebar'}):Object(Translate["b" /* translate */])({id:'theme.docs.sidebar.responsiveOpenButtonLabel',message:'Open menu',description:'The ARIA label for open button of mobile doc sidebar'}),"aria-haspopup":"true",className:"button button--secondary button--sm menu__button",type:"button",onClick:onClick},responsiveSidebarOpened?/*#__PURE__*/react_default.a.createElement("span",{className:Object(clsx_m["a" /* default */])(styles_module.sidebarMenuIcon,styles_module.sidebarMenuCloseIcon)},"\xD7"):/*#__PURE__*/react_default.a.createElement(IconMenu["a" /* default */],{className:styles_module.sidebarMenuIcon,height:MOBILE_TOGGLE_SIZE,width:MOBILE_TOGGLE_SIZE}));}function DocSidebar({path,sidebar,sidebarCollapsible=true,onCollapse,isHidden}){const showAnnouncementBar=useShowAnnouncementBar();const{navbar:{hideOnScroll},hideableSidebar}=Object(lib["useThemeConfig"])();const{isAnnouncementBarClosed}=Object(useUserPreferencesContext["a" /* default */])();const{showResponsiveSidebar,closeResponsiveSidebar,toggleResponsiveSidebar}=useResponsiveSidebar();return/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])(styles_module.sidebar,{[styles_module.sidebarWithHideableNavbar]:hideOnScroll,[styles_module.sidebarHidden]:isHidden})},hideOnScroll&&/*#__PURE__*/react_default.a.createElement(Logo["a" /* default */],{tabIndex:-1,className:styles_module.sidebarLogo}),/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])('menu','menu--responsive','thin-scrollbar',styles_module.menu,{'menu--show':showResponsiveSidebar,[styles_module.menuWithAnnouncementBar]:!isAnnouncementBarClosed&&showAnnouncementBar})},/*#__PURE__*/react_default.a.createElement(ResponsiveSidebarButton,{responsiveSidebarOpened:showResponsiveSidebar,onClick:toggleResponsiveSidebar}),/*#__PURE__*/react_default.a.createElement("ul",{className:"menu__list"},/*#__PURE__*/react_default.a.createElement(DocSidebar_DocSidebarItems,{items:sidebar,onItemClick:closeResponsiveSidebar,collapsible:sidebarCollapsible,activePath:path}))),hideableSidebar&&/*#__PURE__*/react_default.a.createElement(HideableSidebarButton,{onClick:onCollapse}));}/* harmony default export */ var theme_DocSidebar = (DocSidebar);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/MDXComponents/index.js + 9 modules
-var MDXComponents = __webpack_require__(42);
+var MDXComponents = __webpack_require__(43);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/NotFound.js
 var NotFound = __webpack_require__(97);
@@ -17526,6 +17510,100 @@ var router = __webpack_require__(18);
 sidebarName,sidebar:sidebar,path:currentDocRoute.path,sidebarCollapsible:(_siteConfig$themeConf=(_siteConfig$themeConf2=siteConfig.themeConfig)===null||_siteConfig$themeConf2===void 0?void 0:_siteConfig$themeConf2.sidebarCollapsible)!==null&&_siteConfig$themeConf!==void 0?_siteConfig$themeConf:true,onCollapse:toggleSidebar,isHidden:hiddenSidebar}),hiddenSidebar&&/*#__PURE__*/react_default.a.createElement("div",{className:DocPage_styles_module.collapsedDocSidebar,title:Object(Translate["b" /* translate */])({id:'theme.docs.sidebar.expandButtonTitle',message:'Expand sidebar',description:'The ARIA label and title attribute for expand button of doc sidebar'}),"aria-label":Object(Translate["b" /* translate */])({id:'theme.docs.sidebar.expandButtonAriaLabel',message:'Expand sidebar',description:'The ARIA label and title attribute for expand button of doc sidebar'}),tabIndex:0,role:"button",onKeyDown:toggleSidebar,onClick:toggleSidebar},/*#__PURE__*/react_default.a.createElement(theme_IconArrow,{className:DocPage_styles_module.expandSidebarButtonIcon}))),/*#__PURE__*/react_default.a.createElement("main",{className:Object(clsx_m["a" /* default */])(DocPage_styles_module.docMainContainer,{[DocPage_styles_module.docMainContainerEnhanced]:hiddenSidebarContainer||!sidebar})},/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])('container padding-vert--lg',DocPage_styles_module.docItemWrapper,{[DocPage_styles_module.docItemWrapperEnhanced]:hiddenSidebarContainer})},/*#__PURE__*/react_default.a.createElement(esm["a" /* MDXProvider */],{components:MDXComponents["a" /* default */]},children)))));}function DocPage(props){const{route:{routes:docRoutes},versionMetadata,location}=props;const currentDocRoute=docRoutes.find(docRoute=>Object(router["matchPath"])(location.pathname,docRoute));if(!currentDocRoute){return/*#__PURE__*/react_default.a.createElement(NotFound["default"],props);}return/*#__PURE__*/react_default.a.createElement(DocPageContent,{currentDocRoute:currentDocRoute,versionMetadata:versionMetadata},Object(renderRoutes["a" /* default */])(docRoutes));}/* harmony default export */ var theme_DocPage = __webpack_exports__["default"] = (DocPage);
 
 /***/ }),
+/* 164 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "frontMatter", function() { return /* binding */ frontMatter; });
+__webpack_require__.d(__webpack_exports__, "metadata", function() { return /* binding */ metadata; });
+__webpack_require__.d(__webpack_exports__, "toc", function() { return /* binding */ toc; });
+__webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ MDXContent; });
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/dist/esm.js
+var esm = __webpack_require__(1);
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/hooks/useUserPreferencesContext.js
+var useUserPreferencesContext = __webpack_require__(34);
+
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
+var clsx_m = __webpack_require__(4);
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Tabs/styles.module.css
+// Exports
+/* harmony default export */ var styles_module = ({
+	"tabItem": "tabItem_1uMI",
+	"tabItemActive": "tabItemActive_2DSg",
+	"blink": "blink_XB8L"
+});
+
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Tabs/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function isInViewport(element){const{top,left,bottom,right}=element.getBoundingClientRect();const{innerHeight,innerWidth}=window;return top>=0&&right<=innerWidth&&bottom<=innerHeight&&left>=0;}const keys={left:37,right:39};function Tabs(props){const{lazy,block,defaultValue,values,groupId,className}=props;const{tabGroupChoices,setTabGroupChoices}=Object(useUserPreferencesContext["a" /* default */])();const[selectedValue,setSelectedValue]=Object(react["useState"])(defaultValue);const children=react["Children"].toArray(props.children);const tabRefs=[];if(groupId!=null){const relevantTabGroupChoice=tabGroupChoices[groupId];if(relevantTabGroupChoice!=null&&relevantTabGroupChoice!==selectedValue&&values.some(value=>value.value===relevantTabGroupChoice)){setSelectedValue(relevantTabGroupChoice);}}const handleTabChange=event=>{const selectedTab=event.currentTarget;const selectedTabIndex=tabRefs.indexOf(selectedTab);const selectedTabValue=values[selectedTabIndex].value;setSelectedValue(selectedTabValue);if(groupId!=null){setTabGroupChoices(groupId,selectedTabValue);setTimeout(()=>{if(isInViewport(selectedTab)){return;}selectedTab.scrollIntoView({block:'center',behavior:'smooth'});selectedTab.classList.add(styles_module.tabItemActive);setTimeout(()=>selectedTab.classList.remove(styles_module.tabItemActive),2000);},150);}};const handleKeydown=event=>{var _focusElement;let focusElement;switch(event.keyCode){case keys.right:{const nextTab=tabRefs.indexOf(event.target)+1;focusElement=tabRefs[nextTab]||tabRefs[0];break;}case keys.left:{const prevTab=tabRefs.indexOf(event.target)-1;focusElement=tabRefs[prevTab]||tabRefs[tabRefs.length-1];break;}default:break;}(_focusElement=focusElement)===null||_focusElement===void 0?void 0:_focusElement.focus();};return/*#__PURE__*/react_default.a.createElement("div",{className:"tabs-container"},/*#__PURE__*/react_default.a.createElement("ul",{role:"tablist","aria-orientation":"horizontal",className:Object(clsx_m["a" /* default */])('tabs',{'tabs--block':block},className)},values.map(({value,label})=>/*#__PURE__*/react_default.a.createElement("li",{role:"tab",tabIndex:selectedValue===value?0:-1,"aria-selected":selectedValue===value,className:Object(clsx_m["a" /* default */])('tabs__item',styles_module.tabItem,{'tabs__item--active':selectedValue===value}),key:value,ref:tabControl=>tabRefs.push(tabControl),onKeyDown:handleKeydown,onFocus:handleTabChange,onClick:handleTabChange},label))),lazy?/*#__PURE__*/Object(react["cloneElement"])(children.filter(tabItem=>tabItem.props.value===selectedValue)[0],{className:'margin-vert--md'}):/*#__PURE__*/react_default.a.createElement("div",{className:"margin-vert--md"},children.map((tabItem,i)=>/*#__PURE__*/Object(react["cloneElement"])(tabItem,{key:i,hidden:tabItem.props.value!==selectedValue}))));}/* harmony default export */ var theme_Tabs = (Tabs);
+// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/TabItem/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function TabItem({children,hidden,className}){return/*#__PURE__*/react_default.a.createElement("div",{role:"tabpanel",hidden,className},children);}/* harmony default export */ var theme_TabItem = (TabItem);
+// CONCATENATED MODULE: ./wiki/fastj-basics/creating-a-fastj-project.mdx
+const frontMatter={sidebar_position:2,keywords:['fastj project','fastj tutorial','create fastj project','how to create fastj project'],description:'Let\'s install FastJ, and create your first game window.',image:'/static/img/fastj/fastj_icon.png'};const metadata={"unversionedId":"fastj-basics/creating-a-fastj-project","id":"fastj-basics/creating-a-fastj-project","isDocsHomePage":false,"title":"Creating the Gradle Project","description":"Let's install FastJ, and create your first game window.","source":"@site/wiki/fastj-basics/creating-a-fastj-project.mdx","sourceDirName":"fastj-basics","slug":"/fastj-basics/creating-a-fastj-project","permalink":"/fastj/wiki/fastj-basics/creating-a-fastj-project","version":"current","sidebarPosition":2,"frontMatter":{"sidebar_position":2,"keywords":["fastj project","fastj tutorial","create fastj project","how to create fastj project"],"description":"Let's install FastJ, and create your first game window.","image":"/static/img/fastj/fastj_icon.png"},"sidebar":"defaultSidebar","previous":{"title":"Setting up for FastJ","permalink":"/fastj/wiki/fastj-basics/setting-up-for-fastj"},"next":{"title":"Create a Page","permalink":"/fastj/wiki/tutorial-basics/create-a-page"}};/* @jsxRuntime classic */ /* @jsx mdx */const toc=[{value:'Create a Workspace',id:'create-a-workspace',children:[]},{value:'Open The Terminal/Command Prompt',id:'open-the-terminalcommand-prompt',children:[]},{value:'Create the Gradle Project',id:'create-the-gradle-project',children:[{value:'Project Type Selection',id:'project-type-selection',children:[]},{value:'Programming Language Selection',id:'programming-language-selection',children:[]},{value:'Functionality Splitting',id:'functionality-splitting',children:[]},{value:'Build Script',id:'build-script',children:[]},{value:'Unit Testing Framework',id:'unit-testing-framework',children:[]},{value:'Project Name',id:'project-name',children:[]},{value:'Source Package Name',id:'source-package-name',children:[]}]},{value:'You&#39;ve done it!',id:'youve-done-it',children:[]}];const layoutProps={toc};const MDXLayout="wrapper";function MDXContent({components,...props}){return Object(esm["b" /* mdx */])(MDXLayout,Object(esm_extends["a" /* default */])({},layoutProps,props,{components:components,mdxType:"MDXLayout"}),Object(esm["b" /* mdx */])("p",null,`Let's jump right into creating that FastJ project.`),Object(esm["b" /* mdx */])("div",{"className":"admonition admonition-caution alert alert--warning"},Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-heading"},Object(esm["b" /* mdx */])("h5",{parentName:"div"},Object(esm["b" /* mdx */])("span",{parentName:"h5","className":"admonition-icon"},Object(esm["b" /* mdx */])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"16","height":"16","viewBox":"0 0 16 16"},Object(esm["b" /* mdx */])("path",{parentName:"svg","fillRule":"evenodd","d":"M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"}))),`Before following this tutorial...`)),Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-content"},Object(esm["b" /* mdx */])("p",{parentName:"div"},`Before following this tutorial, please make sure you've installed all the requirements for creating a FastJ project outlined `,Object(esm["b" /* mdx */])("a",{parentName:"p","href":"setting-up-for-fastj","title":"Setting up for FastJ"},Object(esm["b" /* mdx */])("strong",{parentName:"a"},`here`)),`.`))),Object(esm["b" /* mdx */])("h2",{"id":"create-a-workspace"},`Create a Workspace`),Object(esm["b" /* mdx */])("p",null,`Now that you have your IDE and other tools installed (if you don't, click `,Object(esm["b" /* mdx */])("a",{parentName:"p","href":"setting-up-for-fastj","title":"Setting up for FastJ"},`here`),` to get them), we can start off by giving ourselves a folder to work in. Open up your file explorer on your pc, and create a folder to work inside of.`),Object(esm["b" /* mdx */])("p",null,`For the sake of this project, I've named mine `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"p"},`fastj-tutorial`),` -- feel free to name it the same if you're not confident in what exactly you're doing.`),Object(esm["b" /* mdx */])("div",{"className":"admonition admonition-tip alert alert--success"},Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-heading"},Object(esm["b" /* mdx */])("h5",{parentName:"div"},Object(esm["b" /* mdx */])("span",{parentName:"h5","className":"admonition-icon"},Object(esm["b" /* mdx */])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"12","height":"16","viewBox":"0 0 12 16"},Object(esm["b" /* mdx */])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"}))),`Be organized!`)),Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-content"},Object(esm["b" /* mdx */])("p",{parentName:"div"},`Like with other computer tasks, it's best practice to stay organized while working. Putting in the effort to stay organized now instead of later makes your life much easier down the line.`))),Object(esm["b" /* mdx */])("h2",{"id":"open-the-terminalcommand-prompt"},`Open The Terminal/Command Prompt`),Object(esm["b" /* mdx */])("p",null,`Next, you'll want to open up a terminal (Linux/Unix) or a command prompt (Windows) inside of the folder you created. The instructions below are divided by the operating system -- click or tap the operating system name to change to its instructions.`),Object(esm["b" /* mdx */])(theme_Tabs,{groupId:"operating-systems",defaultValue:"win",values:[{label:'Windows',value:'win'},{label:'macOS',value:'mac'},{label:'Linux',value:'lin'}],mdxType:"Tabs"},Object(esm["b" /* mdx */])(theme_TabItem,{value:"win",mdxType:"TabItem"},"Type ",Object(esm["b" /* mdx */])("code",null,"cmd")," into File Explorer's searchbar -- this opens the command prompt and directs it to the folder you're in."),Object(esm["b" /* mdx */])(theme_TabItem,{value:"mac",mdxType:"TabItem"},"Until further notice, I don't own a macOS device and don't actually know how to do this off-hand. Instead, ",Object(esm["b" /* mdx */])("a",{href:"https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514#:~:text=Head%20into%20System%20Preferences%20and,the%20folder%20you%27re%20in.",target:"_blank"},"follow these guidelines"),"."),Object(esm["b" /* mdx */])(theme_TabItem,{value:"lin",mdxType:"TabItem"},"Right-click anywhere inside the folder window, and select ",Object(esm["b" /* mdx */])("code",null,"Open in Terminal"),".")),Object(esm["b" /* mdx */])("h2",{"id":"create-the-gradle-project"},`Create the Gradle Project`),Object(esm["b" /* mdx */])("video",{width:"480",height:"280",controls:true},Object(esm["b" /* mdx */])("source",{src:"/static/video/create-gradle-project.mp4",type:"video/mp4"}),"Your browser/device does not support this video's format -- try a different one."),Object(esm["b" /* mdx */])("br",null),Object(esm["b" /* mdx */])("br",null),Object(esm["b" /* mdx */])("p",null,`This is as simple as typing `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"p"},`gradle init`),` in the command prompt/terminal and hitting `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"p"},`Enter`),`, and then entering a sequence of numbers that likely will confuse you! 😀`),Object(esm["b" /* mdx */])("p",null,`...right. I should explain the numbers. Actually, i'll explain the entire process while I'm at it.`),Object(esm["b" /* mdx */])("h3",{"id":"project-type-selection"},`Project Type Selection`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Gradle Project Type Selection\"","title":"\"Gradle","Project":true,"Type":true,"Selection\"":true},`Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4]
+`)),Object(esm["b" /* mdx */])("p",null,`This section is asking you what type of Gradle project you want to make. Gradle supports a few different default configurations of projects: `),Object(esm["b" /* mdx */])("ul",null,Object(esm["b" /* mdx */])("li",{parentName:"ul"},Object(esm["b" /* mdx */])("strong",{parentName:"li"},`application`),` - executable applications like games and software apps`),Object(esm["b" /* mdx */])("li",{parentName:"ul"},Object(esm["b" /* mdx */])("strong",{parentName:"li"},`library`),` - `,Object(esm["b" /* mdx */])("del",{parentName:"li"},`literally libraries of code`),` game-making code frameworks, UI frameworks`),Object(esm["b" /* mdx */])("li",{parentName:"ul"},Object(esm["b" /* mdx */])("strong",{parentName:"li"},Object(esm["b" /* mdx */])("a",{parentName:"strong","href":"https://docs.gradle.org/current/userguide/plugins.html","title":"Gradle Plugins"},`Gradle plugins`)),` - code to improve your build script experience`),Object(esm["b" /* mdx */])("li",{parentName:"ul"},Object(esm["b" /* mdx */])("strong",{parentName:"li"},`basic`),` - an empty project with no specialization whatsoever.`)),Object(esm["b" /* mdx */])("p",null,`Each one has its own pros and cons, and are generally designed to speed up the development process of setting up your project.`),Object(esm["b" /* mdx */])("p",null,`For now, we can just pick `,Object(esm["b" /* mdx */])("strong",{parentName:"p"},`number 2 -- application`),`. This configuration gets us the quickest to making our game. In more advanced situations, we may end up using the other templates, but for now we can stick with just this template.`),Object(esm["b" /* mdx */])("h3",{"id":"programming-language-selection"},`Programming Language Selection`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Programming Language Selection\"","title":"\"Programming","Language":true,"Selection\"":true},`Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6]
+`)),Object(esm["b" /* mdx */])("p",null,`This section is much more straightorward -- it's only asking what programming language we're going to be using. As we know, this tutorial will be using Java so you can go ahead and select `,Object(esm["b" /* mdx */])("strong",{parentName:"p"},`number 3 -- Java`),`.`),Object(esm["b" /* mdx */])("h3",{"id":"functionality-splitting"},`Functionality Splitting`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Functionality Splitting\"","title":"\"Functionality","Splitting\"":true},`Split functionality across multiple subprojects?:
+  1: no - only one application project
+  2: yes - application and library projects
+Enter selection (default: no - only one application project) [1..2]
+`)),Object(esm["b" /* mdx */])("p",null,`This one might be a bit confusing. However, fear not -- we're just going to stick with choice `,Object(esm["b" /* mdx */])("strong",{parentName:"p"},`number 1 -- only one application project`),`.`),Object(esm["b" /* mdx */])("div",{"className":"admonition admonition-note alert alert--secondary"},Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-heading"},Object(esm["b" /* mdx */])("h5",{parentName:"div"},Object(esm["b" /* mdx */])("span",{parentName:"h5","className":"admonition-icon"},Object(esm["b" /* mdx */])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"14","height":"16","viewBox":"0 0 14 16"},Object(esm["b" /* mdx */])("path",{parentName:"svg","fillRule":"evenodd","d":"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"}))),`What's a subproject?`)),Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-content"},Object(esm["b" /* mdx */])("p",{parentName:"div"},`Gradle has this functionality called `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`modules`),` -- it's the idea of separating your one big project into multiple chunks, or `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`subprojects`),`. Dividing your project allows you to separate logic from implementation, which is a very good way to create reusable code. I won't go into detail because it's out of the scope of this tutorial, but this is also another way useful way of organizing your project and one step into the ways of `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`abstraction`),`.`),Object(esm["b" /* mdx */])("p",{parentName:"div"},`Oh, and in case you're curious about using multiple subprojects you can check out Gradle's guide `,Object(esm["b" /* mdx */])("a",{parentName:"p","href":"https://docs.gradle.org/current/samples/sample_building_java_applications_multi_project.html","title":"Gradle Subprojects Tutorial"},`here`),`.`))),Object(esm["b" /* mdx */])("h3",{"id":"build-script"},`Build Script`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Build Script\"","title":"\"Build","Script\"":true},`Select build script DSL:
+  1: Groovy
+  2: Kotlin
+Enter selection (default: Groovy) [1..2]
+`)),Object(esm["b" /* mdx */])("p",null,`This one's once again more straightorward, although you may not have heard of build scripts before. A `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`build script`),` is a set of code defining a set of rules for the build tool to follow. This gives the build tool the context it needs in order to work for your specific use cases.`),Object(esm["b" /* mdx */])("p",null,`I personally prefer Groovy to Kotlin (this is preference!), so we'll use `,Object(esm["b" /* mdx */])("strong",{parentName:"p"},`number 1 -- Groovy`),`.`),Object(esm["b" /* mdx */])("h3",{"id":"unit-testing-framework"},`Unit Testing Framework`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Unit Testing Framework\"","title":"\"Unit","Testing":true,"Framework\"":true},`Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit 4) [1..4]
+`)),Object(esm["b" /* mdx */])("p",null,`Unit testing! Some of you might have heard of this before, and absolutely dread it. Don't worry, we're going to cover unit testing in an advanced topic later on. For now, select `,Object(esm["b" /* mdx */])("strong",{parentName:"p"},`number 4 -- JUnit Jupiter`),`.`),Object(esm["b" /* mdx */])("h3",{"id":"project-name"},`Project Name`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Project Name\"","title":"\"Project","Name\"":true},`Project name (default: FastJ Tutorial Project):
+`)),Object(esm["b" /* mdx */])("p",null,`This one's super simple -- you're just choosing your project's name!`),Object(esm["b" /* mdx */])("p",null,`In this case, I'm going to call this project `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"p"},`FastJ Tutorial Project`),`.`),Object(esm["b" /* mdx */])("div",{"className":"admonition admonition-info alert alert--info"},Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-heading"},Object(esm["b" /* mdx */])("h5",{parentName:"div"},Object(esm["b" /* mdx */])("span",{parentName:"h5","className":"admonition-icon"},Object(esm["b" /* mdx */])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"14","height":"16","viewBox":"0 0 14 16"},Object(esm["b" /* mdx */])("path",{parentName:"svg","fillRule":"evenodd","d":"M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"}))),`Wait... Why didn't you type the name?`)),Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-content"},Object(esm["b" /* mdx */])("p",{parentName:"div"},`I didn't type the project name out because the default was already exactly what I wanted! You can see the default below here, with me just pressing `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"p"},`Enter`),` to avoid having to type out the project name again.`),Object(esm["b" /* mdx */])("p",{parentName:"div"},Object(esm["b" /* mdx */])("img",{alt:"Defaults exist -- they&#39;re right on the line where you enter input!",src:__webpack_require__(326).default})))),Object(esm["b" /* mdx */])("h3",{"id":"source-package-name"},`Source Package Name`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Source Package Name\"","title":"\"Source","Package":true,"Name\"":true},`Project name (default: FastJ Tutorial Project):
+`)),Object(esm["b" /* mdx */])("p",null,`This one's `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`almost`),` as simple as project name, but we'll need to go much more in-depth in order to get it right. Java packages have to follow a style guide that defines what the top package names (the one we're deciding right now) can be. `),Object(esm["b" /* mdx */])("ol",null,Object(esm["b" /* mdx */])("li",{parentName:"ol"},`The product/project name needs to be specified as the last part of the package sequence.`),Object(esm["b" /* mdx */])("li",{parentName:"ol"},`The package sequence needs to be written in reverse domain name notation.`)),Object(esm["b" /* mdx */])("p",null,`The project name is simple enough -- `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"p"},`fastjtutorial`),` will do. (Java packages don't allow spaces or dashes, so we'll just put the two words together.)`),Object(esm["b" /* mdx */])("p",null,Object(esm["b" /* mdx */])("em",{parentName:"p"},`But what is reverse domain name notation`),`, you ask. `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`Reverse domain name notation`),` is the way website URLs are written when you search them, but backwards.`),Object(esm["b" /* mdx */])("p",null,`Here's an example:`),Object(esm["b" /* mdx */])("ul",null,Object(esm["b" /* mdx */])("li",{parentName:"ul"},`Domain: `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"li"},`docs.google.com`)),Object(esm["b" /* mdx */])("li",{parentName:"ul"},`Reverse Domain Name Notation: `,Object(esm["b" /* mdx */])("inlineCode",{parentName:"li"},`com.google.docs`))),Object(esm["b" /* mdx */])("p",null,`That hopefully simplifies how this works. `),Object(esm["b" /* mdx */])("p",null,`But what do we actually `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`put`),` for this? Well, we need to use a domain that we own. Luckily, everyone is entitled to a specific domain thanks to Github, a site where you can store your code privately or publicly, and share it with others on the internet. As long as you have a Github account, you can (legally) use this package sequence:`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-Java"},`io.github.yourusername.yourprojectname
+`)),Object(esm["b" /* mdx */])("p",null,`That's exactly what we'll use: `,Object(esm["b" /* mdx */])("strong",{parentName:"p"},`io.github.yourusername.fastjtutorial`),`.`),Object(esm["b" /* mdx */])("div",{"className":"admonition admonition-caution alert alert--warning"},Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-heading"},Object(esm["b" /* mdx */])("h5",{parentName:"div"},Object(esm["b" /* mdx */])("span",{parentName:"h5","className":"admonition-icon"},Object(esm["b" /* mdx */])("svg",{parentName:"span","xmlns":"http://www.w3.org/2000/svg","width":"16","height":"16","viewBox":"0 0 16 16"},Object(esm["b" /* mdx */])("path",{parentName:"svg","fillRule":"evenodd","d":"M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"}))),`What if I don't want a Github account?`)),Object(esm["b" /* mdx */])("div",{parentName:"div","className":"admonition-content"},Object(esm["b" /* mdx */])("p",{parentName:"div"},`For future reference, there will likely be parts of this tutorial that involve you having a Github account, so that may be a slight hinderance to you in the long run.`),Object(esm["b" /* mdx */])("p",{parentName:"div"},`However, you don't `,Object(esm["b" /* mdx */])("em",{parentName:"p"},`need`),` to follow these conventions if you aren't distributing your code to others. It's another good practice -- one that might bite you in the butt if you don't use. You've been warned!`))),Object(esm["b" /* mdx */])("h2",{"id":"youve-done-it"},`You've done it!`),Object(esm["b" /* mdx */])("p",null,`That's all there is to it. Nice work getting this far! If you look in the original folder you created, you'll see some new files and directories (folders):`),Object(esm["b" /* mdx */])("pre",null,Object(esm["b" /* mdx */])("code",{parentName:"pre","className":"language-txt","metastring":"title=\"Contents of FastJ Tutorial Project\"","title":"\"Contents","of":true,"FastJ":true,"Tutorial":true,"Project\"":true},`.gradle/
+app/
+gradle/
+.gitattributes
+.gitignore
+gradlew
+gradlew.bat
+settings.groovy
+`)),Object(esm["b" /* mdx */])("p",null,`Each of these will be explained as we use them.`),Object(esm["b" /* mdx */])("p",null,`For the sake of brevity (keeping things from getting too long), I'll put the next part of the tutorial in the next page. Read on!`));};MDXContent.isMDXComponent=true;
+
+/***/ }),
 /* 165 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17541,7 +17619,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
-var clsx_m = __webpack_require__(5);
+var clsx_m = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/Layout/index.js + 27 modules
 var Layout = __webpack_require__(15);
@@ -17572,7 +17650,7 @@ var esm_extends = __webpack_require__(2);
 });
 
 // CONCATENATED MODULE: ./src/components/HomepageFeatures.js
-const FeatureList=[{title:'Easy to Use',Svg:__webpack_require__(327).default,description:/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,"FastJ was designed with ease of use in mind. With ",/*#__PURE__*/react_default.a.createElement("b",null," expressive syntax"),", a plethora of ",/*#__PURE__*/react_default.a.createElement("b",null,"documentation"),", and lots of ",/*#__PURE__*/react_default.a.createElement("b",null,"helpful examples"),", you'll never be left in the dark.")},{title:'Lightweight Where it Counts',Svg:__webpack_require__(328).default,description:/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,"FastJ uses no external dependencies and is ",/*#__PURE__*/react_default.a.createElement("b",null,"under 1MB in total size"),". You can focus on your content -- we won't get in the way with bloat.")},{title:'Cross-Platform',Svg:__webpack_require__(329).default,description:/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,"FastJ fully supports ",/*#__PURE__*/react_default.a.createElement("b",null,"Windows, macOS, and Linux"),". Targeting multiple platforms is a breeze with ",/*#__PURE__*/react_default.a.createElement("b",null,"Github Actions")," and ",/*#__PURE__*/react_default.a.createElement("b",null,"jpackage"),".")}];function Feature({Svg,title,description}){return/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])('col col--4')},/*#__PURE__*/react_default.a.createElement("div",{className:"text--center"},/*#__PURE__*/react_default.a.createElement(Svg,{className:HomepageFeatures_module.featureMedia,alt:title})),/*#__PURE__*/react_default.a.createElement("div",{className:"text--center padding-horiz--md"},/*#__PURE__*/react_default.a.createElement("h3",null,title),/*#__PURE__*/react_default.a.createElement("p",null,description)));}function HomepageFeatures(){return/*#__PURE__*/react_default.a.createElement("section",{className:HomepageFeatures_module.features},/*#__PURE__*/react_default.a.createElement("div",{className:"container"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},FeatureList.map((props,idx)=>/*#__PURE__*/react_default.a.createElement(Feature,Object(esm_extends["a" /* default */])({key:idx},props))))));}
+const FeatureList=[{title:'Easy to Use',Svg:__webpack_require__(328).default,description:/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,"FastJ was designed with ease of use in mind. With ",/*#__PURE__*/react_default.a.createElement("b",null," expressive syntax"),", a plethora of ",/*#__PURE__*/react_default.a.createElement("b",null,"documentation"),", and lots of ",/*#__PURE__*/react_default.a.createElement("b",null,"helpful examples"),", you'll never be left in the dark.")},{title:'Lightweight Where it Counts',Svg:__webpack_require__(329).default,description:/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,"FastJ uses no external dependencies and is ",/*#__PURE__*/react_default.a.createElement("b",null,"under 1MB in total size"),". You can focus on your content -- we won't get in the way with bloat.")},{title:'Cross-Platform',Svg:__webpack_require__(330).default,description:/*#__PURE__*/react_default.a.createElement(react_default.a.Fragment,null,"FastJ fully supports ",/*#__PURE__*/react_default.a.createElement("b",null,"Windows, macOS, and Linux"),". Targeting multiple platforms is a breeze with ",/*#__PURE__*/react_default.a.createElement("b",null,"Github Actions")," and ",/*#__PURE__*/react_default.a.createElement("b",null,"jpackage"),".")}];function Feature({Svg,title,description}){return/*#__PURE__*/react_default.a.createElement("div",{className:Object(clsx_m["a" /* default */])('col col--4')},/*#__PURE__*/react_default.a.createElement("div",{className:"text--center"},/*#__PURE__*/react_default.a.createElement(Svg,{className:HomepageFeatures_module.featureMedia,alt:title})),/*#__PURE__*/react_default.a.createElement("div",{className:"text--center padding-horiz--md"},/*#__PURE__*/react_default.a.createElement("h3",null,title),/*#__PURE__*/react_default.a.createElement("p",null,description)));}function HomepageFeatures(){return/*#__PURE__*/react_default.a.createElement("section",{className:HomepageFeatures_module.features},/*#__PURE__*/react_default.a.createElement("div",{className:"container"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},FeatureList.map((props,idx)=>/*#__PURE__*/react_default.a.createElement(Feature,Object(esm_extends["a" /* default */])({key:idx},props))))));}
 // CONCATENATED MODULE: ./src/pages/index.js
 function HomepageHeader(){const{siteConfig}=Object(useDocusaurusContext["default"])();return/*#__PURE__*/react_default.a.createElement("header",{className:Object(clsx_m["a" /* default */])('hero hero--primary',index_module.heroBanner)},/*#__PURE__*/react_default.a.createElement("div",{className:"container"},/*#__PURE__*/react_default.a.createElement("h1",{className:"hero__title"},/*#__PURE__*/react_default.a.createElement("span",{style:{color:"#1B6BF9",fontWeight:'900'}},"F"),/*#__PURE__*/react_default.a.createElement("span",{style:{color:"#1B6BF9"}},"ast"),/*#__PURE__*/react_default.a.createElement("span",{style:{color:"#ee8200",fontWeight:'900'}},"J")),/*#__PURE__*/react_default.a.createElement("p",{className:"hero__subtitle"},siteConfig.tagline),/*#__PURE__*/react_default.a.createElement("div",{className:index_module.buttons},/*#__PURE__*/react_default.a.createElement(Link["a" /* default */],{className:"button button--secondary button--lg",to:"/wiki/intro"},"Get Started \xBB"))));}function Home(){const{siteConfig}=Object(useDocusaurusContext["default"])();return/*#__PURE__*/react_default.a.createElement(Layout["a" /* default */],{title:`Home`,description:"The open-source, 2D Java game engine. <head />"},/*#__PURE__*/react_default.a.createElement(HomepageHeader,null),/*#__PURE__*/react_default.a.createElement("main",null,/*#__PURE__*/react_default.a.createElement(HomepageFeatures,null)));}
 
@@ -17595,13 +17673,13 @@ var useDocusaurusContext = __webpack_require__(7);
 var Layout = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/BlogPostItem/index.js + 1 modules
-var BlogPostItem = __webpack_require__(44);
+var BlogPostItem = __webpack_require__(45);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
 var Link = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/BlogListPaginator/index.js
 /**
@@ -17641,10 +17719,10 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 var Layout = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/BlogPostItem/index.js + 1 modules
-var BlogPostItem = __webpack_require__(44);
+var BlogPostItem = __webpack_require__(45);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(4);
+var Translate = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
 var Link = __webpack_require__(6);
@@ -17660,7 +17738,7 @@ var Link = __webpack_require__(6);
 var BlogSidebar = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/TOC/index.js + 2 modules
-var TOC = __webpack_require__(43);
+var TOC = __webpack_require__(44);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/EditThisPage/index.js + 2 modules
 var EditThisPage = __webpack_require__(76);
@@ -19401,7 +19479,7 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 /* 175 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"/fastj/-26c\":{\"component\":\"c4f5d8e4\",\"config\":\"5e9f5e1a\"},\"/fastj/markdown-page-55f\":{\"component\":\"1f391b9e\",\"content\":\"393be207\"},\"/fastj/news-6cd\":{\"component\":\"a6aa9e1f\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"},{\"content\":\"5a1abde2\"},{\"content\":\"7149aa05\"}],\"metadata\":\"9653069b\"},\"/fastj/news/hello-world-3d8\":{\"component\":\"ccc49370\",\"sidebar\":\"27e0b534\",\"content\":\"85a96ceb\"},\"/fastj/news/hola-ff1\":{\"component\":\"ccc49370\",\"sidebar\":\"27e0b534\",\"content\":\"95b1568c\"},\"/fastj/news/tags-d31\":{\"component\":\"01a85c17\",\"sidebar\":\"27e0b534\",\"tags\":\"63060486\"},\"/fastj/news/tags/docusaurus-ead\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"},{\"content\":\"5a1abde2\"},{\"content\":\"7149aa05\"}],\"metadata\":\"f19f614d\"},\"/fastj/news/tags/facebook-5b2\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"}],\"metadata\":\"8280cd5c\"},\"/fastj/news/tags/hello-d4d\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"},{\"content\":\"5a1abde2\"}],\"metadata\":\"bd2599cb\"},\"/fastj/news/tags/hola-cd3\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"7149aa05\"}],\"metadata\":\"01b8d4be\"},\"/fastj/news/welcome-dc3\":{\"component\":\"ccc49370\",\"sidebar\":\"27e0b534\",\"content\":\"2fb406b9\"},\"/fastj/wiki-fc8\":{\"component\":\"1be78505\",\"versionMetadata\":\"935f2afb\"},\"/fastj/wiki/fastj-basics/creating-a-fastj-project-7c2\":{\"component\":\"17896441\",\"content\":\"488ab454\"},\"/fastj/wiki/fastj-basics/setting-up-for-fastj-677\":{\"component\":\"17896441\",\"content\":\"454ed76d\"},\"/fastj/wiki/intro-5cb\":{\"component\":\"17896441\",\"content\":\"0155a78c\"},\"/fastj/wiki/tutorial-basics/congratulations-b44\":{\"component\":\"17896441\",\"content\":\"349df4dd\"},\"/fastj/wiki/tutorial-basics/create-a-blog-post-35a\":{\"component\":\"17896441\",\"content\":\"29e0838b\"},\"/fastj/wiki/tutorial-basics/create-a-document-b9e\":{\"component\":\"17896441\",\"content\":\"36ed24db\"},\"/fastj/wiki/tutorial-basics/create-a-page-2d8\":{\"component\":\"17896441\",\"content\":\"0b75010d\"},\"/fastj/wiki/tutorial-basics/deploy-your-site-d07\":{\"component\":\"17896441\",\"content\":\"67d07d7a\"},\"/fastj/wiki/tutorial-basics/markdown-features-937\":{\"component\":\"17896441\",\"content\":\"35191907\"},\"/fastj/wiki/tutorial-extras/manage-docs-versions-7f9\":{\"component\":\"17896441\",\"content\":\"532afc76\"},\"/fastj/wiki/tutorial-extras/translate-your-site-8e6\":{\"component\":\"17896441\",\"content\":\"0bcb36d2\"}}");
+module.exports = JSON.parse("{\"/fastj/-26c\":{\"component\":\"c4f5d8e4\",\"config\":\"5e9f5e1a\"},\"/fastj/markdown-page-55f\":{\"component\":\"1f391b9e\",\"content\":\"393be207\"},\"/fastj/news-6cd\":{\"component\":\"a6aa9e1f\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"},{\"content\":\"5a1abde2\"},{\"content\":\"7149aa05\"}],\"metadata\":\"9653069b\"},\"/fastj/news/hello-world-3d8\":{\"component\":\"ccc49370\",\"sidebar\":\"27e0b534\",\"content\":\"85a96ceb\"},\"/fastj/news/hola-ff1\":{\"component\":\"ccc49370\",\"sidebar\":\"27e0b534\",\"content\":\"95b1568c\"},\"/fastj/news/tags-d31\":{\"component\":\"01a85c17\",\"sidebar\":\"27e0b534\",\"tags\":\"63060486\"},\"/fastj/news/tags/docusaurus-ead\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"},{\"content\":\"5a1abde2\"},{\"content\":\"7149aa05\"}],\"metadata\":\"f19f614d\"},\"/fastj/news/tags/facebook-5b2\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"}],\"metadata\":\"8280cd5c\"},\"/fastj/news/tags/hello-d4d\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"bad4b5fa\"},{\"content\":\"5a1abde2\"}],\"metadata\":\"bd2599cb\"},\"/fastj/news/tags/hola-cd3\":{\"component\":\"6875c492\",\"sidebar\":\"27e0b534\",\"items\":[{\"content\":\"7149aa05\"}],\"metadata\":\"01b8d4be\"},\"/fastj/news/welcome-dc3\":{\"component\":\"ccc49370\",\"sidebar\":\"27e0b534\",\"content\":\"2fb406b9\"},\"/fastj/wiki-7b4\":{\"component\":\"1be78505\",\"versionMetadata\":\"935f2afb\"},\"/fastj/wiki/fastj-basics/creating-a-fastj-project-d65\":{\"component\":\"17896441\",\"content\":\"4eb0aec7\"},\"/fastj/wiki/fastj-basics/setting-up-for-fastj-677\":{\"component\":\"17896441\",\"content\":\"454ed76d\"},\"/fastj/wiki/intro-5cb\":{\"component\":\"17896441\",\"content\":\"0155a78c\"},\"/fastj/wiki/tutorial-basics/congratulations-b44\":{\"component\":\"17896441\",\"content\":\"349df4dd\"},\"/fastj/wiki/tutorial-basics/create-a-blog-post-35a\":{\"component\":\"17896441\",\"content\":\"29e0838b\"},\"/fastj/wiki/tutorial-basics/create-a-document-b9e\":{\"component\":\"17896441\",\"content\":\"36ed24db\"},\"/fastj/wiki/tutorial-basics/create-a-page-2d8\":{\"component\":\"17896441\",\"content\":\"0b75010d\"},\"/fastj/wiki/tutorial-basics/deploy-your-site-d07\":{\"component\":\"17896441\",\"content\":\"67d07d7a\"},\"/fastj/wiki/tutorial-basics/markdown-features-937\":{\"component\":\"17896441\",\"content\":\"35191907\"},\"/fastj/wiki/tutorial-extras/manage-docs-versions-7f9\":{\"component\":\"17896441\",\"content\":\"532afc76\"},\"/fastj/wiki/tutorial-extras/translate-your-site-8e6\":{\"component\":\"17896441\",\"content\":\"0bcb36d2\"}}");
 
 /***/ }),
 /* 176 */
@@ -37640,8 +37718,8 @@ var tidyAtRule = __webpack_require__(205);
 
 var Hack = __webpack_require__(82);
 var removeUnused = __webpack_require__(104);
-var restoreFromOptimizing = __webpack_require__(46);
-var wrapForOptimizing = __webpack_require__(37).all;
+var restoreFromOptimizing = __webpack_require__(47);
+var wrapForOptimizing = __webpack_require__(38).all;
 
 var OptimizationLevel = __webpack_require__(28).OptimizationLevel;
 
@@ -38890,8 +38968,8 @@ var compactable = __webpack_require__(31);
 var deepClone = __webpack_require__(59).deep;
 var restoreWithComponents = __webpack_require__(86);
 
-var restoreFromOptimizing = __webpack_require__(46);
-var wrapSingle = __webpack_require__(37).single;
+var restoreFromOptimizing = __webpack_require__(47);
+var wrapSingle = __webpack_require__(38).single;
 
 var serializeBody = __webpack_require__(13).body;
 var Token = __webpack_require__(11);
@@ -39335,7 +39413,7 @@ module.exports = mergeIntoShorthands;
 
 var InvalidPropertyError = __webpack_require__(108);
 
-var wrapSingle = __webpack_require__(37).single;
+var wrapSingle = __webpack_require__(38).single;
 
 var Token = __webpack_require__(11);
 var Marker = __webpack_require__(16);
@@ -40615,7 +40693,7 @@ var deepClone = __webpack_require__(59).deep;
 var restoreWithComponents = __webpack_require__(86);
 var shallowClone = __webpack_require__(59).shallow;
 
-var restoreFromOptimizing = __webpack_require__(46);
+var restoreFromOptimizing = __webpack_require__(47);
 
 var Token = __webpack_require__(11);
 var Marker = __webpack_require__(16);
@@ -41909,8 +41987,8 @@ module.exports = removeDuplicates;
 
 var populateComponents = __webpack_require__(85);
 
-var wrapForOptimizing = __webpack_require__(37).single;
-var restoreFromOptimizing = __webpack_require__(46);
+var wrapForOptimizing = __webpack_require__(38).single;
+var restoreFromOptimizing = __webpack_require__(47);
 
 var Token = __webpack_require__(11);
 
@@ -43327,7 +43405,7 @@ var url = __webpack_require__(30);
 
 var isHttpResource = __webpack_require__(236);
 var isHttpsResource = __webpack_require__(237);
-var override = __webpack_require__(36);
+var override = __webpack_require__(37);
 
 var HTTP_PROTOCOL = 'http:';
 
@@ -43462,7 +43540,7 @@ module.exports = inlineOptionsFrom;
 
 var url = __webpack_require__(30);
 
-var override = __webpack_require__(36);
+var override = __webpack_require__(37);
 
 function inlineRequestFrom(option) {
   return override(
@@ -43669,7 +43747,7 @@ exports.decode = function (charCode) {
  * http://opensource.org/licenses/BSD-3-Clause
  */
 
-var util = __webpack_require__(47);
+var util = __webpack_require__(48);
 
 /**
  * Determine whether mappingB is after mappingA with respect to generated
@@ -43754,7 +43832,7 @@ exports.MappingList = MappingList;
  * http://opensource.org/licenses/BSD-3-Clause
  */
 
-var util = __webpack_require__(47);
+var util = __webpack_require__(48);
 var binarySearch = __webpack_require__(247);
 var ArraySet = __webpack_require__(114).ArraySet;
 var base64VLQ = __webpack_require__(113);
@@ -45143,7 +45221,7 @@ exports.quickSort = function (ary, comparator) {
  */
 
 var SourceMapGenerator = __webpack_require__(112).SourceMapGenerator;
-var util = __webpack_require__(47);
+var util = __webpack_require__(48);
 
 // Matches a Windows-style `\r\n` newline or a `\n` newline used by all other
 // operating systems these days (capturing the result).
@@ -45572,7 +45650,7 @@ var Token = __webpack_require__(11);
 var Marker = __webpack_require__(16);
 var hasProtocol = __webpack_require__(61);
 var isImport = __webpack_require__(119);
-var isRemoteResource = __webpack_require__(48);
+var isRemoteResource = __webpack_require__(49);
 
 var UNKNOWN_URI = 'uri:unknown';
 
@@ -45912,7 +45990,7 @@ var rebaseRemoteMap = __webpack_require__(116);
 var Token = __webpack_require__(11);
 var hasProtocol = __webpack_require__(61);
 var isDataUriResource = __webpack_require__(253);
-var isRemoteResource = __webpack_require__(48);
+var isRemoteResource = __webpack_require__(49);
 
 var MAP_MARKER_PATTERN = /^\/\*# sourceMappingURL=(\S+) \*\/$/;
 
@@ -46184,7 +46262,7 @@ var path = __webpack_require__(9);
 var isAllowedResource = __webpack_require__(89);
 
 var hasProtocol = __webpack_require__(61);
-var isRemoteResource = __webpack_require__(48);
+var isRemoteResource = __webpack_require__(49);
 
 function loadOriginalSources(context, callback) {
   var loadContext = {
@@ -47191,7 +47269,7 @@ module.exports = serializeStyles;
 var SourceMapGenerator = __webpack_require__(88).SourceMapGenerator;
 var all = __webpack_require__(84).all;
 
-var isRemoteResource = __webpack_require__(48);
+var isRemoteResource = __webpack_require__(49);
 
 var isWindows = process.platform == 'win32';
 
@@ -51592,7 +51670,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */Object.defineProperty(exports,"__esModule",{value:true});exports.useAlternatePageUtils=void 0;const tslib_1=__webpack_require__(49);const useDocusaurusContext_1=tslib_1.__importDefault(__webpack_require__(7));const router_1=__webpack_require__(18);// Permits to obtain the url of the current page in another locale
+ */Object.defineProperty(exports,"__esModule",{value:true});exports.useAlternatePageUtils=void 0;const tslib_1=__webpack_require__(50);const useDocusaurusContext_1=tslib_1.__importDefault(__webpack_require__(7));const router_1=__webpack_require__(18);// Permits to obtain the url of the current page in another locale
 // Useful to generate hreflang meta headers etc...
 // See https://developers.google.com/search/docs/advanced/crawling/localized-versions
 function useAlternatePageUtils(){const{siteConfig:{baseUrl,url},i18n:{defaultLocale,currentLocale}}=useDocusaurusContext_1.default();const{pathname}=router_1.useLocation();const baseUrlUnlocalized=currentLocale===defaultLocale?baseUrl:baseUrl.replace(`/${currentLocale}/`,'/');const pathnameSuffix=pathname.replace(baseUrl,'');function getLocalizedBaseUrl(locale){return locale===defaultLocale?`${baseUrlUnlocalized}`:`${baseUrlUnlocalized}${locale}/`;}// TODO support correct alternate url when localized site is deployed on another domain
@@ -51694,7 +51772,7 @@ const isSamePath=(path1,path2)=>{const normalize=pathname=>{return!pathname||(pa
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:true});exports.useTitleFormatter=void 0;const tslib_1=__webpack_require__(49);/**
+Object.defineProperty(exports,"__esModule",{value:true});exports.useTitleFormatter=void 0;const tslib_1=__webpack_require__(50);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -51711,7 +51789,7 @@ Object.defineProperty(exports,"__esModule",{value:true});exports.useTitleFormatt
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */Object.defineProperty(exports,"__esModule",{value:true});exports.usePluralForm=void 0;const tslib_1=__webpack_require__(49);const react_1=__webpack_require__(0);const useDocusaurusContext_1=tslib_1.__importDefault(__webpack_require__(7));// We want to ensurer a stable plural form order in all cases
+ */Object.defineProperty(exports,"__esModule",{value:true});exports.usePluralForm=void 0;const tslib_1=__webpack_require__(50);const react_1=__webpack_require__(0);const useDocusaurusContext_1=tslib_1.__importDefault(__webpack_require__(7));// We want to ensurer a stable plural form order in all cases
 // It is more convenient and natural to handle "small values" first
 // See https://twitter.com/sebastienlorber/status/1366820663261077510
 const OrderedPluralForms=['zero','one','two','few','many','other'];function sortPluralForms(pluralForms){return OrderedPluralForms.filter(pf=>pluralForms.includes(pf));}// Hardcoded english/fallback implementation
@@ -51860,7 +51938,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _theme_NavbarItem_DefaultNavbarItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(27);
 /* harmony import */ var _theme_hooks_useDocs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
 /* harmony import */ var _theme_hooks_useDocs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_theme_hooks_useDocs__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 /* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__);
 /**
@@ -51911,10 +51989,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/docsVersionDropdown-dda80f009a926fb2dd92bab8faa6c4d8.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/gradle-create-project-defaults-cf9ce39e5101e4ac2e2ea3f6dff727ef.gif");
 
 /***/ }),
 /* 327 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/docsVersionDropdown-dda80f009a926fb2dd92bab8faa6c4d8.png");
+
+/***/ }),
+/* 328 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51964,7 +52050,7 @@ function SvgFastjIconWired(_ref) {
 /* harmony default export */ __webpack_exports__["default"] = (SvgFastjIconWired);
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52010,7 +52096,7 @@ function SvgLightweight(_ref) {
 /* harmony default export */ __webpack_exports__["default"] = (SvgLightweight);
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52074,17 +52160,17 @@ function SvgWinMacLinComboInteresting(_ref) {
 /* harmony default export */ __webpack_exports__["default"] = (SvgWinMacLinComboInteresting);
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const components = __webpack_require__(332);
-const getLoader = __webpack_require__(333);
+const components = __webpack_require__(333);
+const getLoader = __webpack_require__(334);
 
 
 /**
@@ -52142,14 +52228,14 @@ module.exports = loadLanguages;
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var components = {"core":{"meta":{"path":"components/prism-core.js","option":"mandatory"},"core":"Core"},"themes":{"meta":{"path":"themes/{id}.css","link":"index.html?theme={id}","exclusive":true},"prism":{"title":"Default","option":"default"},"prism-dark":"Dark","prism-funky":"Funky","prism-okaidia":{"title":"Okaidia","owner":"ocodia"},"prism-twilight":{"title":"Twilight","owner":"remybach"},"prism-coy":{"title":"Coy","owner":"tshedor"},"prism-solarizedlight":{"title":"Solarized Light","owner":"hectormatos2011 "},"prism-tomorrow":{"title":"Tomorrow Night","owner":"Rosey"}},"languages":{"meta":{"path":"components/prism-{id}","noCSS":true,"examplesPath":"examples/prism-{id}","addCheckAll":true},"markup":{"title":"Markup","alias":["html","xml","svg","mathml","ssml","atom","rss"],"aliasTitles":{"html":"HTML","xml":"XML","svg":"SVG","mathml":"MathML","ssml":"SSML","atom":"Atom","rss":"RSS"},"option":"default"},"css":{"title":"CSS","option":"default","modify":"markup"},"clike":{"title":"C-like","option":"default"},"javascript":{"title":"JavaScript","require":"clike","modify":"markup","optional":"regex","alias":"js","option":"default"},"abap":{"title":"ABAP","owner":"dellagustin"},"abnf":{"title":"ABNF","owner":"RunDevelopment"},"actionscript":{"title":"ActionScript","require":"javascript","modify":"markup","owner":"Golmote"},"ada":{"title":"Ada","owner":"Lucretia"},"agda":{"title":"Agda","owner":"xy-ren"},"al":{"title":"AL","owner":"RunDevelopment"},"antlr4":{"title":"ANTLR4","alias":"g4","owner":"RunDevelopment"},"apacheconf":{"title":"Apache Configuration","owner":"GuiTeK"},"apex":{"title":"Apex","require":["clike","sql"],"owner":"RunDevelopment"},"apl":{"title":"APL","owner":"ngn"},"applescript":{"title":"AppleScript","owner":"Golmote"},"aql":{"title":"AQL","owner":"RunDevelopment"},"arduino":{"title":"Arduino","require":"cpp","owner":"dkern"},"arff":{"title":"ARFF","owner":"Golmote"},"asciidoc":{"alias":"adoc","title":"AsciiDoc","owner":"Golmote"},"aspnet":{"title":"ASP.NET (C#)","require":["markup","csharp"],"owner":"nauzilus"},"asm6502":{"title":"6502 Assembly","owner":"kzurawel"},"autohotkey":{"title":"AutoHotkey","owner":"aviaryan"},"autoit":{"title":"AutoIt","owner":"Golmote"},"bash":{"title":"Bash","alias":"shell","aliasTitles":{"shell":"Shell"},"owner":"zeitgeist87"},"basic":{"title":"BASIC","owner":"Golmote"},"batch":{"title":"Batch","owner":"Golmote"},"bbcode":{"title":"BBcode","alias":"shortcode","aliasTitles":{"shortcode":"Shortcode"},"owner":"RunDevelopment"},"birb":{"title":"Birb","require":"clike","owner":"Calamity210"},"bison":{"title":"Bison","require":"c","owner":"Golmote"},"bnf":{"title":"BNF","alias":"rbnf","aliasTitles":{"rbnf":"RBNF"},"owner":"RunDevelopment"},"brainfuck":{"title":"Brainfuck","owner":"Golmote"},"brightscript":{"title":"BrightScript","owner":"RunDevelopment"},"bro":{"title":"Bro","owner":"wayward710"},"bsl":{"title":"BSL (1C:Enterprise)","alias":"oscript","aliasTitles":{"oscript":"OneScript"},"owner":"Diversus23"},"c":{"title":"C","require":"clike","owner":"zeitgeist87"},"csharp":{"title":"C#","require":"clike","alias":["cs","dotnet"],"owner":"mvalipour"},"cpp":{"title":"C++","require":"c","owner":"zeitgeist87"},"cil":{"title":"CIL","owner":"sbrl"},"clojure":{"title":"Clojure","owner":"troglotit"},"cmake":{"title":"CMake","owner":"mjrogozinski"},"coffeescript":{"title":"CoffeeScript","require":"javascript","alias":"coffee","owner":"R-osey"},"concurnas":{"title":"Concurnas","alias":"conc","owner":"jasontatton"},"csp":{"title":"Content-Security-Policy","owner":"ScottHelme"},"crystal":{"title":"Crystal","require":"ruby","owner":"MakeNowJust"},"css-extras":{"title":"CSS Extras","require":"css","modify":"css","owner":"milesj"},"cypher":{"title":"Cypher","owner":"RunDevelopment"},"d":{"title":"D","require":"clike","owner":"Golmote"},"dart":{"title":"Dart","require":"clike","owner":"Golmote"},"dataweave":{"title":"DataWeave","owner":"machaval"},"dax":{"title":"DAX","owner":"peterbud"},"dhall":{"title":"Dhall","owner":"RunDevelopment"},"diff":{"title":"Diff","owner":"uranusjr"},"django":{"title":"Django/Jinja2","require":"markup-templating","alias":"jinja2","owner":"romanvm"},"dns-zone-file":{"title":"DNS zone file","owner":"RunDevelopment","alias":"dns-zone"},"docker":{"title":"Docker","alias":"dockerfile","owner":"JustinBeckwith"},"ebnf":{"title":"EBNF","owner":"RunDevelopment"},"editorconfig":{"title":"EditorConfig","owner":"osipxd"},"eiffel":{"title":"Eiffel","owner":"Conaclos"},"ejs":{"title":"EJS","require":["javascript","markup-templating"],"owner":"RunDevelopment","alias":"eta","aliasTitles":{"eta":"Eta"}},"elixir":{"title":"Elixir","owner":"Golmote"},"elm":{"title":"Elm","owner":"zwilias"},"etlua":{"title":"Embedded Lua templating","require":["lua","markup-templating"],"owner":"RunDevelopment"},"erb":{"title":"ERB","require":["ruby","markup-templating"],"owner":"Golmote"},"erlang":{"title":"Erlang","owner":"Golmote"},"excel-formula":{"title":"Excel Formula","alias":["xlsx","xls"],"owner":"RunDevelopment"},"fsharp":{"title":"F#","require":"clike","owner":"simonreynolds7"},"factor":{"title":"Factor","owner":"catb0t"},"firestore-security-rules":{"title":"Firestore security rules","require":"clike","owner":"RunDevelopment"},"flow":{"title":"Flow","require":"javascript","owner":"Golmote"},"fortran":{"title":"Fortran","owner":"Golmote"},"ftl":{"title":"FreeMarker Template Language","require":"markup-templating","owner":"RunDevelopment"},"gml":{"title":"GameMaker Language","alias":"gamemakerlanguage","require":"clike","owner":"LiarOnce"},"gcode":{"title":"G-code","owner":"RunDevelopment"},"gdscript":{"title":"GDScript","owner":"RunDevelopment"},"gedcom":{"title":"GEDCOM","owner":"Golmote"},"gherkin":{"title":"Gherkin","owner":"hason"},"git":{"title":"Git","owner":"lgiraudel"},"glsl":{"title":"GLSL","require":"c","owner":"Golmote"},"go":{"title":"Go","require":"clike","owner":"arnehormann"},"graphql":{"title":"GraphQL","optional":["markdown"],"owner":"Golmote"},"groovy":{"title":"Groovy","require":"clike","owner":"robfletcher"},"haml":{"title":"Haml","require":"ruby","optional":["css","css-extras","coffeescript","erb","javascript","less","markdown","scss","textile"],"owner":"Golmote"},"handlebars":{"title":"Handlebars","require":"markup-templating","owner":"Golmote"},"haskell":{"title":"Haskell","alias":"hs","owner":"bholst"},"haxe":{"title":"Haxe","require":"clike","owner":"Golmote"},"hcl":{"title":"HCL","owner":"outsideris"},"hlsl":{"title":"HLSL","require":"c","owner":"RunDevelopment"},"http":{"title":"HTTP","optional":["css","javascript","json","markup"],"owner":"danielgtaylor"},"hpkp":{"title":"HTTP Public-Key-Pins","owner":"ScottHelme"},"hsts":{"title":"HTTP Strict-Transport-Security","owner":"ScottHelme"},"ichigojam":{"title":"IchigoJam","owner":"BlueCocoa"},"icon":{"title":"Icon","owner":"Golmote"},"ignore":{"title":".ignore","owner":"osipxd","alias":["gitignore","hgignore","npmignore"],"aliasTitles":{"gitignore":".gitignore","hgignore":".hgignore","npmignore":".npmignore"}},"inform7":{"title":"Inform 7","owner":"Golmote"},"ini":{"title":"Ini","owner":"aviaryan"},"io":{"title":"Io","owner":"AlesTsurko"},"j":{"title":"J","owner":"Golmote"},"java":{"title":"Java","require":"clike","owner":"sherblot"},"javadoc":{"title":"JavaDoc","require":["markup","java","javadoclike"],"modify":"java","optional":"scala","owner":"RunDevelopment"},"javadoclike":{"title":"JavaDoc-like","modify":["java","javascript","php"],"owner":"RunDevelopment"},"javastacktrace":{"title":"Java stack trace","owner":"RunDevelopment"},"jolie":{"title":"Jolie","require":"clike","owner":"thesave"},"jq":{"title":"JQ","owner":"RunDevelopment"},"jsdoc":{"title":"JSDoc","require":["javascript","javadoclike","typescript"],"modify":"javascript","optional":["actionscript","coffeescript"],"owner":"RunDevelopment"},"js-extras":{"title":"JS Extras","require":"javascript","modify":"javascript","optional":["actionscript","coffeescript","flow","n4js","typescript"],"owner":"RunDevelopment"},"json":{"title":"JSON","alias":"webmanifest","aliasTitles":{"webmanifest":"Web App Manifest"},"owner":"CupOfTea696"},"json5":{"title":"JSON5","require":"json","owner":"RunDevelopment"},"jsonp":{"title":"JSONP","require":"json","owner":"RunDevelopment"},"jsstacktrace":{"title":"JS stack trace","owner":"sbrl"},"js-templates":{"title":"JS Templates","require":"javascript","modify":"javascript","optional":["css","css-extras","graphql","markdown","markup"],"owner":"RunDevelopment"},"julia":{"title":"Julia","owner":"cdagnino"},"keyman":{"title":"Keyman","owner":"mcdurdin"},"kotlin":{"title":"Kotlin","alias":["kt","kts"],"aliasTitles":{"kts":"Kotlin Script"},"require":"clike","owner":"Golmote"},"latex":{"title":"LaTeX","alias":["tex","context"],"aliasTitles":{"tex":"TeX","context":"ConTeXt"},"owner":"japborst"},"latte":{"title":"Latte","require":["clike","markup-templating","php"],"owner":"nette"},"less":{"title":"Less","require":"css","optional":"css-extras","owner":"Golmote"},"lilypond":{"title":"LilyPond","require":"scheme","alias":"ly","owner":"RunDevelopment"},"liquid":{"title":"Liquid","owner":"cinhtau"},"lisp":{"title":"Lisp","alias":["emacs","elisp","emacs-lisp"],"owner":"JuanCaicedo"},"livescript":{"title":"LiveScript","owner":"Golmote"},"llvm":{"title":"LLVM IR","owner":"porglezomp"},"lolcode":{"title":"LOLCODE","owner":"Golmote"},"lua":{"title":"Lua","owner":"Golmote"},"makefile":{"title":"Makefile","owner":"Golmote"},"markdown":{"title":"Markdown","require":"markup","optional":"yaml","alias":"md","owner":"Golmote"},"markup-templating":{"title":"Markup templating","require":"markup","owner":"Golmote"},"matlab":{"title":"MATLAB","owner":"Golmote"},"mel":{"title":"MEL","owner":"Golmote"},"mizar":{"title":"Mizar","owner":"Golmote"},"mongodb":{"title":"MongoDB","owner":"airs0urce","require":"javascript"},"monkey":{"title":"Monkey","owner":"Golmote"},"moonscript":{"title":"MoonScript","alias":"moon","owner":"RunDevelopment"},"n1ql":{"title":"N1QL","owner":"TMWilds"},"n4js":{"title":"N4JS","require":"javascript","optional":"jsdoc","alias":"n4jsd","owner":"bsmith-n4"},"nand2tetris-hdl":{"title":"Nand To Tetris HDL","owner":"stephanmax"},"naniscript":{"title":"Naninovel Script","owner":"Elringus","alias":"nani"},"nasm":{"title":"NASM","owner":"rbmj"},"neon":{"title":"NEON","owner":"nette"},"nginx":{"title":"nginx","owner":"westonganger","require":"clike"},"nim":{"title":"Nim","owner":"Golmote"},"nix":{"title":"Nix","owner":"Golmote"},"nsis":{"title":"NSIS","owner":"idleberg"},"objectivec":{"title":"Objective-C","require":"c","alias":"objc","owner":"uranusjr"},"ocaml":{"title":"OCaml","owner":"Golmote"},"opencl":{"title":"OpenCL","require":"c","modify":["c","cpp"],"owner":"Milania1"},"oz":{"title":"Oz","owner":"Golmote"},"parigp":{"title":"PARI/GP","owner":"Golmote"},"parser":{"title":"Parser","require":"markup","owner":"Golmote"},"pascal":{"title":"Pascal","alias":"objectpascal","aliasTitles":{"objectpascal":"Object Pascal"},"owner":"Golmote"},"pascaligo":{"title":"Pascaligo","owner":"DefinitelyNotAGoat"},"pcaxis":{"title":"PC-Axis","alias":"px","owner":"RunDevelopment"},"peoplecode":{"title":"PeopleCode","alias":"pcode","owner":"RunDevelopment"},"perl":{"title":"Perl","owner":"Golmote"},"php":{"title":"PHP","require":"markup-templating","owner":"milesj"},"phpdoc":{"title":"PHPDoc","require":["php","javadoclike"],"modify":"php","owner":"RunDevelopment"},"php-extras":{"title":"PHP Extras","require":"php","modify":"php","owner":"milesj"},"plsql":{"title":"PL/SQL","require":"sql","owner":"Golmote"},"powerquery":{"title":"PowerQuery","alias":["pq","mscript"],"owner":"peterbud"},"powershell":{"title":"PowerShell","owner":"nauzilus"},"processing":{"title":"Processing","require":"clike","owner":"Golmote"},"prolog":{"title":"Prolog","owner":"Golmote"},"promql":{"title":"PromQL","owner":"arendjr"},"properties":{"title":".properties","owner":"Golmote"},"protobuf":{"title":"Protocol Buffers","require":"clike","owner":"just-boris"},"pug":{"title":"Pug","require":["markup","javascript"],"optional":["coffeescript","ejs","handlebars","less","livescript","markdown","scss","stylus","twig"],"owner":"Golmote"},"puppet":{"title":"Puppet","owner":"Golmote"},"pure":{"title":"Pure","optional":["c","cpp","fortran"],"owner":"Golmote"},"purebasic":{"title":"PureBasic","require":"clike","alias":"pbfasm","owner":"HeX0R101"},"purescript":{"title":"PureScript","require":"haskell","alias":"purs","owner":"sriharshachilakapati"},"python":{"title":"Python","alias":"py","owner":"multipetros"},"q":{"title":"Q (kdb+ database)","owner":"Golmote"},"qml":{"title":"QML","require":"javascript","owner":"RunDevelopment"},"qore":{"title":"Qore","require":"clike","owner":"temnroegg"},"r":{"title":"R","owner":"Golmote"},"racket":{"title":"Racket","require":"scheme","alias":"rkt","owner":"RunDevelopment"},"jsx":{"title":"React JSX","require":["markup","javascript"],"optional":["jsdoc","js-extras","js-templates"],"owner":"vkbansal"},"tsx":{"title":"React TSX","require":["jsx","typescript"]},"reason":{"title":"Reason","require":"clike","owner":"Golmote"},"regex":{"title":"Regex","owner":"RunDevelopment"},"renpy":{"title":"Ren'py","alias":"rpy","owner":"HyuchiaDiego"},"rest":{"title":"reST (reStructuredText)","owner":"Golmote"},"rip":{"title":"Rip","owner":"ravinggenius"},"roboconf":{"title":"Roboconf","owner":"Golmote"},"robotframework":{"title":"Robot Framework","alias":"robot","owner":"RunDevelopment"},"ruby":{"title":"Ruby","require":"clike","alias":"rb","owner":"samflores"},"rust":{"title":"Rust","owner":"Golmote"},"sas":{"title":"SAS","optional":["groovy","lua","sql"],"owner":"Golmote"},"sass":{"title":"Sass (Sass)","require":"css","owner":"Golmote"},"scss":{"title":"Sass (Scss)","require":"css","optional":"css-extras","owner":"MoOx"},"scala":{"title":"Scala","require":"java","owner":"jozic"},"scheme":{"title":"Scheme","owner":"bacchus123"},"shell-session":{"title":"Shell session","require":"bash","alias":["sh-session","shellsession"],"owner":"RunDevelopment"},"smali":{"title":"Smali","owner":"RunDevelopment"},"smalltalk":{"title":"Smalltalk","owner":"Golmote"},"smarty":{"title":"Smarty","require":"markup-templating","owner":"Golmote"},"sml":{"title":"SML","alias":"smlnj","aliasTitles":{"smlnj":"SML/NJ"},"owner":"RunDevelopment"},"solidity":{"title":"Solidity (Ethereum)","alias":"sol","require":"clike","owner":"glachaud"},"solution-file":{"title":"Solution file","alias":"sln","owner":"RunDevelopment"},"soy":{"title":"Soy (Closure Template)","require":"markup-templating","owner":"Golmote"},"sparql":{"title":"SPARQL","require":"turtle","owner":"Triply-Dev","alias":"rq"},"splunk-spl":{"title":"Splunk SPL","owner":"RunDevelopment"},"sqf":{"title":"SQF: Status Quo Function (Arma 3)","require":"clike","owner":"RunDevelopment"},"sql":{"title":"SQL","owner":"multipetros"},"stan":{"title":"Stan","owner":"RunDevelopment"},"iecst":{"title":"Structured Text (IEC 61131-3)","owner":"serhioromano"},"stylus":{"title":"Stylus","owner":"vkbansal"},"swift":{"title":"Swift","require":"clike","owner":"chrischares"},"t4-templating":{"title":"T4 templating","owner":"RunDevelopment"},"t4-cs":{"title":"T4 Text Templates (C#)","require":["t4-templating","csharp"],"alias":"t4","owner":"RunDevelopment"},"t4-vb":{"title":"T4 Text Templates (VB)","require":["t4-templating","vbnet"],"owner":"RunDevelopment"},"tap":{"title":"TAP","owner":"isaacs","require":"yaml"},"tcl":{"title":"Tcl","owner":"PeterChaplin"},"tt2":{"title":"Template Toolkit 2","require":["clike","markup-templating"],"owner":"gflohr"},"textile":{"title":"Textile","require":"markup","optional":"css","owner":"Golmote"},"toml":{"title":"TOML","owner":"RunDevelopment"},"turtle":{"title":"Turtle","alias":"trig","aliasTitles":{"trig":"TriG"},"owner":"jakubklimek"},"twig":{"title":"Twig","require":"markup","owner":"brandonkelly"},"typescript":{"title":"TypeScript","require":"javascript","optional":"js-templates","alias":"ts","owner":"vkbansal"},"typoscript":{"title":"TypoScript","alias":"tsconfig","aliasTitles":{"tsconfig":"TSConfig"},"owner":"dkern"},"unrealscript":{"title":"UnrealScript","alias":["uscript","uc"],"owner":"RunDevelopment"},"vala":{"title":"Vala","require":"clike","optional":"regex","owner":"TemplarVolk"},"vbnet":{"title":"VB.Net","require":"basic","owner":"Bigsby"},"velocity":{"title":"Velocity","require":"markup","owner":"Golmote"},"verilog":{"title":"Verilog","owner":"a-rey"},"vhdl":{"title":"VHDL","owner":"a-rey"},"vim":{"title":"vim","owner":"westonganger"},"visual-basic":{"title":"Visual Basic","alias":["vb","vba"],"aliasTitles":{"vba":"VBA"},"owner":"Golmote"},"warpscript":{"title":"WarpScript","owner":"RunDevelopment"},"wasm":{"title":"WebAssembly","owner":"Golmote"},"wiki":{"title":"Wiki markup","require":"markup","owner":"Golmote"},"xeora":{"title":"Xeora","require":"markup","alias":"xeoracube","aliasTitles":{"xeoracube":"XeoraCube"},"owner":"freakmaxi"},"xml-doc":{"title":"XML doc (.net)","require":"markup","modify":["csharp","fsharp","vbnet"],"owner":"RunDevelopment"},"xojo":{"title":"Xojo (REALbasic)","owner":"Golmote"},"xquery":{"title":"XQuery","require":"markup","owner":"Golmote"},"yaml":{"title":"YAML","alias":"yml","owner":"hason"},"yang":{"title":"YANG","owner":"RunDevelopment"},"zig":{"title":"Zig","owner":"RunDevelopment"}},"plugins":{"meta":{"path":"plugins/{id}/prism-{id}","link":"plugins/{id}/"},"line-highlight":{"title":"Line Highlight","description":"Highlights specific lines and/or line ranges."},"line-numbers":{"title":"Line Numbers","description":"Line number at the beginning of code lines.","owner":"kuba-kubula"},"show-invisibles":{"title":"Show Invisibles","description":"Show hidden characters such as tabs and line breaks.","optional":["autolinker","data-uri-highlight"]},"autolinker":{"title":"Autolinker","description":"Converts URLs and emails in code to clickable links. Parses Markdown links in comments."},"wpd":{"title":"WebPlatform Docs","description":"Makes tokens link to <a href=\"https://webplatform.github.io/docs/\">WebPlatform.org documentation</a>. The links open in a new tab."},"custom-class":{"title":"Custom Class","description":"This plugin allows you to prefix Prism's default classes (<code>.comment</code> can become <code>.namespace--comment</code>) or replace them with your defined ones (like <code>.editor__comment</code>). You can even add new classes.","owner":"dvkndn","noCSS":true},"file-highlight":{"title":"File Highlight","description":"Fetch external files and highlight them with Prism. Used on the Prism website itself.","noCSS":true},"show-language":{"title":"Show Language","description":"Display the highlighted language in code blocks (inline code does not show the label).","owner":"nauzilus","noCSS":true,"require":"toolbar"},"jsonp-highlight":{"title":"JSONP Highlight","description":"Fetch content with JSONP and highlight some interesting content (e.g. GitHub/Gists or Bitbucket API).","noCSS":true,"owner":"nauzilus"},"highlight-keywords":{"title":"Highlight Keywords","description":"Adds special CSS classes for each keyword matched in the code. For example, the keyword <code>if</code> will have the class <code>keyword-if</code> as well. You can have fine grained control over the appearance of each keyword by providing your own CSS rules.","owner":"vkbansal","noCSS":true},"remove-initial-line-feed":{"title":"Remove initial line feed","description":"Removes the initial line feed in code blocks.","owner":"Golmote","noCSS":true},"inline-color":{"title":"Inline color","description":"Adds a small inline preview for colors in style sheets.","require":"css-extras","owner":"RunDevelopment"},"previewers":{"title":"Previewers","description":"Previewers for angles, colors, gradients, easing and time.","require":"css-extras","owner":"Golmote"},"autoloader":{"title":"Autoloader","description":"Automatically loads the needed languages to highlight the code blocks.","owner":"Golmote","noCSS":true},"keep-markup":{"title":"Keep Markup","description":"Prevents custom markup from being dropped out during highlighting.","owner":"Golmote","optional":"normalize-whitespace","noCSS":true},"command-line":{"title":"Command Line","description":"Display a command line with a prompt and, optionally, the output/response from the commands.","owner":"chriswells0"},"unescaped-markup":{"title":"Unescaped Markup","description":"Write markup without having to escape anything."},"normalize-whitespace":{"title":"Normalize Whitespace","description":"Supports multiple operations to normalize whitespace in code blocks.","owner":"zeitgeist87","optional":"unescaped-markup","noCSS":true},"data-uri-highlight":{"title":"Data-URI Highlight","description":"Highlights data-URI contents.","owner":"Golmote","noCSS":true},"toolbar":{"title":"Toolbar","description":"Attach a toolbar for plugins to easily register buttons on the top of a code block.","owner":"mAAdhaTTah"},"copy-to-clipboard":{"title":"Copy to Clipboard Button","description":"Add a button that copies the code block to the clipboard when clicked.","owner":"mAAdhaTTah","require":"toolbar","noCSS":true},"download-button":{"title":"Download Button","description":"A button in the toolbar of a code block adding a convenient way to download a code file.","owner":"Golmote","require":"toolbar","noCSS":true},"match-braces":{"title":"Match braces","description":"Highlights matching braces.","owner":"RunDevelopment"},"diff-highlight":{"title":"Diff Highlight","description":"Highlights the code inside diff blocks.","owner":"RunDevelopment","require":"diff"},"filter-highlight-all":{"title":"Filter highlightAll","description":"Filters the elements the <code>highlightAll</code> and <code>highlightAllUnder</code> methods actually highlight.","owner":"RunDevelopment","noCSS":true},"treeview":{"title":"Treeview","description":"A language with special styles to highlight file system tree structures.","owner":"Golmote"}}};
 if ( true && module.exports) { module.exports = components; }
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52606,12 +52692,6 @@ if (true) {
 
 
 /***/ }),
-/* 334 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
 /* 335 */
 /***/ (function(module, exports) {
 
@@ -52619,6 +52699,12 @@ if (true) {
 
 /***/ }),
 /* 336 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52664,7 +52750,7 @@ const setLazyProperty = (object, property, get) => {
 let colorConvert;
 const makeDynamicStyles = (wrap, targetSpace, identity, isBackground) => {
 	if (colorConvert === undefined) {
-		colorConvert = __webpack_require__(337);
+		colorConvert = __webpack_require__(338);
 	}
 
 	const offset = isBackground ? 10 : 0;
@@ -52789,11 +52875,11 @@ Object.defineProperty(module, 'exports', {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(90)(module)))
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const conversions = __webpack_require__(162);
-const route = __webpack_require__(339);
+const conversions = __webpack_require__(161);
+const route = __webpack_require__(340);
 
 const convert = {};
 
@@ -52876,7 +52962,7 @@ module.exports = convert;
 
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53035,10 +53121,10 @@ module.exports = {
 
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const conversions = __webpack_require__(162);
+const conversions = __webpack_require__(161);
 
 /*
 	This function routes a model to all other models.
@@ -53138,14 +53224,14 @@ module.exports = function (fromModel) {
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 const os = __webpack_require__(103);
-const tty = __webpack_require__(341);
-const hasFlag = __webpack_require__(342);
+const tty = __webpack_require__(342);
+const hasFlag = __webpack_require__(343);
 
 const {env} = process;
 
@@ -53280,13 +53366,13 @@ module.exports = {
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports) {
 
 module.exports = require("tty");
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53301,7 +53387,7 @@ module.exports = (flag, argv = process.argv) => {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53347,7 +53433,7 @@ module.exports = {
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53488,7 +53574,7 @@ module.exports = (chalk, temporary) => {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54532,7 +54618,7 @@ var Helmet = __webpack_require__(66);
 var lib = __webpack_require__(171);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/react-loadable/lib/index.js
-var react_loadable_lib = __webpack_require__(50);
+var react_loadable_lib = __webpack_require__(51);
 var react_loadable_lib_default = /*#__PURE__*/__webpack_require__.n(react_loadable_lib);
 
 // EXTERNAL MODULE: ./node_modules/html-minifier-terser/src/htmlminifier.js
@@ -54611,7 +54697,7 @@ function _interopRequireWildcard(obj) {
 var routesChunkNames = __webpack_require__(175);
 
 // CONCATENATED MODULE: ./.docusaurus/registry.js
-/* harmony default export */ var registry = ({'0155a78c':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(128))),"@site/wiki/intro.md",/*require.resolve*/(128)],'01a85c17':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(129))),"@theme/BlogTagsListPage",/*require.resolve*/(129)],'01b8d4be':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(135))),"~blog/default/fastj-news-tags-hola-d1e.json",/*require.resolve*/(135)],'0b75010d':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(136))),"@site/wiki/tutorial-basics/create-a-page.md",/*require.resolve*/(136)],'0bcb36d2':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(137))),"@site/wiki/tutorial-extras/translate-your-site.md",/*require.resolve*/(137)],'17896441':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(163))),"@theme/DocItem",/*require.resolve*/(163)],'1be78505':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(164))),"@theme/DocPage",/*require.resolve*/(164)],'1f391b9e':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(138))),"@theme/MDXPage",/*require.resolve*/(138)],'27e0b534':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(139))),"F:\\npmtest\\fastj-docs\\.docusaurus\\docusaurus-plugin-content-blog\\default\\blog-post-list-prop-default.json",/*require.resolve*/(139)],'29e0838b':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(140))),"@site/wiki/tutorial-basics/create-a-blog-post.md",/*require.resolve*/(140)],'2fb406b9':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(141))),"@site/news/2019-05-30-welcome.md",/*require.resolve*/(141)],'349df4dd':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(142))),"@site/wiki/tutorial-basics/congratulations.md",/*require.resolve*/(142)],'35191907':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(143))),"@site/wiki/tutorial-basics/markdown-features.mdx",/*require.resolve*/(143)],'36ed24db':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(144))),"@site/wiki/tutorial-basics/create-a-document.md",/*require.resolve*/(144)],'393be207':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(145))),"@site/src/pages/markdown-page.md",/*require.resolve*/(145)],'454ed76d':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(146))),"@site/wiki/fastj-basics/setting-up-for-fastj.md",/*require.resolve*/(146)],'488ab454':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(147))),"@site/wiki/fastj-basics/creating-a-fastj-project.md",/*require.resolve*/(147)],'532afc76':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(148))),"@site/wiki/tutorial-extras/manage-docs-versions.md",/*require.resolve*/(148)],'5a1abde2':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(149))),"@site/news/2019-05-29-hello-world.md?truncated=true",/*require.resolve*/(149)],'5e9f5e1a':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(39))),"@generated/docusaurus.config",/*require.resolve*/(39)],'63060486':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(150))),"~blog/default/fastj-news-tags-tags-f2f.json",/*require.resolve*/(150)],'67d07d7a':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(151))),"@site/wiki/tutorial-basics/deploy-your-site.md",/*require.resolve*/(151)],'6875c492':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(152))),"@theme/BlogTagsPostsPage",/*require.resolve*/(152)],'7149aa05':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(153))),"@site/news/2019-05-28-hola.md?truncated=true",/*require.resolve*/(153)],'8280cd5c':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(154))),"~blog/default/fastj-news-tags-facebook-115.json",/*require.resolve*/(154)],'85a96ceb':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(155))),"@site/news/2019-05-29-hello-world.md",/*require.resolve*/(155)],'935f2afb':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(156))),"~docs/default/version-current-metadata-prop-751.json",/*require.resolve*/(156)],'95b1568c':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(157))),"@site/news/2019-05-28-hola.md",/*require.resolve*/(157)],'9653069b':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(158))),"~blog/default/fastj-news-7d4.json",/*require.resolve*/(158)],'a6aa9e1f':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(166))),"@theme/BlogListPage",/*require.resolve*/(166)],'bad4b5fa':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(159))),"@site/news/2019-05-30-welcome.md?truncated=true",/*require.resolve*/(159)],'bd2599cb':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(160))),"~blog/default/fastj-news-tags-hello-8eb.json",/*require.resolve*/(160)],'c4f5d8e4':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(165))),"@site/src/pages/index.js",/*require.resolve*/(165)],'ccc49370':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(167))),"@theme/BlogPostPage",/*require.resolve*/(167)],'f19f614d':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(161))),"~blog/default/fastj-news-tags-docusaurus-be1.json",/*require.resolve*/(161)]});
+/* harmony default export */ var registry = ({'0155a78c':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(128))),"@site/wiki/intro.md",/*require.resolve*/(128)],'01a85c17':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(129))),"@theme/BlogTagsListPage",/*require.resolve*/(129)],'01b8d4be':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(135))),"~blog/default/fastj-news-tags-hola-d1e.json",/*require.resolve*/(135)],'0b75010d':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(136))),"@site/wiki/tutorial-basics/create-a-page.md",/*require.resolve*/(136)],'0bcb36d2':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(137))),"@site/wiki/tutorial-extras/translate-your-site.md",/*require.resolve*/(137)],'17896441':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(162))),"@theme/DocItem",/*require.resolve*/(162)],'1be78505':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(163))),"@theme/DocPage",/*require.resolve*/(163)],'1f391b9e':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(138))),"@theme/MDXPage",/*require.resolve*/(138)],'27e0b534':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(139))),"F:\\npmtest\\fastj-docs\\.docusaurus\\docusaurus-plugin-content-blog\\default\\blog-post-list-prop-default.json",/*require.resolve*/(139)],'29e0838b':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(140))),"@site/wiki/tutorial-basics/create-a-blog-post.md",/*require.resolve*/(140)],'2fb406b9':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(141))),"@site/news/2019-05-30-welcome.md",/*require.resolve*/(141)],'349df4dd':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(142))),"@site/wiki/tutorial-basics/congratulations.md",/*require.resolve*/(142)],'35191907':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(143))),"@site/wiki/tutorial-basics/markdown-features.mdx",/*require.resolve*/(143)],'36ed24db':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(144))),"@site/wiki/tutorial-basics/create-a-document.md",/*require.resolve*/(144)],'393be207':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(145))),"@site/src/pages/markdown-page.md",/*require.resolve*/(145)],'454ed76d':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(146))),"@site/wiki/fastj-basics/setting-up-for-fastj.md",/*require.resolve*/(146)],'4eb0aec7':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(164))),"@site/wiki/fastj-basics/creating-a-fastj-project.mdx",/*require.resolve*/(164)],'532afc76':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(147))),"@site/wiki/tutorial-extras/manage-docs-versions.md",/*require.resolve*/(147)],'5a1abde2':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(148))),"@site/news/2019-05-29-hello-world.md?truncated=true",/*require.resolve*/(148)],'5e9f5e1a':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(40))),"@generated/docusaurus.config",/*require.resolve*/(40)],'63060486':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(149))),"~blog/default/fastj-news-tags-tags-f2f.json",/*require.resolve*/(149)],'67d07d7a':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(150))),"@site/wiki/tutorial-basics/deploy-your-site.md",/*require.resolve*/(150)],'6875c492':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(151))),"@theme/BlogTagsPostsPage",/*require.resolve*/(151)],'7149aa05':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(152))),"@site/news/2019-05-28-hola.md?truncated=true",/*require.resolve*/(152)],'8280cd5c':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(153))),"~blog/default/fastj-news-tags-facebook-115.json",/*require.resolve*/(153)],'85a96ceb':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(154))),"@site/news/2019-05-29-hello-world.md",/*require.resolve*/(154)],'935f2afb':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(155))),"~docs/default/version-current-metadata-prop-751.json",/*require.resolve*/(155)],'95b1568c':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(156))),"@site/news/2019-05-28-hola.md",/*require.resolve*/(156)],'9653069b':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(157))),"~blog/default/fastj-news-7d4.json",/*require.resolve*/(157)],'a6aa9e1f':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(166))),"@theme/BlogListPage",/*require.resolve*/(166)],'bad4b5fa':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(158))),"@site/news/2019-05-30-welcome.md?truncated=true",/*require.resolve*/(158)],'bd2599cb':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(159))),"~blog/default/fastj-news-tags-hello-8eb.json",/*require.resolve*/(159)],'c4f5d8e4':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(165))),"@site/src/pages/index.js",/*require.resolve*/(165)],'ccc49370':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(167))),"@theme/BlogPostPage",/*require.resolve*/(167)],'f19f614d':[()=>Promise.resolve().then(()=>_interopRequireWildcard(__webpack_require__(160))),"~blog/default/fastj-news-tags-docusaurus-be1.json",/*require.resolve*/(160)]});
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/flat.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54640,7 +54726,7 @@ if(path==='*'){return react_loadable_lib_default()({loading:Loading,loader:()=>P
     */const flatChunkNames=client_flat(chunkNames);Object.keys(flatChunkNames).forEach(key=>{const chunkRegistry=registry[flatChunkNames[key]];if(chunkRegistry){/* eslint-disable prefer-destructuring */optsLoader[key]=chunkRegistry[0];optsModules.push(chunkRegistry[1]);optsWebpack.push(chunkRegistry[2]);/* eslint-enable prefer-destructuring */}});return react_loadable_lib_default.a.Map({loading:Loading,loader:optsLoader,modules:optsModules,webpack:()=>optsWebpack,render:(loaded,props)=>{// Clone the original object since we don't want to alter the original.
 const loadedModules=JSON.parse(JSON.stringify(chunkNames));Object.keys(loaded).forEach(key=>{let val=loadedModules;const keyPath=key.split('.');for(let i=0;i<keyPath.length-1;i+=1){val=val[keyPath[i]];}val[keyPath[keyPath.length-1]]=loaded[key].default;const nonDefaultKeys=Object.keys(loaded[key]).filter(k=>k!=='default');if(nonDefaultKeys&&nonDefaultKeys.length){nonDefaultKeys.forEach(nonDefaultKey=>{val[keyPath[keyPath.length-1]][nonDefaultKey]=loaded[key][nonDefaultKey];});}});const Component=loadedModules.component;delete loadedModules.component;return/*#__PURE__*/react_default.a.createElement(Component,Object.assign({},loadedModules,props));}});}/* harmony default export */ var exports_ComponentCreator = (ComponentCreator);
 // CONCATENATED MODULE: ./.docusaurus/routes.js
-/* harmony default export */ var _docusaurus_routes = ([{path:'/fastj/',component:exports_ComponentCreator('/fastj/','26c'),exact:true},{path:'/fastj/markdown-page',component:exports_ComponentCreator('/fastj/markdown-page','55f'),exact:true},{path:'/fastj/news',component:exports_ComponentCreator('/fastj/news','6cd'),exact:true},{path:'/fastj/news/hello-world',component:exports_ComponentCreator('/fastj/news/hello-world','3d8'),exact:true},{path:'/fastj/news/hola',component:exports_ComponentCreator('/fastj/news/hola','ff1'),exact:true},{path:'/fastj/news/tags',component:exports_ComponentCreator('/fastj/news/tags','d31'),exact:true},{path:'/fastj/news/tags/docusaurus',component:exports_ComponentCreator('/fastj/news/tags/docusaurus','ead'),exact:true},{path:'/fastj/news/tags/facebook',component:exports_ComponentCreator('/fastj/news/tags/facebook','5b2'),exact:true},{path:'/fastj/news/tags/hello',component:exports_ComponentCreator('/fastj/news/tags/hello','d4d'),exact:true},{path:'/fastj/news/tags/hola',component:exports_ComponentCreator('/fastj/news/tags/hola','cd3'),exact:true},{path:'/fastj/news/welcome',component:exports_ComponentCreator('/fastj/news/welcome','dc3'),exact:true},{path:'/fastj/wiki',component:exports_ComponentCreator('/fastj/wiki','fc8'),routes:[{path:'/fastj/wiki/fastj-basics/creating-a-fastj-project',component:exports_ComponentCreator('/fastj/wiki/fastj-basics/creating-a-fastj-project','7c2'),exact:true},{path:'/fastj/wiki/fastj-basics/setting-up-for-fastj',component:exports_ComponentCreator('/fastj/wiki/fastj-basics/setting-up-for-fastj','677'),exact:true},{path:'/fastj/wiki/intro',component:exports_ComponentCreator('/fastj/wiki/intro','5cb'),exact:true},{path:'/fastj/wiki/tutorial-basics/congratulations',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/congratulations','b44'),exact:true},{path:'/fastj/wiki/tutorial-basics/create-a-blog-post',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/create-a-blog-post','35a'),exact:true},{path:'/fastj/wiki/tutorial-basics/create-a-document',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/create-a-document','b9e'),exact:true},{path:'/fastj/wiki/tutorial-basics/create-a-page',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/create-a-page','2d8'),exact:true},{path:'/fastj/wiki/tutorial-basics/deploy-your-site',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/deploy-your-site','d07'),exact:true},{path:'/fastj/wiki/tutorial-basics/markdown-features',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/markdown-features','937'),exact:true},{path:'/fastj/wiki/tutorial-extras/manage-docs-versions',component:exports_ComponentCreator('/fastj/wiki/tutorial-extras/manage-docs-versions','7f9'),exact:true},{path:'/fastj/wiki/tutorial-extras/translate-your-site',component:exports_ComponentCreator('/fastj/wiki/tutorial-extras/translate-your-site','8e6'),exact:true}]},{path:'*',component:exports_ComponentCreator('*')}]);
+/* harmony default export */ var _docusaurus_routes = ([{path:'/fastj/',component:exports_ComponentCreator('/fastj/','26c'),exact:true},{path:'/fastj/markdown-page',component:exports_ComponentCreator('/fastj/markdown-page','55f'),exact:true},{path:'/fastj/news',component:exports_ComponentCreator('/fastj/news','6cd'),exact:true},{path:'/fastj/news/hello-world',component:exports_ComponentCreator('/fastj/news/hello-world','3d8'),exact:true},{path:'/fastj/news/hola',component:exports_ComponentCreator('/fastj/news/hola','ff1'),exact:true},{path:'/fastj/news/tags',component:exports_ComponentCreator('/fastj/news/tags','d31'),exact:true},{path:'/fastj/news/tags/docusaurus',component:exports_ComponentCreator('/fastj/news/tags/docusaurus','ead'),exact:true},{path:'/fastj/news/tags/facebook',component:exports_ComponentCreator('/fastj/news/tags/facebook','5b2'),exact:true},{path:'/fastj/news/tags/hello',component:exports_ComponentCreator('/fastj/news/tags/hello','d4d'),exact:true},{path:'/fastj/news/tags/hola',component:exports_ComponentCreator('/fastj/news/tags/hola','cd3'),exact:true},{path:'/fastj/news/welcome',component:exports_ComponentCreator('/fastj/news/welcome','dc3'),exact:true},{path:'/fastj/wiki',component:exports_ComponentCreator('/fastj/wiki','7b4'),routes:[{path:'/fastj/wiki/fastj-basics/creating-a-fastj-project',component:exports_ComponentCreator('/fastj/wiki/fastj-basics/creating-a-fastj-project','d65'),exact:true},{path:'/fastj/wiki/fastj-basics/setting-up-for-fastj',component:exports_ComponentCreator('/fastj/wiki/fastj-basics/setting-up-for-fastj','677'),exact:true},{path:'/fastj/wiki/intro',component:exports_ComponentCreator('/fastj/wiki/intro','5cb'),exact:true},{path:'/fastj/wiki/tutorial-basics/congratulations',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/congratulations','b44'),exact:true},{path:'/fastj/wiki/tutorial-basics/create-a-blog-post',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/create-a-blog-post','35a'),exact:true},{path:'/fastj/wiki/tutorial-basics/create-a-document',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/create-a-document','b9e'),exact:true},{path:'/fastj/wiki/tutorial-basics/create-a-page',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/create-a-page','2d8'),exact:true},{path:'/fastj/wiki/tutorial-basics/deploy-your-site',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/deploy-your-site','d07'),exact:true},{path:'/fastj/wiki/tutorial-basics/markdown-features',component:exports_ComponentCreator('/fastj/wiki/tutorial-basics/markdown-features','937'),exact:true},{path:'/fastj/wiki/tutorial-extras/manage-docs-versions',component:exports_ComponentCreator('/fastj/wiki/tutorial-extras/manage-docs-versions','7f9'),exact:true},{path:'/fastj/wiki/tutorial-extras/translate-your-site',component:exports_ComponentCreator('/fastj/wiki/tutorial-extras/translate-your-site','8e6'),exact:true}]},{path:'*',component:exports_ComponentCreator('*')}]);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/package.json
 var core_package = __webpack_require__(177);
 
@@ -54664,7 +54750,7 @@ var react_router_config = __webpack_require__(75);
 if(component&&component.preload){// @ts-expect-error: checked above.
 return component.preload();}return undefined;}));}
 // EXTERNAL MODULE: ./.docusaurus/docusaurus.config.js
-var docusaurus_config = __webpack_require__(39);
+var docusaurus_config = __webpack_require__(40);
 
 // EXTERNAL MODULE: ./.docusaurus/globalData.json
 var globalData = __webpack_require__(178);
@@ -54689,7 +54775,7 @@ var nprogress = __webpack_require__(78);
 var nprogress_default = /*#__PURE__*/__webpack_require__.n(nprogress);
 
 // CONCATENATED MODULE: ./.docusaurus/client-modules.js
-/* harmony default export */ var client_modules = ([__webpack_require__(95),__webpack_require__(95),__webpack_require__(95),__webpack_require__(330),__webpack_require__(346),__webpack_require__(334)]);
+/* harmony default export */ var client_modules = ([__webpack_require__(95),__webpack_require__(95),__webpack_require__(95),__webpack_require__(331),__webpack_require__(347),__webpack_require__(335)]);
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/client-lifecycles-dispatcher.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54707,7 +54793,7 @@ var nprogress_default = /*#__PURE__*/__webpack_require__.n(nprogress);
  */ // Memoize previously normalized pathnames.
 const pathnames={};function normalizeLocation(location){if(pathnames[location.pathname]){return{...location,pathname:pathnames[location.pathname]};}let pathname=location.pathname||'/';pathname=pathname.trim().replace(/\/index\.html$/,'');if(pathname===''){pathname='/';}pathnames[location.pathname]=pathname;return{...location,pathname};}/* harmony default export */ var client_normalizeLocation = (normalizeLocation);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/nprogress.css
-var client_nprogress = __webpack_require__(335);
+var client_nprogress = __webpack_require__(336);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/PendingNavigation.js
 /**
@@ -54851,7 +54937,7 @@ function doMinify(){return Object(htmlminifier["minify"])(renderedHtml,{removeCo
 try{return doMinify();}catch(e){if(e.message&&e.message.includes("Cannot read property 'replace' of undefined")){console.error(source_default.a.red('\nDocusaurus user: you probably have this known error due to using a monorepo/workspace.\nWe have a workaround for you, check https://github.com/facebook/docusaurus/issues/3515\n'));}throw e;}}
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54859,13 +54945,13 @@ try{return doMinify();}catch(e){if(e.message&&e.message.includes("Cannot read pr
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/prism-react-renderer/prism/index.js
-var prism = __webpack_require__(38);
+var prism = __webpack_require__(39);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/ExecutionEnvironment.js
 var ExecutionEnvironment = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./.docusaurus/docusaurus.config.js
-var docusaurus_config = __webpack_require__(39);
+var docusaurus_config = __webpack_require__(40);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib-next/theme/prism-include-languages.js
 /**
