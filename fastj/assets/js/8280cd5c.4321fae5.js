@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[25],{97:function(a){a.exports=JSON.parse('{"allTagsPath":"/fastj/news/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/fastj/news/tags/facebook"}')}}]);
